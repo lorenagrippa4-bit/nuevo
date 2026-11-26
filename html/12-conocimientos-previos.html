@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="es" id="exe-page-mwfq63cf-52kukzari">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="eXeLearning v4.0.6">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="exe-pass-score" content="5">
+<link rel="license" type="text/html" href="https://creativecommons.org/licenses/by-sa/4.0/">
+<title>1.2 Conocimientos Previos | “ Arquitectura de computadoras y Hardware: del núcleo de procesamiento a los dispositivos periféricos y de almacenamiento”</title>
+<link rel="icon" type="image/x-icon" href="../libs/favicon.ico">
+<meta name="description" content="Aborda el estudio integral del hardware de un sistema informático, estructurado desde sus principios teóricos fundamentales hasta la clasificación de sus componentes y periféricos.">
+<script>document.querySelector("html").classList.add("js");</script><script src="../libs/jquery/jquery.min.js"> </script><script src="../libs/common_i18n.js"> </script><script src="../libs/common.js"> </script><script src="../libs/exe_export.js"> </script><script src="../libs/bootstrap/bootstrap.bundle.min.js"> </script><link rel="stylesheet" href="../libs/bootstrap/bootstrap.min.css">
+<script src="../idevices/udl-content/udl-content.js"></script><link rel="stylesheet" href="../idevices/udl-content/udl-content.css">
+<script src="../idevices/text/text.js"></script><link rel="stylesheet" href="../idevices/text/text.css">
+<script src="../idevices/trueorfalse/trueorfalse.js"></script><link rel="stylesheet" href="../idevices/trueorfalse/trueorfalse.css">
+<link rel="stylesheet" href="../content/css/base.css"><script src="../theme/style.js"> </script><link rel="stylesheet" href="../theme/style.css">
+<style>
+
+/* Personalización de botones y navegación  - Tonos Lila y Celeste Pastel */
+.nav-container, .pagination, .node-name, .iDevice_header 
+{
+    --primary-color: #9b87f5;
+    --secondary-color: #b5c7ed;
+    --accent-color: #dcd6f7;
+}
+
+/* Botones de navegación y pestañas (Inicio, Presentación, Motivación, etc.) */
+.ui-tabs-nav li a, 
+.pagination a, 
+.pagination span,
+.node a,
+.iDevice_header h2 
+{
+    background-color: #e8e4f8 !important; /* Lila pastel muy suave */
+    color: #4a4563 !important;
+    border-color: #b5c7ed !important;
+    transition: all 0.3s ease;
+}
+
+/* Estado activo o al pasar el cursor sobre los botones */
+.ui-tabs-nav li.ui-state-active a, 
+.ui-tabs-nav li a:hover,
+.pagination a:hover,
+.node.current > a 
+{
+    background: linear-gradient(135deg, #b5c7ed 0%, #d4b5ed 100%) !important; /* Degradado suave celeste y lila pastel */
+    color: #2c264a !important;
+    border-color: #9b87f5 !important;
+    font-weight: bold;
+}
+
+/* Forzar la eliminación de tonos verdes o naranjas heredados */
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default 
+{
+    background: #f3f0ff !important;
+    border: 1px solid #dcd6f7 !important;
+    color: #5c5470 !important;
+}
+
+/* Personalización del menú lateral y enlaces en estilo Neo - Tonos Azules */
+.node a, 
+.ui-widget-content .node a, 
+#siteNav ul li a 
+{
+    color: #2b4c7e !important; /* Color principal del texto de los enlaces */
+    transition: all 0.2s ease;
+}
+
+/* Efecto al pasar el cursor por encima de las opciones del menú */
+.node a:hover, 
+#siteNav ul li a:hover 
+{
+    color: #1a365d !important;
+    background-color: #e2ecf8 !important; /* Fondo azul pastel muy suave al pasar el mouse */
+    border-radius: 4px;
+}
+
+/* Estilo para la página o sección seleccionada actualmente (activa) */
+.node.current > a, 
+#siteNav ul li.current > a,
+.ui-state-active 
+{
+    background: linear-gradient(135deg, #3182ce 0%, #2b6cb0 100%) !important; /* Degradado en tonos azules */
+    color: #ffffff !important; /* Texto blanco para destacar perfectamente */
+    font-weight: bold !important;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(49, 130, 206, 0.2);
+}
+
+/* Ajuste general de los iconos o elementos del árbol de contenidos */
+#siteNav .node
+ {
+    margin-bottom: 2px;
+}
+
+
+
+
+  .cc-footer-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 15px;
+  }
+
+  .btn-print-footer {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #555555; /* Gris oscuro idéntico a tus referencias */
+    color: #ffffff !important;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-family: inherit;
+    cursor: pointer;
+    text-decoration: none !important;
+    transition: background-color 0.2s ease;
+  }
+
+  .btn-print-footer:hover {
+    background-color: #333333;
+  }
+
+  .btn-print-footer svg {
+    width: 16px;
+    height: 16px;
+    fill: #ffffff;
+  }
+
+
+<!-- Botón de impresión ubicado abajo junto al pie de página -->
+
+<div class="cc-footer-container">
+  <button class="btn-print-footer" onclick="window.print()" title="Imprimir o guardar como PDF">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/>
+    </svg>
+    Imprimir página
+  </button>
+</div>
+
+
+
+
+<div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; width: 100%; margin: 20px 0;">
+  
+  <style>
+    .titulo-principal {
+      font-size: 32px;
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 8px;
+      text-align: justify; /* Título justificado a ambos márgenes */
+      color: #1e3a8a;
+      transition: color 0.3s ease;
+      cursor: default;
+    }
+    /* Cambio de color automático al pasar el mouse por encima */
+    .titulo-principal:hover {
+      color: #2563eb;
+    }
+  </style>
+
+  <!-- Título principal justificado -->
+  <h1 class="titulo-principal">
+    “Arquitectura de computadoras y Hardware: del núcleo de procesamiento a los dispositivos periféricos y de almacenamiento”
+  </h1>
+
+  
+  <!-- Doble línea azul en todo el ancho -->
+  <hr style="border: none; border-top: 4px double #1d4ed8; width: 100%; margin: 0;">
+
+
+<style>
+  a:active,
+  a:focus,
+  button:active,
+  button:focus {
+    background-color: #dbeafe !important;
+    color: #1e3a8a !important;
+    outline: 2px solid #2563eb !important;
+  }
+</style>
+
+
+
+<style>
+  /* Selectores generales del árbol de navegación / menú lateral */
+  nav a,
+  nav button,
+  aside a,
+  aside button,
+  .exe-navigation a,
+  .exe-navigation button,
+  [role="navigation"] a,
+  [role="navigation"] button,
+  .tree-node a,
+  .tree-node span,
+  .node-label {
+    font-size: 1.08rem !important; /* Letra más grande */
+    color: #1d4ed8 !important;     /* Color azul */
+    font-weight: 500 !important;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease !important;
+  }
+
+  /* Al pasar el cursor o presionar (clic sostenido / foco) */
+  nav a:hover,
+  nav a:active,
+  nav a:focus,
+  aside a:hover,
+  aside a:active,
+  aside a:focus,
+  .exe-navigation a:hover,
+  .exe-navigation a:active,
+  .exe-navigation a:focus,
+  [role="navigation"] a:hover,
+  [role="navigation"] a:active,
+  [role="navigation"] a:focus,
+  .menu-presionado {
+    background-color: #bae6fd !important; /* Celeste fuerte al presionar/pasar */
+    color: #0c4a6e !important;
+    border-radius: 8px !important;
+    font-weight: 700 !important;
+  }
+
+  /* Elemento seleccionado / página activa: celeste más fuerte y definido */
+  .menu-seleccionado-celeste,
+  .active > a,
+  .current > a,
+  [aria-current="page"],
+  .selected {
+    background-color: #7dd3fc !important; /* Celeste más fuerte al seleccionar */
+    color: #082f49 !important;
+    border: 2px solid #0284c7 !important;
+    border-radius: 8px !important;
+    font-weight: 700 !important;
+    font-size: 1.1rem !important;
+  }
+</style>
+
+<script>
+  (function () {
+    function aplicarEstiloMenu() {
+      const selectores = 'nav a, aside a, .exe-navigation a, [role="navigation"] a, .tree-node a, .tree-node span';
+      const items = document.querySelectorAll(selectores);
+      const paginaActual = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase();
+
+      items.forEach(function (item) {
+        const href = (item.getAttribute('href') || '').split('/').pop().toLowerCase();
+
+        // Marca en celeste fuerte si corresponde a la página actual
+        if (href && paginaActual && href === paginaActual) {
+          item.classList.add('menu-seleccionado-celeste');
+          if (item.parentElement) {
+            item.parentElement.classList.add('menu-seleccionado-celeste');
+          }
+        }
+
+        // Al hacer clic o presionar, destaca en celeste más fuerte
+        item.addEventListener('pointerdown', function () {
+          items.forEach(function (el) {
+            el.classList.remove('menu-seleccionado-celeste');
+            el.classList.remove('menu-presionado');
+            if (el.parentElement) {
+              el.parentElement.classList.remove('menu-seleccionado-celeste');
+            }
+          });
+
+          item.classList.add('menu-seleccionado-celeste');
+          if (item.parentElement) {
+            item.parentElement.classList.add('menu-seleccionado-celeste');
+          }
+        });
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', aplicarEstiloMenu);
+    } else {
+      aplicarEstiloMenu();
+    }
+  })();
+</script>
+
+
+
+
+
+
+</div>
+
+
+  
+
+
+
+
+</style>
+</head>
+<body class="exe-export exe-web-site">
+<script>document.body.className+=" js"</script>
+<div class="exe-content exe-export pre-js siteNav-hidden"><a href="#page-mwfq63cf-52kukzari" id="skipNav">Skip to content</a> <nav id="siteNav">
+<ul>
+<li class="current-page-parent"> <a href="../index.html" class="main-node daddy">Inicio</a>
+<ul class="other-section">
+<li class="current-page-parent"> <a href="../html/1-presentacion.html" class="daddy">1-Presentación</a>
+<ul class="other-section">
+<li> <a href="../html/11-objetivos.html" class="no-ch">1.1 Objetivos</a>
+</li>
+<li class="active"> <a href="../html/12-conocimientos-previos.html" class="active no-ch">1.2 Conocimientos Previos</a>
+</li>
+<li> <a href="../html/13-hoja-de-ruta.html" class="no-ch">1.3 Hoja de Ruta</a>
+</li>
+<li> <a href="../html/14-motivacion.html" class="no-ch">1.4-Motivación</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li> <a href="../html/2-fundamentos-de-hardware-y-su-arquitectura.html" class="no-ch">2-Fundamentos de Hardware y su Arquitectura</a>
+</li>
+<li> <a href="../html/3-perifericos-y-sistemas-de-almacenamiento.html" class="no-ch">3-Periféricos y Sistemas de Almacenamiento</a>
+</li>
+<li> <a href="../html/4-actividades.html" class="daddy">4-Actividades</a>
+<ul class="other-section">
+<li> <a href="../html/41-video-interactivo.html" class="no-ch">4.1 Vídeo Interactivo</a>
+</li>
+<li> <a href="../html/42-panel-grafico-interactivo.html" class="no-ch">4.2 Panel Gráfico interactivo</a>
+</li>
+<li> <a href="../html/43-edpuzzle.html" class="no-ch">4.3 Edpuzzle</a>
+</li>
+<li> <a href="../html/44-el-rosco-hardware.html" class="no-ch">4.4 El Rosco hardware</a>
+</li>
+<li> <a href="../html/45-realidad-aumentada.html" class="no-ch">4.5 Realidad Aumentada</a>
+</li>
+</ul>
+</li>
+<li> <a href="../html/5-autoevaluacion.html" class="no-ch">5-Autoevaluación</a>
+</li>
+<li> <a href="../html/6-cierre.html" class="no-ch">6-Cierre</a>
+</li>
+<li> <a href="../html/7-informe-de-progreso.html" class="no-ch">7-Informe de Progreso</a>
+</li>
+<li> <a href="../html/8-bibliografia-y-creditos.html" class="no-ch">8-Bibliografía y Créditos</a>
+</li>
+</ul>
+</nav><main id="page-mwfq63cf-52kukzari" class="page"> 
+<header class="main-header">
+<div class="package-header"><p class="package-title">“ Arquitectura de computadoras y Hardware: del núcleo de procesamiento a los dispositivos periféricos y de almacenamiento”</p></div>
+<div class="page-header"><h1 class="page-title">1.2 Conocimientos Previos</h1></div>
+</header><div id="page-content-page-mwfq63cf-52kukzari" class="page-content">
+<article id="block-mwfucsfu-5623cpkdg" class="box">
+<header class="box-head">
+<div class="box-icon exe-icon">
+<span class="exe-material-icon" style="--exe-material-icon-url:url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2248%22%20height%3D%2248%22%20viewBox%3D%220%20-960%20960%20960%22%3E%3Cpath%20d%3D%22M430-580q29%200%2049.5-20.5T500-650q0-29-20.5-49.5T430-720q-29%200-49.5%2020.5T360-650q0%2029%2020.5%2049.5T430-580Zm0%20160q39%200%2075-16t63-45q-32-20-67-29.5t-71-9.5q-36%200-71%209.5T292-481q28%2029%2064%2045t74%2016Zm408%20300L627-331q-40%2032-91.5%2051.5T430-260q-129%200-219.5-90.5T120-570q0-129%2090.5-219.5T430-880q129%200%20219.5%2090.5T740-570q0%2054-19.5%20105.5T669-373l211%20211-42%2042Z%22%2F%3E%3C%2Fsvg%3E');" aria-hidden="true"></span>
+</div>
+<h1 class="box-title">Repaso de Conceptos</h1>
+<button class="box-toggle box-toggle-on" title="Toggle content">
+<span>Toggle content</span>
+</button></header>
+<div class="box-content">
+<div id="idevice-1794626622712-drliydwu0" class="idevice_node udl-content" data-idevice-path="../idevices/udl-content/" data-idevice-type="udl-content">
+<div class="exe-udlContent exe-udlContent-engagement"><section class="exe-udlContent-block"><div class="exe-udlContent-content"><div class="exe-udlContent-content-main"><div style="font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #2d3748; line-height: 1.6; max-width: 900px; margin: 0px auto; text-align: justify;"><!-- Párrafo introductorio -->
+<p style="font-size: 1.05em; margin-bottom: 18px; color: #334155; text-align: justify;">Antes de adentrarnos en la <strong>arquitectura interna de la computadora</strong> y el funcionamiento de sus componentes, vamos a detenernos a observar lo que ya sabes hacer. Cada vez que envías un audio, descargas una aplicación o guardas un trabajo en tu teléfono o notebook, estás tomando decisiones técnicas de forma intuitiva.</p>
+<!-- Caja destacada: Propósito -->
+<div style="background: linear-gradient(135deg, #f0f7ff 0%, #e6f0fa 100%); border-left: 5px solid #2563eb; padding: 16px 20px; border-radius: 0px 10px 10px 0px; margin-bottom: 24px; box-shadow: rgba(37, 99, 235, 0.08) 0px 2px 6px; text-align: justify;">
+<p style="margin: 0; font-size: 1em; color: #1e3a8a;"><strong style="display: block; font-size: 1.05em; margin-bottom: 4px; color: #1d4ed8;">🎯 Propósito de este espacio</strong> Rescatar esa experiencia cotidiana como usuario y transformarla en el punto de partida para construir los conceptos técnicos del módulo.</p>
+</div>
+<!-- Subtítulo disparador -->
+<p style="font-weight: 600; font-size: 1.05em; color: #1e293b; margin-bottom: 14px; text-align: justify;">Para comenzar a poner en juego tus ideas previas, te invitamos a reflexionar sobre tres situaciones habituales:</p>
+<!-- Contenedor flexible de 3 tarjetas (se adapta a celular y PC) -->
+<div style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; text-align: justify;"><!-- Tarjeta 1 -->
+<div style="flex: 1 1 250px; background-color: #ffffff; border: 1px solid #e2e8f0; border-top: 4px solid #0ea5e9; border-radius: 10px; padding: 18px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);">
+<div style="font-size: 1.6em; margin-bottom: 8px;">🖥️</div>
+<h4 style="margin: 0 0 8px 0; color: #0369a1; font-size: 1.05em;">Lo tangible y lo intangible</h4>
+<p style="margin: 0; font-size: 0.95em; color: #475569;">Cuando usas un dispositivo, ¿qué partes puedes tocar y qué cosas ocurren "por dentro" sin que puedas agarrarlas?</p>
+</div>
+<!-- Tarjeta 2 -->
+<div style="flex: 1 1 250px; background-color: #ffffff; border: 1px solid #e2e8f0; border-top: 4px solid #8b5cf6; border-radius: 10px; padding: 18px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);">
+<div style="font-size: 1.6em; margin-bottom: 8px;">🔄</div>
+<h4 style="margin: 0 0 8px 0; color: #6d28d9; font-size: 1.05em;">El viaje de la información</h4>
+<p style="margin: 0; font-size: 0.95em; color: #475569;">¿Qué herramientas usas para darle órdenes a la computadora y por dónde te devuelve ella los resultados?</p>
+</div>
+<!-- Tarjeta 3 -->
+<div style="flex: 1 1 250px; background-color: #ffffff; border: 1px solid #e2e8f0; border-top: 4px solid #10b981; border-radius: 10px; padding: 18px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);">
+<div style="font-size: 1.6em; margin-bottom: 8px;">💾</div>
+<h4 style="margin: 0 0 8px 0; color: #047857; font-size: 1.05em;">El peso de lo digital</h4>
+<p style="margin: 0; font-size: 0.95em; color: #475569;">Cuando el teléfono te avisa que "queda poco espacio", ¿qué criterios usas para saber qué archivos ocupan más lugar que otros?</p>
+</div>
+</div>
+</div>
+<p style="text-align: justify;"><img src="../content/resources/conocimeintosprevios.jpg" alt="Infografía de activación de saberes" style="width: 100%; max-height: 360px; object-fit: contain; border-radius: 6px; display: block; margin: 0px auto;"></p>
+<p style="color: #64748b; font-size: 12px; margin-top: 8px; text-align: center;">Conectando la experiencia cotidiana con el conocimiento técnico.</p></div></div></section></div>
+</div>
+</div>
+</article><article id="block-mw99yi9j-libavqxg4" class="box">
+<header class="box-head">
+<div class="box-icon exe-icon">
+<span class="exe-material-icon" style="--exe-material-icon-url:url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2248%22%20height%3D%2248%22%20viewBox%3D%220%20-960%20960%20960%22%3E%3Cpath%20d%3D%22M566-80v-60h214v-430H180v220h-60v-410q0-24%2018-42t42-18h65v-60h65v60h340v-60h65v60h65q24%200%2042%2018t18%2042v620q0%2024-18%2042t-42%2018H566ZM320-14l-42-42%20113-114H50v-60h341L278-344l42-42%20186%20186L320-14Z%22%2F%3E%3C%2Fsvg%3E');" aria-hidden="true"></span>
+</div>
+<h1 class="box-title">Diagnóstico</h1>
+<button class="box-toggle box-toggle-on" title="Toggle content">
+<span>Toggle content</span>
+</button></header>
+<div class="box-content">
+<div id="idevice-1794229566966-pngzbpul7" class="idevice_node text" data-idevice-path="../idevices/text/" data-idevice-type="text" data-idevice-component-type="json" data-idevice-json-data="{&quot;ideviceId&quot;:&quot;idevice-1794229566966-pngzbpul7&quot;}">
+<div class="exe-text-template">
+    <div style="font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #2d3748; line-height: 1.6; max-width: 900px; margin: 0 auto;"><!-- Contenedor principal tipo banner de consigna -->
+<div style="background-color: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 20px 24px; box-shadow: rgba(15, 23, 42, 0.04) 0px 2px 8px; text-align: justify;"><!-- Encabezado con etiqueta visual (Badge) -->
+<div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 12px;"><span style="background-color: #1e3a8a; color: #ffffff; font-size: 0.78em; font-weight: bold; text-transform: uppercase; letter-spacing: 0.05em; padding: 4px 10px; border-radius: 20px;"> Actividad interactiva </span> <span style="background-color: #dcfce7; color: #166534; font-size: 0.78em; font-weight: bold; padding: 4px 10px; border-radius: 20px;"> ✓ Sin calificación </span></div>
+<!-- Párrafo principal de la consigna -->
+<p style="margin: 0px 0px 16px; font-size: 1.02em; color: #334155; text-align: justify;">Para activar estas ideas previas, te proponemos resolver la siguiente actividad de <strong>Verdadero o Falso</strong>. No busca medir cuánto sabes de memoria; su único fin es que puedas confrontar tus intuiciones cotidianas con el funcionamiento real de los equipos.</p>
+<!-- Caja de consejo / metacognición en tono cálido -->
+<div style="background-color: #fffbeb; border-left: 4px solid #f59e0b; border-radius: 0px 8px 8px 0px; padding: 14px 16px; display: flex; align-items: flex-start; gap: 12px; text-align: justify;"><span style="font-size: 1.4em; line-height: 1.2;">💡</span>
+<div style="font-size: 0.95em; color: #78350f; text-align: justify;"><strong style="color: #92400e;">Un consejo importante:</strong> Lee cada afirmación y responde apoyándote en tu experiencia diaria. Al confirmar cada respuesta, el sistema te mostrará una <strong>devolución explicativa</strong>: léela con atención incluso si acertaste, ya que allí encontrarás las pistas clave que retomaremos en los próximos temas.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article><article id="block-mw9a4nmw-dznimvcy8" class="box">
+<header class="box-head">
+<div class="box-icon exe-icon">
+<span class="exe-material-icon" style="--exe-material-icon-url:url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2248%22%20height%3D%2248%22%20viewBox%3D%220%20-960%20960%20960%22%3E%3Cpath%20d%3D%22M810-680v-90h-90v-60h90v-90h60v90h90v60h-90v90h-60ZM626-533q22.5%200%2038.25-15.75T680-587q0-22.5-15.75-38.25T626-641q-22.5%200-38.25%2015.75T572-587q0%2022.5%2015.75%2038.25T626-533Zm-292%200q22.5%200%2038.25-15.75T388-587q0-22.5-15.75-38.25T334-641q-22.5%200-38.25%2015.75T280-587q0%2022.5%2015.75%2038.25T334-533Zm146%20272q66%200%20121.5-35.5T682-393H278q26%2061%2081%2096.5T480-261Zm.27%20181q-82.74%200-155.5-31.5Q252-143%20197.5-197.5t-86-127.27Q80-397.53%2080-480.27%2080-563%20111.6-636q31.6-73%2085.77-127%2054.17-54%20127.4-85.5T480-880q45.8%200%2088.4%2010%2042.6%2010%2081.6%2028v152h80v80h128q11%2031.42%2016.5%2063.37Q880-514.67%20880-480q0%2082-31.5%20155.23-31.5%2073.23-85.5%20127.4T636-111.6Q563-80%20480.27-80Z%22%2F%3E%3C%2Fsvg%3E');" aria-hidden="true"></span>
+</div>
+<h1 class="box-title">Actividad de Diagnóstico</h1>
+<button class="box-toggle box-toggle-on" title="Toggle content">
+<span>Toggle content</span>
+</button></header>
+<div class="box-content">
+<div id="idevice-1794229853863-2y4shtrdm" class="idevice_node trueorfalse" data-idevice-path="../idevices/trueorfalse/" data-idevice-type="trueorfalse" data-idevice-component-type="json" data-idevice-json-data="{&quot;id&quot;:&quot;idevice-1794229853863-2y4shtrdm&quot;,&quot;typeGame&quot;:&quot;TrueOrFalse&quot;,&quot;eXeGameInstructions&quot;:&quot;&quot;,&quot;eXeIdeviceTextAfter&quot;:&quot;&quot;,&quot;msgs&quot;:{&quot;msgStartGame&quot;:&quot;Pulsa aquí para empezar&quot;,&quot;msgTime&quot;:&quot;Tiempo por pregunta&quot;,&quot;msgNoImage&quot;:&quot;Pregunta sin imágenes&quot;,&quot;msgScoreScorm&quot;:&quot;La puntuación no se puede guardar porque esta página no forma parte  de un paquete SCORM.&quot;,&quot;msgEndGameScore&quot;:&quot;Comience la partida antes de guardar la puntuación.&quot;,&quot;msgOnlySaveScore&quot;:&quot;¡Solo puede guardar la puntuación una vez!&quot;,&quot;msgOnlySave&quot;:&quot;Solo puede guardar una vez&quot;,&quot;msgYouScore&quot;:&quot;Su puntuación&quot;,&quot;msgAuthor&quot;:&quot;Autoría&quot;,&quot;msgOnlySaveAuto&quot;:&quot;Su puntuación se guardará después de cada pregunta. Solo puede jugar una vez.&quot;,&quot;msgSaveAuto&quot;:&quot;Su puntuación se guardará automáticamente después de cada pregunta.&quot;,&quot;msgSeveralScore&quot;:&quot;Puede guardar la puntuación tantas veces como quiera&quot;,&quot;msgYouLastScore&quot;:&quot;La última puntuación guardada es&quot;,&quot;msgActityComply&quot;:&quot;Ya ha realizado esta actividad.&quot;,&quot;msgPlaySeveralTimes&quot;:&quot;Puede realizar esta actividad cuantas veces quiera&quot;,&quot;msgUncompletedActivity&quot;:&quot;Actividad no completada&quot;,&quot;msgSuccessfulActivity&quot;:&quot;Actividad superada. Puntuación: %s&quot;,&quot;msgUnsuccessfulActivity&quot;:&quot;Actividad no superada. Puntuación: %s&quot;,&quot;msgPassScore&quot;:&quot;Puntuación mínima necesaria para aprobar esta actividad: %s&quot;,&quot;msgTypeGame&quot;:&quot;Verdadero o falso&quot;,&quot;msgFeedback&quot;:&quot;Retroalimentación&quot;,&quot;msgSuggestion&quot;:&quot;Sugerencia&quot;,&quot;msgSolution&quot;:&quot;Solución&quot;,&quot;msgQuestion&quot;:&quot;Pregunta&quot;,&quot;msgTrue&quot;:&quot;Verdadero&quot;,&quot;msgFalse&quot;:&quot;Falso&quot;,&quot;msgOk&quot;:&quot;Correcto&quot;,&quot;msgKO&quot;:&quot;Incorrecto&quot;,&quot;msgShow&quot;:&quot;Mostrar&quot;,&quot;msgHide&quot;:&quot;Ocultar&quot;,&quot;msgCheck&quot;:&quot;Comprobar&quot;,&quot;msgReboot&quot;:&quot;¡Prueba otra vez!&quot;,&quot;msgScore&quot;:&quot;Puntuación&quot;,&quot;msgWeight&quot;:&quot;Peso&quot;,&quot;msgNext&quot;:&quot;Siguiente&quot;,&quot;msgPrevious&quot;:&quot;Anterior&quot;,&quot;textButtonScorm&quot;:&quot;Guardar la puntuación&quot;},&quot;questionsRandom&quot;:true,&quot;percentageQuestions&quot;:100,&quot;isTest&quot;:false,&quot;time&quot;:0,&quot;attemptsNumber&quot;:1,&quot;questionsGame&quot;:[{&quot;question&quot;:&quot;&lt;p&gt;Si descargo una película que pesa 2 Gigabytes (GB), ocupará prácticamente el mismo espacio en la memoria de mi dispositivo que guardar 200 fotos de 10 Megabytes (MB) cada una.&lt;/p&gt;&quot;,&quot;feedback&quot;:&quot;&lt;p&gt;En el mundo digital, las unidades de medida funcionan en escala: 1 Gigabyte (GB) equivale aproximadamente a 1.000 Megabytes (MB) (más precisamente, 1.024 MB en sistema binario). Por lo tanto, 2 GB representan unos 2.000 MB, exactamente el mismo espacio que suman 200 fotos de 10 MB cada una. &lt;/p&gt;&quot;,&quot;suggestion&quot;:&quot;&quot;,&quot;solution&quot;:1},{&quot;question&quot;:&quot;&lt;p&gt;Los auriculares con micrófono integrado (como los que usamos para mandar audios por WhatsApp o en videollamadas) funcionan únicamente como periféricos de salida.&lt;/p&gt;&quot;,&quot;feedback&quot;:&quot;&lt;p&gt;Si bien los auriculares por sí solos son dispositivos de salida (porque sacan el sonido desde el equipo hacia tus oídos), al tener un micrófono integrado cumplen una doble función: entrada y salida. El micrófono captura tu voz e ingresa esos datos al dispositivo, mientras que los altavoces te devuelven el audio. Puente hacia el módulo: En arquitectura de computadoras llamamos a estos equipos periféricos mixtos o de entrada/salida (E/S), una categoría clave que compartiremos junto con las pantallas táctiles o las impresoras multifunción.&lt;/p&gt;&quot;,&quot;suggestion&quot;:&quot;&quot;,&quot;solution&quot;:0},{&quot;question&quot;:&quot;&lt;p&gt;La aplicación o programa que utilizas para redactar un texto (como Word o Documentos de Google) es software, mientras que el teclado donde apoyas tus dedos para escribirlo es hardware.&lt;/p&gt;&quot;,&quot;feedback&quot;:&quot;&lt;p&gt;Todo componente físico que puedes tocar y manipular —como el teclado, la pantalla o los circuitos internos— forma parte del hardware. En cambio, las aplicaciones, programas y sistemas operativos que contienen las instrucciones para que el equipo realice tareas específicas constituyen el software (y los textos o fotos que creas con ellos son los datos). Puente hacia el módulo: Ambos elementos se necesitan mutuamente: el hardware sin software no sabría qué hacer, y el software sin hardware no tendría dónde ejecutarse. En las próximas páginas exploraremos cómo dialogan entre sí dentro de la computadora.&lt;/p&gt;&quot;,&quot;suggestion&quot;:&quot;&quot;,&quot;solution&quot;:1}],&quot;isScorm&quot;:0,&quot;textButtonScorm&quot;:&quot;Guardar la puntuación&quot;,&quot;repeatActivity&quot;:true,&quot;weighted&quot;:100,&quot;evaluation&quot;:false,&quot;evaluationID&quot;:&quot;&quot;,&quot;passScoreMode&quot;:&quot;global&quot;,&quot;passScoreCustom&quot;:5,&quot;showSlider&quot;:false,&quot;ideviceId&quot;:&quot;idevice-1794229853863-2y4shtrdm&quot;}" data-idevice-template="trueorfalse.html">
+<div class="exe-trueorfalse-container">
+  
+    <div class="game-evaluation-ids js-hidden" data-id="idevice-1794229853863-2y4shtrdm" data-evaluationb="false" data-evaluationid=""></div>
+        <div class="TOFP-instructions"></div>
+        <div class="TOFP-MainContainer" data-instance="idevice-1794229853863-2y4shtrdm" id="tofPMainContainer-idevice-1794229853863-2y4shtrdm">
+            <div class="TOFP-GameContainer" id="tofPGameContainer-idevice-1794229853863-2y4shtrdm">
+                <div class="TOFP-GameScoreBoard TOFP-EHidden">
+                    <div class="TOFP-TimeNumber">
+                        <strong><span class="sr-av">Tiempo por pregunta:</span></strong>
+                        <p id="tofPPTime-idevice-1794229853863-2y4shtrdm" class="TOFP-PTime">00:00:</p>
+                    </div>
+                </div>
+                <div class="TOFP-MessgeDiv" id="tofPMessageDiv-idevice-1794229853863-2y4shtrdm">
+                    <div class="TOFP-Message" id="tofPMessage-idevice-1794229853863-2y4shtrdm"></div>
+                </div>
+                <div class="TOFP-StartGameDiv TOFP-EHidden" id="tofPStartGameDiv-idevice-1794229853863-2y4shtrdm">
+                    <button  id="tofPStartGame-idevice-1794229853863-2y4shtrdm" type="button" class="btn btn-primary">Pulsa aquí para empezar</button>
+                </div>
+                <div class="TOFP-Multimedia " id="tofPMultimedia-idevice-1794229853863-2y4shtrdm">
+                </div>
+                <div class="TOFP-CheckTestDiv TOFP-EHidden" id="tofPCheckTestDiv-idevice-1794229853863-2y4shtrdm">
+                    <button id="tofPCheckTest-idevice-1794229853863-2y4shtrdm" type="button" class="btn btn-primary">Comprobar</button>
+                    <button id="tofRebootTest-idevice-1794229853863-2y4shtrdm" type="button" class="btn btn-primary TOFP-EHidden">¡Prueba otra vez!</button>
+                </div>
+        </div> 
+        </div>
+        <div class="Games-BottonContainer d-flex align-items-center justify-content-end mx-auto p-0 w-100"></div>
+        <div class="TOFP-After"></div>
+        <div class="questionsMedia" style="display:none"></div>
+</div>
+
+</div>
+</div>
+</article>
+</div></main><div class="nav-buttons">
+<a href="../html/11-objetivos.html" title="Anterior" class="nav-button nav-button-left"><span>Anterior</span></a>
+<a href="../html/13-hoja-de-ruta.html" title="Siguiente" class="nav-button nav-button-right"><span>Siguiente</span></a>
+</div>
+<footer id="siteFooter"><div id="siteFooterContent"> <div id="packageLicense" class="cc cc-by-sa"> <p> <span class="license-label">Licencia: </span><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="license">Creative Commons: Reconocimiento - compartir igual 4.0</a></p>
+</div>
+<div id="siteUserFooter"> <div><style>
+
+<div style="background-color: #f0f9ff; border: 1px solid #bae6fd; border-left: 6px solid #0284c7; border-radius: 6px; padding: 18px 22px; margin: 10px 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #1e293b; font-size: 15px; line-height: 1.6; text-align: justify;">
+  <p style="margin: 0;">
+    En esta sección encontrarás actividades interactivas para poner en práctica lo aprendido sobre <strong>Hardware y Arquitectura</strong>: analizar el ciclo de instrucción en un vídeo interactivo, explorar componentes en un panel gráfico, resolver desafíos en Edpuzzle, jugar a <em>El Rosco</em> e interactuar con modelos en Realidad Aumentada. Cada propuesta te ayudará a fortalecer tu comprensión sobre el funcionamiento interno del computador. <strong>¡Explorá, probá y aprendé haciendo!</strong>
+  </p>
+</div>
+
+
+<div style="background-color: #f0f9ff; border: 1px solid #bae6fd; border-left: 6px solid #0284c7; border-radius: 6px; padding: 18px 22px; margin: 10px 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #1e293b; font-size: 15px; line-height: 1.6; text-align: justify;">
+  <p style="margin: 0;">
+    Aquí escribes tu texto o consigna de la sección. Este tono celeste suave cuida la vista de los estudiantes y mantiene la coherencia visual con todo tu módulo de Hardware y Arquitectura. <strong>¡Explorá, probá y aprendé haciendo!</strong>
+  </p>
+</div>
+
+
+  .print-banner-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 15px;
+  }
+
+  .btn-print-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #334155; /* Gris pizarra profesional */
+    color: #ffffff !important;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    text-decoration: none !important;
+  }
+
+  .btn-print-action:hover {
+    background-color: #1e293b;
+    transform: translateY(-1px);
+  }
+
+  .btn-print-action svg {
+    width: 18px;
+    height: 18px;
+    fill: #ffffff;
+  }
+</style>
+
+<!-- Botón de impresión visible y garantizado -->
+<div class="print-banner-container">
+  <button class="btn-print-action" onclick="window.print()" title="Imprimir o guardar como PDF esta página">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/>
+    </svg>
+    Imprimir página
+  </button>
+</div></div>
+</div></div></footer>
+</div>
+<p id="made-with-eXe"> <a href="https://exelearning.net/" target="_blank" rel="noopener"> <span>Creado con eXeLearning <span>(Ventana nueva)</span></span></a></p>
+</body>
+</html>

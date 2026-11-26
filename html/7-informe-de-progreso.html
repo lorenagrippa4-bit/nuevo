@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="es" id="exe-page-mvvi7oat-bhfq4m7gv">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="eXeLearning v4.0.6">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="exe-pass-score" content="5">
+<link rel="license" type="text/html" href="https://creativecommons.org/licenses/by-sa/4.0/">
+<title>7-Informe de Progreso | “ Arquitectura de computadoras y Hardware: del núcleo de procesamiento a los dispositivos periféricos y de almacenamiento”</title>
+<link rel="icon" type="image/x-icon" href="../libs/favicon.ico">
+<meta name="description" content="Aborda el estudio integral del hardware de un sistema informático, estructurado desde sus principios teóricos fundamentales hasta la clasificación de sus componentes y periféricos.">
+<script>document.querySelector("html").classList.add("js");</script><script src="../libs/jquery/jquery.min.js"> </script><script src="../libs/common_i18n.js"> </script><script src="../libs/common.js"> </script><script src="../libs/exe_export.js"> </script><script src="../libs/bootstrap/bootstrap.bundle.min.js"> </script><link rel="stylesheet" href="../libs/bootstrap/bootstrap.min.css">
+<script src="../idevices/text/text.js"></script><link rel="stylesheet" href="../idevices/text/text.css">
+<script src="../idevices/progress-report/html2canvas.js"></script><link rel="stylesheet" href="../idevices/progress-report/progress-report.css">
+<script src="../idevices/progress-report/progress-report.js"></script>
+<link rel="stylesheet" href="../content/css/base.css"><script src="../theme/style.js"> </script><link rel="stylesheet" href="../theme/style.css">
+<style>
+
+/* Personalización de botones y navegación  - Tonos Lila y Celeste Pastel */
+.nav-container, .pagination, .node-name, .iDevice_header 
+{
+    --primary-color: #9b87f5;
+    --secondary-color: #b5c7ed;
+    --accent-color: #dcd6f7;
+}
+
+/* Botones de navegación y pestañas (Inicio, Presentación, Motivación, etc.) */
+.ui-tabs-nav li a, 
+.pagination a, 
+.pagination span,
+.node a,
+.iDevice_header h2 
+{
+    background-color: #e8e4f8 !important; /* Lila pastel muy suave */
+    color: #4a4563 !important;
+    border-color: #b5c7ed !important;
+    transition: all 0.3s ease;
+}
+
+/* Estado activo o al pasar el cursor sobre los botones */
+.ui-tabs-nav li.ui-state-active a, 
+.ui-tabs-nav li a:hover,
+.pagination a:hover,
+.node.current > a 
+{
+    background: linear-gradient(135deg, #b5c7ed 0%, #d4b5ed 100%) !important; /* Degradado suave celeste y lila pastel */
+    color: #2c264a !important;
+    border-color: #9b87f5 !important;
+    font-weight: bold;
+}
+
+/* Forzar la eliminación de tonos verdes o naranjas heredados */
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default 
+{
+    background: #f3f0ff !important;
+    border: 1px solid #dcd6f7 !important;
+    color: #5c5470 !important;
+}
+
+/* Personalización del menú lateral y enlaces en estilo Neo - Tonos Azules */
+.node a, 
+.ui-widget-content .node a, 
+#siteNav ul li a 
+{
+    color: #2b4c7e !important; /* Color principal del texto de los enlaces */
+    transition: all 0.2s ease;
+}
+
+/* Efecto al pasar el cursor por encima de las opciones del menú */
+.node a:hover, 
+#siteNav ul li a:hover 
+{
+    color: #1a365d !important;
+    background-color: #e2ecf8 !important; /* Fondo azul pastel muy suave al pasar el mouse */
+    border-radius: 4px;
+}
+
+/* Estilo para la página o sección seleccionada actualmente (activa) */
+.node.current > a, 
+#siteNav ul li.current > a,
+.ui-state-active 
+{
+    background: linear-gradient(135deg, #3182ce 0%, #2b6cb0 100%) !important; /* Degradado en tonos azules */
+    color: #ffffff !important; /* Texto blanco para destacar perfectamente */
+    font-weight: bold !important;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(49, 130, 206, 0.2);
+}
+
+/* Ajuste general de los iconos o elementos del árbol de contenidos */
+#siteNav .node
+ {
+    margin-bottom: 2px;
+}
+
+
+
+
+  .cc-footer-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 15px;
+  }
+
+  .btn-print-footer {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #555555; /* Gris oscuro idéntico a tus referencias */
+    color: #ffffff !important;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-family: inherit;
+    cursor: pointer;
+    text-decoration: none !important;
+    transition: background-color 0.2s ease;
+  }
+
+  .btn-print-footer:hover {
+    background-color: #333333;
+  }
+
+  .btn-print-footer svg {
+    width: 16px;
+    height: 16px;
+    fill: #ffffff;
+  }
+
+
+<!-- Botón de impresión ubicado abajo junto al pie de página -->
+
+<div class="cc-footer-container">
+  <button class="btn-print-footer" onclick="window.print()" title="Imprimir o guardar como PDF">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/>
+    </svg>
+    Imprimir página
+  </button>
+</div>
+
+
+
+
+<div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; width: 100%; margin: 20px 0;">
+  
+  <style>
+    .titulo-principal {
+      font-size: 32px;
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 8px;
+      text-align: justify; /* Título justificado a ambos márgenes */
+      color: #1e3a8a;
+      transition: color 0.3s ease;
+      cursor: default;
+    }
+    /* Cambio de color automático al pasar el mouse por encima */
+    .titulo-principal:hover {
+      color: #2563eb;
+    }
+  </style>
+
+  <!-- Título principal justificado -->
+  <h1 class="titulo-principal">
+    “Arquitectura de computadoras y Hardware: del núcleo de procesamiento a los dispositivos periféricos y de almacenamiento”
+  </h1>
+
+  
+  <!-- Doble línea azul en todo el ancho -->
+  <hr style="border: none; border-top: 4px double #1d4ed8; width: 100%; margin: 0;">
+
+
+<style>
+  a:active,
+  a:focus,
+  button:active,
+  button:focus {
+    background-color: #dbeafe !important;
+    color: #1e3a8a !important;
+    outline: 2px solid #2563eb !important;
+  }
+</style>
+
+
+
+<style>
+  /* Selectores generales del árbol de navegación / menú lateral */
+  nav a,
+  nav button,
+  aside a,
+  aside button,
+  .exe-navigation a,
+  .exe-navigation button,
+  [role="navigation"] a,
+  [role="navigation"] button,
+  .tree-node a,
+  .tree-node span,
+  .node-label {
+    font-size: 1.08rem !important; /* Letra más grande */
+    color: #1d4ed8 !important;     /* Color azul */
+    font-weight: 500 !important;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease !important;
+  }
+
+  /* Al pasar el cursor o presionar (clic sostenido / foco) */
+  nav a:hover,
+  nav a:active,
+  nav a:focus,
+  aside a:hover,
+  aside a:active,
+  aside a:focus,
+  .exe-navigation a:hover,
+  .exe-navigation a:active,
+  .exe-navigation a:focus,
+  [role="navigation"] a:hover,
+  [role="navigation"] a:active,
+  [role="navigation"] a:focus,
+  .menu-presionado {
+    background-color: #bae6fd !important; /* Celeste fuerte al presionar/pasar */
+    color: #0c4a6e !important;
+    border-radius: 8px !important;
+    font-weight: 700 !important;
+  }
+
+  /* Elemento seleccionado / página activa: celeste más fuerte y definido */
+  .menu-seleccionado-celeste,
+  .active > a,
+  .current > a,
+  [aria-current="page"],
+  .selected {
+    background-color: #7dd3fc !important; /* Celeste más fuerte al seleccionar */
+    color: #082f49 !important;
+    border: 2px solid #0284c7 !important;
+    border-radius: 8px !important;
+    font-weight: 700 !important;
+    font-size: 1.1rem !important;
+  }
+</style>
+
+<script>
+  (function () {
+    function aplicarEstiloMenu() {
+      const selectores = 'nav a, aside a, .exe-navigation a, [role="navigation"] a, .tree-node a, .tree-node span';
+      const items = document.querySelectorAll(selectores);
+      const paginaActual = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase();
+
+      items.forEach(function (item) {
+        const href = (item.getAttribute('href') || '').split('/').pop().toLowerCase();
+
+        // Marca en celeste fuerte si corresponde a la página actual
+        if (href && paginaActual && href === paginaActual) {
+          item.classList.add('menu-seleccionado-celeste');
+          if (item.parentElement) {
+            item.parentElement.classList.add('menu-seleccionado-celeste');
+          }
+        }
+
+        // Al hacer clic o presionar, destaca en celeste más fuerte
+        item.addEventListener('pointerdown', function () {
+          items.forEach(function (el) {
+            el.classList.remove('menu-seleccionado-celeste');
+            el.classList.remove('menu-presionado');
+            if (el.parentElement) {
+              el.parentElement.classList.remove('menu-seleccionado-celeste');
+            }
+          });
+
+          item.classList.add('menu-seleccionado-celeste');
+          if (item.parentElement) {
+            item.parentElement.classList.add('menu-seleccionado-celeste');
+          }
+        });
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', aplicarEstiloMenu);
+    } else {
+      aplicarEstiloMenu();
+    }
+  })();
+</script>
+
+
+
+
+
+
+</div>
+
+
+  
+
+
+
+
+</style>
+</head>
+<body class="exe-export exe-web-site">
+<script>document.body.className+=" js"</script>
+<div class="exe-content exe-export pre-js siteNav-hidden"><a href="#page-mvvi7oat-bhfq4m7gv" id="skipNav">Skip to content</a> <nav id="siteNav">
+<ul>
+<li> <a href="../index.html" class="main-node daddy">Inicio</a>
+<ul class="other-section">
+<li> <a href="../html/1-presentacion.html" class="daddy">1-Presentación</a>
+<ul class="other-section">
+<li> <a href="../html/11-objetivos.html" class="no-ch">1.1 Objetivos</a>
+</li>
+<li> <a href="../html/12-conocimientos-previos.html" class="no-ch">1.2 Conocimientos Previos</a>
+</li>
+<li> <a href="../html/13-hoja-de-ruta.html" class="no-ch">1.3 Hoja de Ruta</a>
+</li>
+<li> <a href="../html/14-motivacion.html" class="no-ch">1.4-Motivación</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li> <a href="../html/2-fundamentos-de-hardware-y-su-arquitectura.html" class="no-ch">2-Fundamentos de Hardware y su Arquitectura</a>
+</li>
+<li> <a href="../html/3-perifericos-y-sistemas-de-almacenamiento.html" class="no-ch">3-Periféricos y Sistemas de Almacenamiento</a>
+</li>
+<li> <a href="../html/4-actividades.html" class="daddy">4-Actividades</a>
+<ul class="other-section">
+<li> <a href="../html/41-video-interactivo.html" class="no-ch">4.1 Vídeo Interactivo</a>
+</li>
+<li> <a href="../html/42-panel-grafico-interactivo.html" class="no-ch">4.2 Panel Gráfico interactivo</a>
+</li>
+<li> <a href="../html/43-edpuzzle.html" class="no-ch">4.3 Edpuzzle</a>
+</li>
+<li> <a href="../html/44-el-rosco-hardware.html" class="no-ch">4.4 El Rosco hardware</a>
+</li>
+<li> <a href="../html/45-realidad-aumentada.html" class="no-ch">4.5 Realidad Aumentada</a>
+</li>
+</ul>
+</li>
+<li> <a href="../html/5-autoevaluacion.html" class="no-ch">5-Autoevaluación</a>
+</li>
+<li> <a href="../html/6-cierre.html" class="no-ch">6-Cierre</a>
+</li>
+<li class="active"> <a href="../html/7-informe-de-progreso.html" class="active no-ch">7-Informe de Progreso</a>
+</li>
+<li> <a href="../html/8-bibliografia-y-creditos.html" class="no-ch">8-Bibliografía y Créditos</a>
+</li>
+</ul>
+</nav><main id="page-mvvi7oat-bhfq4m7gv" class="page"> 
+<header class="main-header">
+<div class="package-header"><p class="package-title">“ Arquitectura de computadoras y Hardware: del núcleo de procesamiento a los dispositivos periféricos y de almacenamiento”</p></div>
+<div class="page-header"><h1 class="page-title">7-Informe de Progreso</h1></div>
+</header><div id="page-content-page-mvvi7oat-bhfq4m7gv" class="page-content">
+<article id="block-mw8lt9jc-3ay4pxi15" class="box">
+<header class="box-head">
+<div class="box-icon exe-icon">
+<span class="exe-material-icon" style="--exe-material-icon-url:url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2248%22%20height%3D%2248%22%20viewBox%3D%220%20-960%20960%20960%22%3E%3Cpath%20d%3D%22M290-240h60v-90h90v-60h-90v-90h-60v90h-90v60h90v90Zm230-150h240v-40H520v40Zm0%20120h160v-40H520v40ZM140-80q-24%200-42-18t-18-42v-480q0-24%2018-42t42-18h250v-140q0-24%2018-42t42-18h60q24%200%2042%2018t18%2042v140h250q24%200%2042%2018t18%2042v480q0%2024-18%2042t-42%2018H140Zm310-510h60v-230h-60v230Z%22%2F%3E%3C%2Fsvg%3E');" aria-hidden="true"></span>
+</div>
+<h1 class="box-title">Cómo interpretar y usar tus resultados</h1>
+<button class="box-toggle box-toggle-on" title="Toggle content">
+<span>Toggle content</span>
+</button></header>
+<div class="box-content">
+<div id="idevice-1794189011591-0tse60e49" class="idevice_node text" data-idevice-path="../idevices/text/" data-idevice-type="text" data-idevice-component-type="json" data-idevice-json-data="{&quot;ideviceId&quot;:&quot;idevice-1794189011591-0tse60e49&quot;}">
+<div class="exe-text-template">
+    <div style="font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #2d3748; line-height: 1.6; max-width: 900px; margin: 0px auto;">
+<div style="background: linear-gradient(135deg, #1e3a8a 0%, #0284c7 100%); color: #ffffff; padding: 18px 22px; border-radius: 12px; margin-bottom: 18px; box-shadow: 0 4px 12px rgba(30, 58, 138, 0.16); display: flex; align-items: center; gap: 14px;"><span style="font-size: 1.85em; background: rgba(255,255,255,0.18); padding: 6px 12px; border-radius: 10px;">📊</span>
+<div><span style="display: block; font-size: 0.75em; text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.9; font-weight: 600;">Monitoreo y autorregulación</span>
+<h3 style="margin: 2px 0 0 0; font-size: 1.26em; font-weight: bold; color: #ffffff;">Informe de Progreso</h3>
+</div>
+</div>
+<!-- Párrafo introductorio motivador -->
+<p style="font-size: 1.03em; color: #334155; margin: 0px 0px 18px; text-align: justify;">¡Tu recorrido de aprendizaje no termina en un solo intento! Si el resultado de una actividad no fue el esperado, no te preocupes: el error es una parte natural y valiosa para construir tus saberes. Este panel funciona como un espejo de tu avance para que puedas revisar qué conceptos ya dominas y en cuáles te conviene profundizar.</p>
+<!-- Bloque 1: Propósito metacognitivo -->
+<div style="background: linear-gradient(135deg, #f0f7ff 0%, #e6f0fa 100%); border-left: 5px solid #1e3a8a; padding: 18px 22px; border-radius: 0px 12px 12px 0px; margin-bottom: 20px; box-shadow: rgba(30, 58, 138, 0.08) 0px 2px 8px; text-align: justify;"><span style="display: inline-block; background-color: #1e3a8a; color: #ffffff; font-size: 0.75em; font-weight: bold; text-transform: uppercase; letter-spacing: 0.05em; padding: 3px 10px; border-radius: 20px; margin-bottom: 10px;"> 🎯 Propósito de este espacio </span>
+<p style="margin: 0px; font-size: 0.98em; color: #1e293b; text-align: justify;">Analizar y monitorear tu propia construcción de conocimientos, utilizando este registro como una <strong>guía de retroalimentación constante</strong> para detectar dificultades, regresar a los contenidos teóricos y volver a intentar los desafíos las veces que necesites hasta sentir seguridad en lo aprendido.</p>
+</div>
+<!-- Bloque 2: Tu ruta de progreso (Pasos numerados) -->
+<div style="background-color: #f8fafc; border: 1px solid #cbd5e1; border-top: 4px solid #059669; border-radius: 12px; padding: 18px 22px; margin-bottom: 20px; box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);">
+<p style="margin: 0 0 14px 0; font-weight: bold; font-size: 1.03em; color: #047857;">🧭 Tu ruta de progreso: ¿cómo interpretar y aprovechar tus resultados?</p>
+<!-- Paso 1 -->
+<div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;"><span style="background-color: #d1fae5; color: #047857; font-weight: bold; font-size: 0.85em; min-width: 24px; height: 24px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-top: 2px;">1</span>
+<p style="margin: 0; font-size: 0.95em; color: #334155;"><strong>Analiza más allá del puntaje:</strong> observa el resumen de las actividades completadas y aquellas donde surgieron errores. En lugar de mirar solo el número, identifica qué conceptos específicos (arquitectura, memorias o periféricos) te generaron dudas.</p>
+</div>
+<!-- Paso 2 -->
+<div style="display: flex; align-items: flex-start; gap: 12px;"><span style="background-color: #d1fae5; color: #047857; font-weight: bold; font-size: 0.85em; min-width: 24px; height: 24px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-top: 2px;">2</span>
+<p style="margin: 0; font-size: 0.95em; color: #334155;"><strong>Repasa y vuelve a intentarlo:</strong> regresa a las páginas anteriores para revisar los diagramas o explicaciones, ingresa nuevamente a la actividad que deseas mejorar y pon a prueba tu nuevo conocimiento. ¡El sistema registrará tu evolución!</p>
+</div>
+</div>
+<!-- Bloque 3: Gestión y exportación del informe en dos tarjetas -->
+<p style="font-weight: bold; font-size: 1.02em; color: #1e293b; margin: 0 0 12px 0;">🛠️ ¿Cómo visualizar, gestionar y exportar tu Informe de Progreso?</p>
+<div style="display: flex; flex-wrap: wrap; gap: 16px; text-align: justify;"><!-- Tarjeta 1: Información disponible -->
+<div style="flex: 1 1 280px; background-color: #ffffff; border: 1px solid #cbd5e1; border-top: 4px solid #0284c7; border-radius: 10px; padding: 16px 18px; box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);">
+<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px; text-align: justify;"><span style="font-size: 1.3em;">👁️</span> <strong style="color: #0369a1; font-size: 0.98em;">¿Qué información puedes ver?</strong></div>
+<ul style="margin: 0px; padding-left: 18px; color: #334155; font-size: 0.93em; text-align: justify;">
+<li style="margin-bottom: 6px;"><strong>Registro temporal:</strong> la fecha y hora exacta de cada una de tus interacciones.</li>
+<li style="margin: 0;"><strong>Desempeño detallado:</strong> el puntaje obtenido en cada actividad y el promedio general de todas las propuestas completadas.</li>
+</ul>
+</div>
+<!-- Tarjeta 2: Acciones disponibles -->
+<div style="flex: 1 1 280px; background-color: #ffffff; border: 1px solid #cbd5e1; border-top: 4px solid #7c3aed; border-radius: 10px; padding: 16px 18px; box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);">
+<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px; text-align: justify;"><span style="font-size: 1.3em;">⚡</span> <strong style="color: #6d28d9; font-size: 0.98em;">¿Qué acciones puedes realizar?</strong></div>
+<ul style="margin: 0; padding-left: 18px; color: #334155; font-size: 0.93em;">
+<li style="margin-bottom: 6px; text-align: justify;"><strong>Reiniciar y borrar resultados:</strong> si deseas empezar desde cero tras repasar la teoría, puedes limpiar tus intentos previos y resolver todo nuevamente.</li>
+<li style="margin: 0px; text-align: justify;"><strong>Guardar y exportar (PDF):</strong> cuando estés conforme con tus logros, genera y descarga tu informe en PDF como constancia de tu recorrido.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article><article id="block-mvvi7oat-ydkig7jto" class="box">
+<header class="box-head">
+<div class="box-icon exe-icon">
+<span class="exe-material-icon" style="--exe-material-icon-url:url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2248%22%20height%3D%2248%22%20viewBox%3D%220%20-960%20960%20960%22%3E%3Cpath%20d%3D%22M290-240h60v-90h90v-60h-90v-90h-60v90h-90v60h90v90Zm230-150h240v-40H520v40Zm0%20120h160v-40H520v40ZM140-80q-24%200-42-18t-18-42v-480q0-24%2018-42t42-18h250v-140q0-24%2018-42t42-18h60q24%200%2042%2018t18%2042v140h250q24%200%2042%2018t18%2042v480q0%2024-18%2042t-42%2018H140Zm310-510h60v-230h-60v230Z%22%2F%3E%3C%2Fsvg%3E');" aria-hidden="true"></span>
+</div>
+<h1 class="box-title">Informe de progreso</h1>
+<button class="box-toggle box-toggle-on" title="Toggle content">
+<span>Toggle content</span>
+</button></header>
+<div class="box-content">
+<div id="idevice-mvvi7oau-qv51vo2w2" class="idevice_node progress-report" data-idevice-path="../idevices/progress-report/" data-idevice-type="progress-report">
+<div class="informe-IDevice">
+                    <div class="informe-DataGame js-hidden">{"typeGame":"Progress Report","typeshow":2,"evaluationID":"f33ae91f-a166-464c-be7d-8160fda1b8c9","number":4,"showDate":true,"showTypeGame":false,"activeLinks":true,"userData":true,"sessionIdevices":[{"id":"ffca37a3-0c29-4680-8b09-ebabc97f74af","parentId":null,"title":"Inicio","navId":"ffca37a3-0c29-4680-8b09-ebabc97f74af","ode_nav_structure_sync_id":"ffca37a3-0c29-4680-8b09-ebabc97f74af","ode_session_id":"yjs-8fe98690-0516-4245-a6ef-179a80880096","ode_nav_structure_sync_order":0,"navIsActive":1,"components":[{"ideviceID":"idevice-1791770465498-me0517md9","evaluationID":"","evaluation":null,"componentId":"idevice-1791770465498-me0517md9","ode_pag_structure_sync_id":"block-mv4lvffe-xoz1k7ptq","componentSessionId":"yjs-8fe98690-0516-4245-a6ef-179a80880096","componentPageId":"ffca37a3-0c29-4680-8b09-ebabc97f74af","ode_block_id":"block-mv4lvffe-xoz1k7ptq","blockName":"Arquitectura de Computadoras y Hardware","blockOrder":0,"ode_idevice_id":"idevice-1791770465498-me0517md9","odeIdeviceTypeName":"udl-content","ode_components_sync_order":0,"componentIsActive":1}],"children":[{"id":"page-mv4khvyi-nonmknkhc","parentId":"ffca37a3-0c29-4680-8b09-ebabc97f74af","title":"1-Presentación","navId":"page-mv4khvyi-nonmknkhc","ode_nav_structure_sync_id":"page-mv4khvyi-nonmknkhc","ode_session_id":"yjs-8fe98690-0516-4245-a6ef-179a80880096","ode_nav_structure_sync_order":0,"navIsActive":1,"components":[{"ideviceID":"idevice-1794619806215-778e4e4bw","evaluationID":"","evaluation":null,"componentId":"idevice-1794619806215-778e4e4bw","ode_pag_structure_sync_id":"block-mwfqaoso-hgo3gq6fy","componentSessionId":"yjs-8fe98690-0516-4245-a6ef-179a80880096","componentPageId":"page-mv4khvyi-nonmknkhc","ode_block_id":"block-mwfqaoso-hgo3gq6fy","blockName":"Bienvenidos al estudio de la Arquitectura del Computador y los Periféricos","blockOrder":0,"ode_idevice_id":"idevice-1794619806215-778e4e4bw","odeIdeviceTypeName":"udl-content","ode_components_sync_order":0,"componentIsActive":1}],"children":[{"id":"page-mwfq5leo-jlbjgpo5s","parentId":"page-mv4khvyi-nonmknkhc","title":"1.1 Objetivos","navId":"page-mwfq5leo-jlbjgpo5s","ode_nav_structure_sync_id":"page-mwfq5leo-jlbjgpo5s","ode_session_id":"yjs-8fe98690-0516-4245-a6ef-179a80880096","ode_nav_structure_sync_order":0,"navIsActive":1,"components":[{"ideviceID":"idevice-1794625707065-axtk0qugn","evaluationID":"","evaluation":null,"componentId":"idevice-1794625707065-axtk0qugn","ode_pag_structure_sync_id":"block-mwftt5x7-35e7zusdm","componentSessionId":"yjs-8fe98690-0516-4245-a6ef-179a80880096","componentPageId":"page-mwfq5leo-jlbjgpo5s","ode_block_id":"block-mwftt5x7-35e7zusdm","blockName":"Objetivos","blockOrder":0,"ode_idevice_id":"idevice-1794625707065-axtk0qugn","odeIdeviceTypeName":"udl-content","ode_components_sync_order":0,"componentIsActive":1}],"children":[],"url":"1-1-objetivos"},{"id":"page-mwfq63cf-52kukzari","parentId":"page-mv4khvyi-nonmknkhc","title":"1.2 Conocimientos Previos","navId":"page-mwfq63cf-52kukzari","ode_nav_structure_sync_id":"page-mwfq63cf-52kukzari","ode_session_id":"yjs-8fe98690-0516-4245-a6ef-179a80880096","ode_nav_structure_sync_order":1,"navIsActive":1,"components":[{"ideviceID":"idevice-1794626622712-drliydwu0","evaluationID":"","evaluation":null,"componentId":"idevice-1794626622712-drliydwu0","ode_pag_structure_sync_id":"block-mwfucsfu-5623cpkdg","componentSessionId":"yjs-8fe98690-0516-4245-a6ef-179a80880096","componentPageId":"page-mwfq63cf-52kukzari","ode_block_id":"block-mwfucsfu-5623cpkdg","blockName":"Repaso de Conceptos","blockOrder":0,"ode_idevice_id":"idevice-1794626622712-drliydwu0","odeIdeviceTypeName":"udl-content","ode_components_sync_order":0,"componentIsActive":1},{"ideviceID":"idevice-1794229566966-pngzbpul7","evaluationID":"","evaluation":null,"componentId":"idevice-1794229566966-pngzbpul7","ode_pag_structure_sync_id":"block-mw99yi9j-libavqxg4","componentSessionId":"yjs-8fe98690-0516-4245-a6ef-179a80880096","componentPageId":"page-mwfq63cf-52kukzari","ode_block_id":"block-mw99yi9j-libavqxg4","blockName":"Diagnóstico","blockOrder":1,"ode_idevice_id":"idevice-1794229566966-pngzbpul7","odeIdeviceTypeName":"text","ode_components_sync_order":0,"componentIsActive":1},{"ideviceID":"idevice-1794229853863-2y4shtrdm","evaluationID":"","evaluation":null,"componentId":"idevice-1794229853863-2y4shtrdm","ode_pag_structure_sync_id":"block-mw9a4nmw-dznimvcy8","componentSessionId":"yjs-8fe98690-0516-4245-a6ef-179a80880096","componentPageId":"page-mwfq63cf-52kukzari","ode_block_id":"block-mw9a4nmw-dznimvcy8","blockName":"Actividad de Diagnóstico","blockOrder":3,"ode_idevice_id":"idevice-1794229853863-2y4shtrdm","odeIdeviceTypeName":"trueorfalse","ode_components_sync_order":0,"componentIsActive":1}],"children":[],"url":"1-2-conocimientos-previos"},{"id":"page-mwfua29s-54bevsh8e","parentId":"page-mv4khvyi-nonmknkhc","title":"1.3 Hoja de Ruta","navId":"page-mwfua29s-54bevsh8e","ode_nav_structure_sync_id":"page-mwfua29s-54bevsh8e","ode_session_id":"yjs-8fe98690-0516-4245-a6ef-179a80880096","ode_nav_structure_sync_order":2,"navIsActive":1,"components":[{"ideviceID":"idevice-1791768544202-ratrl2ck5","evaluationID":"","evaluation":null,"componentId":"idevice-1791768544202-ratrl2ck5","ode_pag_structure_sync_id":"block-mwfv2n1c-fdjbojqdo","componentSessionId":"yjs-8fe98690-0516-4245-a6ef-179a80880096","componentPageId":"page-mwfua29s-54bevsh8e","ode_block_id":"block-mwfv2n1c-fdjbojqdo","blockName":"Camino a Seguir...","blockOrder":0,"ode_idevice_id":"idevice-1791768544202-ratrl2ck5","odeIdeviceTypeName":"udl-content","ode_components_sync_order":0,"componentIsActive":1}],"children":[],"url":"1-3-hoja-de-ruta"}],"url":"1-presentacion"},{"id":"page-mv4kiy8y-slt6z2udg","parentId":"ffca37a3-0c29-4680-8b09-ebabc97f74af","title":"2-Motivación","navId":"page-mv4kiy8y-slt6z2udg","ode_nav_structure_sync_id":"page-mv4kiy8y-slt6z2udg","ode_session_id":"yjs-8fe98690-0516-4245-a6ef-179a80880096","ode_nav_structure_sync_order":1,"navIsActive":1,"components":[{"ideviceID":"idevice-1791770701634-jik0j5s0x","evaluationID":"","evaluation":null,"componentId":"idevice-1791770701634-jik0j5s0x","ode_pag_structure_sync_id":"block-mv4m0hmq-9pdqdv2jt","componentSessionId":"yjs-8fe98690-0516-4245-a6ef-179a80880096","componentPageId":"page-mv4kiy8y-slt6z2udg","ode_block_id":"block-mv4m0hmq-9pdqdv2jt","blockName":"Motivación","blockOrder":0,"ode_idevice_id":"idevice-1791770701634-jik0j5s0x","odeIdeviceTypeName":"udl-content","ode_components_sync_order":0,"componentIsActive":1},{"ideviceID":"idevice-1791774251086-ql68ilbto","evaluationID":"","evaluation":null,"componentId":"idevice-1791774251086-ql68ilbto","ode_pag_structure_sync_id":"block-mv4o4ken-9c043dff6","componentSessionId":"yjs-8fe98690-0516-4245-a6ef-179a80880096","componentPageId":"page-mv4kiy8y-slt6z2udg","ode_block_id":"block-mv4o4ken-9c043dff6","blockName":"Del vídeo a los esquemas técnicos: \"Cómo se conectan las piezas\"","blockOrder":1,"ode_idevice_id":"idevice-1791774251086-ql68ilbto","odeIdeviceTypeName":"text","ode_components_sync_order":0,"componentIsActive":1},{"ideviceID":"idevice-1791773830502-acvh5o57p","evaluationID":"","evaluation":null,"componentId":"idevice-1791773830502-acvh5o57p","ode_pag_structure_sync_id":"block-mv4nvjvr-gi3x1vv3h","componentSessionId":"yjs-8fe98690-0516-4245-a6ef-179a80880096","componentPageId":"page-mv4kiy8y-slt6z2udg","ode_block_id":"block-mv4nvjvr-gi3x1vv3h","blockName":"Galería de imágenes","blockOrder":2,"ode_idevice_id":"idevice-1791773830502-acvh5o57p","odeIdeviceTypeName":"image-gallery","ode_components_sync_order":0,"componentIsActive":1}],"children":[],"url":"2-motivacion"}],"url":"inicio"},{"id":"page-mv4klnq2-0nclfcs8x","parentId":null,"title":"3-Fundamentos de Hardware y su Arquitectura","navId":"page-mv4klnq2-0nclfcs8x","ode_nav_structure_sync_id":"page-mv4klnq2-0nclfcs8x","ode_session_id":"yjs-8fe98690-0516-4245-a6ef-179a80880096","ode_nav_structure_sync_order":1,"navIsActive":1,"components":[{"ideviceID":"idevice-1794714267318-mea84ug6j","evaluationID":"","evaluation":null,"componentId":"idevice-1794714267318-mea84ug6j","ode_pag_structure_sync_id":"block-mwhajbg7-dzu9ylk4e","componentSessionId":"yjs-8fe98690-0516-4245-a6ef-179a80880096","componentPageId":"page-mv4klnq2-0nclfcs8x","ode_block_id":"block-mwhajbg7-dzu9ylk4e","blockName":"","blockOrder":0,"ode_idevice_id":"idevice-1794714267318-mea84ug6j","odeIdeviceTypeName":"udl-content","ode_components_sync_order":0,"componentIsActive":1},{"ideviceID":"idevice-1794707718568-o3xqah1kz","evaluationID":"","evaluation":null,"componentId":"idevice-1794707718568-o3xqah1kz","ode_pag_structure_sync_id":"block-mwh6myeh-7inigx4pn","componentSessionId":"yjs-8fe98690-0516-4245-a6ef-179a80880096","componentPageId":"page-mv4klnq2-0nclfcs8x","ode_block_id":"block-mwh6myeh-7inigx4pn","blockName":"Metas","blockOrder":1,"ode_idevice_id":"idevice-1794707718568-o3xqah1kz","odeIdeviceTypeName":"text","ode_components_sync_order":0,"componentIsActive":1},{"ideviceID":"idevice-1792094397927-bnit1ph1l","evaluationID":"","evaluation":null,"componentId":"idevice-1792094397927-bnit1ph1l","ode_pag_structure_sync_id":"block-mv9yqfag-6568boxu5","componentSessionId":"yjs-8fe98690-0516-4245-a6ef-179a80880096","componentPageId":"page-mv4klnq2-0nclfcs8x","ode_block_id":"block-mv9yqfag-6568boxu5","blockName":"Exploración Interactiva del Hardware","blockOrder":2,"ode_idevice_id":"idevice-1792094397927-bnit1ph1l","odeIdeviceTypeName":"text","ode_components_sync_order":0,"componentIsActive":1}],"children":[],"url":"index"},{"id":"page-mv4kkvs1-w1d9hu5ga","parentId":null,"title":"4-Periféricos y Sistemas de Almacenamiento","navId":"page-mv4kkvs1-w1d9hu5ga","ode_nav_structure_sync_id":"page-mv4kkvs1-w1d9hu5ga","ode_session_id":"yjs-8fe98690-0516-4245-a6ef-179a80880096","ode_nav_structure_sync_order":2,"navIsActive":1,"components":[{"ideviceID":"idevice-1791846376282-qa960ttso","evaluationID":"","evaluation":null,"componentId":"idevice-1791846376282-qa960ttso","ode_pag_structure_sync_id":"block-mv5v2gkb-g4w5u2ftn","componentSessionId":"yjs-8fe98690-0516-4245-a6ef-179a80880096","componentPageId":"page-mv4kkvs1-w1d9hu5ga","ode_block_id":"block-mv5v2gkb-g4w5u2ftn","blockName":"","blockOrder":0,"ode_idevice_id":"idevice-1791846376282-qa960ttso","odeIdeviceTypeName":"udl-content","ode_components_sync_order":0,"componentIsActive":1},{"ideviceID":"idevice-1794713375735-zkmr9nkwx","evaluationID":"","evaluation":null,"componentId":"idevice-1794713375735-zkmr9nkwx","ode_pag_structure_sync_id":"block-mwha07hz-xgjsrvmga","componentSessionId":"yjs-8fe98690-0516-4245-a6ef-179a80880096","componentPageId":"page-mv4kkvs1-w1d9hu5ga","ode_block_id":"block-mwha07hz-xgjsrvmga","blockName":"Metas","blockOrder":1,"ode_idevice_id":"idevice-1794713375735-zkmr9nkwx","odeIdeviceTypeName":"text","ode_components_sync_order":0,"componentIsActive":1},{"ideviceID":"idevice-1792146344764-8jfe4xl1q","evaluationID":"","evaluation":null,"componentId":"idevice-1792146344764-8jfe4xl1q","ode_pag_structure_sync_id":"block-mvatntq5-w3pghvo6c","componentSessionId":"yjs-8fe98690-0516-4245-a6ef-179a80880096","componentPageId":"page-mv4kkvs1-w1d9hu5ga","ode_block_id":"block-mvatntq5-w3pghvo6c","blockName":"Libro: Periféricos de Hardware","blockOrder":2,"ode_idevice_id":"idevice-1792146344764-8jfe4xl1q","odeIdeviceTypeName":"text","ode_components_sync_order":0,"componentIsActive":1}],"children":[],"url":"4-perifericos-y-sistemas-de-almacenamiento"},{"id":"page-mvha1fky-vyyn5aggv","parentId":null,"title":"5-Actividades","navId":"page-mvha1fky-vyyn5aggv","ode_nav_structure_sync_id":"page-mvha1fky-vyyn5aggv","ode_session_id":"yjs-8fe98690-0516-4245-a6ef-179a80880096","ode_nav_structure_sync_order":3,"navIsActive":1,"components":[{"ideviceID":"idevice-1792613375757-m13qoc9s8","evaluationID":"","evaluation":null,"componentId":"idevice-1792613375757-m13qoc9s8","ode_pag_structure_sync_id":"block-mvijpx5b-nn8d726u4","componentSessionId":"yjs-8fe98690-0516-4245-a6ef-179a80880096","componentPageId":"page-mvha1fky-vyyn5aggv","ode_block_id":"block-mvijpx5b-nn8d726u4","blockName":"Espacio de Actividades: De la Teoría a la Práctica","blockOrder":0,"ode_idevice_id":"idevice-1792613375757-m13qoc9s8","odeIdeviceTypeName":"text","ode_components_sync_order":0,"componentIsActive":1}],"children":[{"id":"page-mvjvvlgw-to1ly9xib","parentId":"page-mvha1fky-vyyn5aggv","title":"5.1 Vídeo Interactivo","navId":"page-mvjvvlgw-to1ly9xib","ode_nav_structure_sync_id":"page-mvjvvlgw-to1ly9xib","ode_session_id":"yjs-8fe98690-0516-4245-a6ef-179a80880096","ode_nav_structure_sync_order":0,"navIsActive":1,"components":[{"ideviceID":"idevice-1792885062574-kizz2qvhz","evaluationID":"","evaluation":null,"componentId":"idevice-1792885062574-kizz2qvhz","ode_pag_structure_sync_id":"block-mvn1h41b-16068j02s","componentSessionId":"yjs-8fe98690-0516-4245-a6ef-179a80880096","componentPageId":"page-mvjvvlgw-to1ly9xib","ode_block_id":"block-mvn1h41b-16068j02s","blockName":"Enfoque de descubrimiento","blockOrder":0,"ode_idevice_id":"idevice-1792885062574-kizz2qvhz","odeIdeviceTypeName":"text","ode_components_sync_order":0,"componentIsActive":1},{"ideviceID":"idevice-1795307193060-2oxjg51m1","evaluationID":"8fe98690-0516-4245-a6ef-179a80880096","evaluation":true,"componentId":"idevice-1795307193060-2oxjg51m1","ode_pag_structure_sync_id":"block-mwr3jrvp-o7f9fpc2z","componentSessionId":"yjs-8fe98690-0516-4245-a6ef-179a80880096","componentPageId":"page-mvjvvlgw-to1ly9xib","ode_block_id":"block-mwr3jrvp-o7f9fpc2z","blockName":"Vídeo interactivo","blockOrder":1,"ode_idevice_id":"idevice-1795307193060-2oxjg51m1","odeIdeviceTypeName":"interactive-video","ode_components_sync_order":0,"componentIsActive":1}],"children":[],"url":"5-1-video-interactivo"},{"id":"page-mvjvyiy2-3npqs18xl","parentId":"page-mvha1fky-vyyn5aggv","title":"5.2 Panel Gráfico interactivo","navId":"page-mvjvyiy2-3npqs18xl","ode_nav_structure_sync_id":"page-mvjvyiy2-3npqs18xl","ode_session_id":"yjs-8fe98690-0516-4245-a6ef-179a80880096","ode_nav_structure_sync_order":1,"navIsActive":1,"components":[{"ideviceID":"idevice-1792885119285-duzdx88q3","evaluationID":"","evaluation":null,"componentId":"idevice-1792885119285-duzdx88q3","ode_pag_structure_sync_id":"block-mvn1ibsl-ky8jsfrx7","componentSessionId":"yjs-8fe98690-0516-4245-a6ef-179a80880096","componentPageId":"page-mvjvyiy2-3npqs18xl","ode_block_id":"block-mvn1ibsl-ky8jsfrx7","blockName":"Detective de Hardware","blockOrder":0,"ode_idevice_id":"idevice-1792885119285-duzdx88q3","odeIdeviceTypeName":"text","ode_components_sync_order":0,"componentIsActive":1},{"ideviceID":"idevice-1792633883448-6649sf085","evaluationID":"","evaluation":null,"componentId":"idevice-1792633883448-6649sf085","ode_pag_structure_sync_id":"block-mvivxgze-gkrmeuywg","componentSessionId":"yjs-8fe98690-0516-4245-a6ef-179a80880096","componentPageId":"page-mvjvyiy2-3npqs18xl","ode_block_id":"block-mvivxgze-gkrmeuywg","blockName":"Panel Gráfico Interactivo","blockOrder":1,"ode_idevice_id":"idevice-1792633883448-6649sf085","odeIdeviceTypeName":"text","ode_components_sync_order":0,"componentIsActive":1}],"children":[],"url":"5-2-panel-grafico-interactivo"},{"id":"page-mvlbx9hy-6do7h0wre","parentId":"page-mvha1fky-vyyn5aggv","title":"5.3 Edpuzzle","navId":"page-mvlbx9hy-6do7h0wre","ode_nav_structure_sync_id":"page-mvlbx9hy-6do7h0wre","ode_session_id":"yjs-8fe98690-0516-4245-a6ef-179a80880096","ode_nav_structure_sync_order":2,"navIsActive":1,"components":[{"ideviceID":"idevice-1792885158102-ctmtj16qp","evaluationID":"","evaluation":null,"componentId":"idevice-1792885158102-ctmtj16qp","ode_pag_structure_sync_id":"block-mvn1j5qu-cixlfegue","componentSessionId":"yjs-8fe98690-0516-4245-a6ef-179a80880096","componentPageId":"page-mvlbx9hy-6do7h0wre","ode_block_id":"block-mvn1j5qu-cixlfegue","blockName":"¡Dale play!","blockOrder":0,"ode_idevice_id":"idevice-1792885158102-ctmtj16qp","odeIdeviceTypeName":"text","ode_components_sync_order":0,"componentIsActive":1},{"ideviceID":"idevice-1792795733874-2nq7tbhtl","evaluationID":"","evaluation":null,"componentId":"idevice-1792795733874-2nq7tbhtl","ode_pag_structure_sync_id":"block-mvlkahkj-jgfblj53i","componentSessionId":"yjs-8fe98690-0516-4245-a6ef-179a80880096","componentPageId":"page-mvlbx9hy-6do7h0wre","ode_block_id":"block-mvlkahkj-jgfblj53i","blockName":"Explorando el Hardware: Conectando el flujo de información con nuestra vida cotidiana","blockOrder":1,"ode_idevice_id":"idevice-1792795733874-2nq7tbhtl","odeIdeviceTypeName":"text","ode_components_sync_order":0,"componentIsActive":1}],"children":[],"url":"5-3-edpuzzle"},{"id":"page-mw3fg7dy-xy5i2793g","parentId":"page-mvha1fky-vyyn5aggv","title":"5.4 El Rosco hardware","navId":"page-mw3fg7dy-xy5i2793g","ode_nav_structure_sync_id":"page-mw3fg7dy-xy5i2793g","ode_session_id":"yjs-8fe98690-0516-4245-a6ef-179a80880096","ode_nav_structure_sync_order":3,"navIsActive":1,"components":[{"ideviceID":"idevice-1793876002207-mpqo86k3q","evaluationID":"f33ae91f-a166-464c-be7d-8160fda1b8c9","evaluation":true,"componentId":"idevice-1793876002207-mpqo86k3q","ode_pag_structure_sync_id":"block-mw3fgdy8-ub8nlyhpr","componentSessionId":"yjs-8fe98690-0516-4245-a6ef-179a80880096","componentPageId":"page-mw3fg7dy-xy5i2793g","ode_block_id":"block-mw3fgdy8-ub8nlyhpr","blockName":"Desafío Rosco Hardware","blockOrder":1,"ode_idevice_id":"idevice-1793876002207-mpqo86k3q","odeIdeviceTypeName":"az-quiz-game","ode_components_sync_order":0,"componentIsActive":1}],"children":[],"url":"5-4-el-rosco-hardware"},{"id":"page-mw4uaosm-0s0zk1r2a","parentId":"page-mvha1fky-vyyn5aggv","title":"5.5 Realidad Aumentada","navId":"page-mw4uaosm-0s0zk1r2a","ode_nav_structure_sync_id":"page-mw4uaosm-0s0zk1r2a","ode_session_id":"yjs-8fe98690-0516-4245-a6ef-179a80880096","ode_nav_structure_sync_order":4,"navIsActive":1,"components":[{"ideviceID":"idevice-1794009814100-l3joeoylb","evaluationID":"","evaluation":null,"componentId":"idevice-1794009814100-l3joeoylb","ode_pag_structure_sync_id":"block-mw5n4fva-w44r327jl","componentSessionId":"yjs-8fe98690-0516-4245-a6ef-179a80880096","componentPageId":"page-mw4uaosm-0s0zk1r2a","ode_block_id":"block-mw5n4fva-w44r327jl","blockName":"El modelo 3D","blockOrder":0,"ode_idevice_id":"idevice-1794009814100-l3joeoylb","odeIdeviceTypeName":"text","ode_components_sync_order":0,"componentIsActive":1},{"ideviceID":"idevice-1793961407231-yvb3zjgqq","evaluationID":"","evaluation":null,"componentId":"idevice-1793961407231-yvb3zjgqq","ode_pag_structure_sync_id":"block-mw4uaww0-lae0j3m2i","componentSessionId":"yjs-8fe98690-0516-4245-a6ef-179a80880096","componentPageId":"page-mw4uaosm-0s0zk1r2a","ode_block_id":"block-mw4uaww0-lae0j3m2i","blockName":"Procesador 3D interactivo con rotación y etiquetas indicativas.","blockOrder":1,"ode_idevice_id":"idevice-1793961407231-yvb3zjgqq","odeIdeviceTypeName":"text","ode_components_sync_order":0,"componentIsActive":1},{"ideviceID":"idevice-1794001459479-5qvcoltgg","evaluationID":"f33ae91f-a166-464c-be7d-8160fda1b8c9","evaluation":true,"componentId":"idevice-1794001459479-5qvcoltgg","ode_pag_structure_sync_id":"block-mw5i5def-5fq90gjtl","componentSessionId":"yjs-8fe98690-0516-4245-a6ef-179a80880096","componentPageId":"page-mw4uaosm-0s0zk1r2a","ode_block_id":"block-mw5i5def-5fq90gjtl","blockName":"Crucigrama","blockOrder":2,"ode_idevice_id":"idevice-1794001459479-5qvcoltgg","odeIdeviceTypeName":"crossword","ode_components_sync_order":0,"componentIsActive":1}],"children":[],"url":"5-5-realidad-aumentada"}],"url":"5-actividades"},{"id":"page-mvij8z7s-f0jp2wrmm","parentId":null,"title":"6-Autoevaluación","navId":"page-mvij8z7s-f0jp2wrmm","ode_nav_structure_sync_id":"page-mvij8z7s-f0jp2wrmm","ode_session_id":"yjs-8fe98690-0516-4245-a6ef-179a80880096","ode_nav_structure_sync_order":4,"navIsActive":1,"components":[{"ideviceID":"idevice-1792885035910-5zmnoqwql","evaluationID":"","evaluation":null,"componentId":"idevice-1792885035910-5zmnoqwql","ode_pag_structure_sync_id":"block-mvn1gjgn-zomfwhe56","componentSessionId":"yjs-8fe98690-0516-4245-a6ef-179a80880096","componentPageId":"page-mvij8z7s-f0jp2wrmm","ode_block_id":"block-mvn1gjgn-zomfwhe56","blockName":"¡Momento de chequear cuánto aprendiste!","blockOrder":0,"ode_idevice_id":"idevice-1792885035910-5zmnoqwql","odeIdeviceTypeName":"text","ode_components_sync_order":0,"componentIsActive":1},{"ideviceID":"idevice-1792798853762-sfqwzh6xi","evaluationID":"f33ae91f-a166-464c-be7d-8160fda1b8c9","evaluation":true,"componentId":"idevice-1792798853762-sfqwzh6xi","ode_pag_structure_sync_id":"block-mvlm5cw3-7lqqql9vf","componentSessionId":"yjs-8fe98690-0516-4245-a6ef-179a80880096","componentPageId":"page-mvij8z7s-f0jp2wrmm","ode_block_id":"block-mvlm5cw3-7lqqql9vf","blockName":"\"Poniendo a prueba la Arquitectura y el Hardware\"","blockOrder":1,"ode_idevice_id":"idevice-1792798853762-sfqwzh6xi","odeIdeviceTypeName":"quick-questions","ode_components_sync_order":0,"componentIsActive":1}],"children":[],"url":"6-autoevaluacion"},{"id":"page-mvvhs8ts-h1vsmr83v","parentId":null,"title":"7-Cierre","navId":"page-mvvhs8ts-h1vsmr83v","ode_nav_structure_sync_id":"page-mvvhs8ts-h1vsmr83v","ode_session_id":"yjs-8fe98690-0516-4245-a6ef-179a80880096","ode_nav_structure_sync_order":5,"navIsActive":1,"components":[{"ideviceID":"idevice-mw7troae-rnp06i6x8","evaluationID":"f33ae91f-a166-464c-be7d-8160fda1b8c9","evaluation":true,"componentId":"idevice-mw7troae-rnp06i6x8","ode_pag_structure_sync_id":"block-mw7troae-0c4yh487l","componentSessionId":"yjs-8fe98690-0516-4245-a6ef-179a80880096","componentPageId":"page-mvvhs8ts-h1vsmr83v","ode_block_id":"block-mw7troae-0c4yh487l","blockName":"Desafío Final: El Laberinto de los Dispositivos y la Arquitectura","blockOrder":0,"ode_idevice_id":"idevice-mw7troae-rnp06i6x8","odeIdeviceTypeName":"adaptative-quiz","ode_components_sync_order":0,"componentIsActive":1}],"children":[],"url":"7-cierre"},{"id":"page-mvvi7oat-bhfq4m7gv","parentId":null,"title":"8-Informe de Progreso","navId":"page-mvvi7oat-bhfq4m7gv","ode_nav_structure_sync_id":"page-mvvi7oat-bhfq4m7gv","ode_session_id":"yjs-8fe98690-0516-4245-a6ef-179a80880096","ode_nav_structure_sync_order":6,"navIsActive":1,"components":[{"ideviceID":"idevice-1794189011591-0tse60e49","evaluationID":"","evaluation":null,"componentId":"idevice-1794189011591-0tse60e49","ode_pag_structure_sync_id":"block-mw8lt9jc-3ay4pxi15","componentSessionId":"yjs-8fe98690-0516-4245-a6ef-179a80880096","componentPageId":"page-mvvi7oat-bhfq4m7gv","ode_block_id":"block-mw8lt9jc-3ay4pxi15","blockName":"Cómo interpretar y usar tus resultados","blockOrder":0,"ode_idevice_id":"idevice-1794189011591-0tse60e49","odeIdeviceTypeName":"text","ode_components_sync_order":0,"componentIsActive":1},{"ideviceID":"idevice-mvvi7oau-qv51vo2w2","evaluationID":"","evaluation":null,"componentId":"idevice-mvvi7oau-qv51vo2w2","ode_pag_structure_sync_id":"block-mvvi7oat-ydkig7jto","componentSessionId":"yjs-8fe98690-0516-4245-a6ef-179a80880096","componentPageId":"page-mvvi7oat-bhfq4m7gv","ode_block_id":"block-mvvi7oat-ydkig7jto","blockName":"Informe de progreso","blockOrder":1,"ode_idevice_id":"idevice-mvvi7oau-qv51vo2w2","odeIdeviceTypeName":"progress-report","ode_components_sync_order":0,"componentIsActive":1}],"children":[],"url":"8-informe-de-progreso"},{"id":"page-mw7u2xvw-kpgryzcos","parentId":null,"title":"9-Bibliografía y Créditos","navId":"page-mw7u2xvw-kpgryzcos","ode_nav_structure_sync_id":"page-mw7u2xvw-kpgryzcos","ode_session_id":"yjs-8fe98690-0516-4245-a6ef-179a80880096","ode_nav_structure_sync_order":7,"navIsActive":1,"components":[{"ideviceID":"idevice-1794446842615-k5a1qpzgc","evaluationID":"","evaluation":null,"componentId":"idevice-1794446842615-k5a1qpzgc","ode_pag_structure_sync_id":"block-mwcvbh88-pzl75yzie","componentSessionId":"yjs-8fe98690-0516-4245-a6ef-179a80880096","componentPageId":"page-mw7u2xvw-kpgryzcos","ode_block_id":"block-mwcvbh88-pzl75yzie","blockName":"Contenido","blockOrder":0,"ode_idevice_id":"idevice-1794446842615-k5a1qpzgc","odeIdeviceTypeName":"udl-content","ode_components_sync_order":0,"componentIsActive":1},{"ideviceID":"idevice-1795143264122-4uk2l425s","evaluationID":"","evaluation":null,"componentId":"idevice-1795143264122-4uk2l425s","ode_pag_structure_sync_id":"block-mwody7i3-c1dsqo2os","componentSessionId":"yjs-8fe98690-0516-4245-a6ef-179a80880096","componentPageId":"page-mw7u2xvw-kpgryzcos","ode_block_id":"block-mwody7i3-c1dsqo2os","blockName":"Bibliografía","blockOrder":1,"ode_idevice_id":"idevice-1795143264122-4uk2l425s","odeIdeviceTypeName":"text","ode_components_sync_order":0,"componentIsActive":1}],"children":[],"url":"9-bibliografia-y-creditos"}],"msgs":{"msgSummary":"Resumen de las actividades","msgNoCompletedActivities":"No has completado ninguna de las actividades sugeridas para ser evaluado.","msgNoPendientes":"Te falta de resolver: %s.","msgCompletedActivities":"La siguiente tabla recoge los resultados que has obtenido en las actividades evaluables propuestas en este recurso educativo que ya has completado.","msgAverageScore":"Nota media","msgReboot":"Reiniciar","msgReload":"Edita este iDevice para actualizar su contenido.","mssActivitiesNumber":"Nº de actividades: %s","msgActivitiesCompleted":"Completadas: %s","msgAverageScore1":"Nota media: %s","msgAverageScoreCompleted":"Nota media de las actividades completadas: %s","msgDelete":"Esto eliminará las puntuaciones almacenadas de todas las actividades ¿Estás seguro de que deseas continuar?","msgSections":"Secciones del recurso educativo","msgSave":"Guardar","msgReport":"informe_de_progreso","msgReportTitle":"Informe de progreso","msgType":"Tipo","msgSeeActivity":"Ir a la actividad","mgsSections":"Secciones del recurso educativo","msgName":"Nombre","msgDate":"Fecha","msgNotCompleted":"Sin completar","msgNotData":"Error al recuperar los datos","msgScoredActivities":"Actividades calificadas","msgInEXE":"En modo de vista previa, visita este informe de progreso para ver el estado de todas las actividades calificadas asociadas. Este estado puede ser:","msgInEXE2":"Este mensaje solo se mostrará en modo de edición.","msgUncompletedActivity":"Actividad no completada","msgUnsuccessfulActivity":"Actividad no exitosa","msgSuccessfulActivity":"Actividad exitosa","msgLocalMode":"Los resultados de las actividades no se pueden mostrar dentro de la aplicación.","msgDownload":"Descargar el informe de progreso"}}</div>
+                    <div class="informe-bns js-hidden">undefined</div>
+                </div>
+</div>
+</div>
+</article>
+</div></main><div class="nav-buttons">
+<a href="../html/6-cierre.html" title="Anterior" class="nav-button nav-button-left"><span>Anterior</span></a>
+<a href="../html/8-bibliografia-y-creditos.html" title="Siguiente" class="nav-button nav-button-right"><span>Siguiente</span></a>
+</div>
+<footer id="siteFooter"><div id="siteFooterContent"> <div id="packageLicense" class="cc cc-by-sa"> <p> <span class="license-label">Licencia: </span><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="license">Creative Commons: Reconocimiento - compartir igual 4.0</a></p>
+</div>
+<div id="siteUserFooter"> <div><style>
+
+<div style="background-color: #f0f9ff; border: 1px solid #bae6fd; border-left: 6px solid #0284c7; border-radius: 6px; padding: 18px 22px; margin: 10px 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #1e293b; font-size: 15px; line-height: 1.6; text-align: justify;">
+  <p style="margin: 0;">
+    En esta sección encontrarás actividades interactivas para poner en práctica lo aprendido sobre <strong>Hardware y Arquitectura</strong>: analizar el ciclo de instrucción en un vídeo interactivo, explorar componentes en un panel gráfico, resolver desafíos en Edpuzzle, jugar a <em>El Rosco</em> e interactuar con modelos en Realidad Aumentada. Cada propuesta te ayudará a fortalecer tu comprensión sobre el funcionamiento interno del computador. <strong>¡Explorá, probá y aprendé haciendo!</strong>
+  </p>
+</div>
+
+
+<div style="background-color: #f0f9ff; border: 1px solid #bae6fd; border-left: 6px solid #0284c7; border-radius: 6px; padding: 18px 22px; margin: 10px 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #1e293b; font-size: 15px; line-height: 1.6; text-align: justify;">
+  <p style="margin: 0;">
+    Aquí escribes tu texto o consigna de la sección. Este tono celeste suave cuida la vista de los estudiantes y mantiene la coherencia visual con todo tu módulo de Hardware y Arquitectura. <strong>¡Explorá, probá y aprendé haciendo!</strong>
+  </p>
+</div>
+
+
+  .print-banner-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 15px;
+  }
+
+  .btn-print-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #334155; /* Gris pizarra profesional */
+    color: #ffffff !important;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    text-decoration: none !important;
+  }
+
+  .btn-print-action:hover {
+    background-color: #1e293b;
+    transform: translateY(-1px);
+  }
+
+  .btn-print-action svg {
+    width: 18px;
+    height: 18px;
+    fill: #ffffff;
+  }
+</style>
+
+<!-- Botón de impresión visible y garantizado -->
+<div class="print-banner-container">
+  <button class="btn-print-action" onclick="window.print()" title="Imprimir o guardar como PDF esta página">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/>
+    </svg>
+    Imprimir página
+  </button>
+</div></div>
+</div></div></footer>
+</div>
+<p id="made-with-eXe"> <a href="https://exelearning.net/" target="_blank" rel="noopener"> <span>Creado con eXeLearning <span>(Ventana nueva)</span></span></a></p>
+</body>
+</html>

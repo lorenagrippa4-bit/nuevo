@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="es" id="exe-page-mvvhs8ts-h1vsmr83v">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="eXeLearning v4.0.6">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="exe-pass-score" content="5">
+<link rel="license" type="text/html" href="https://creativecommons.org/licenses/by-sa/4.0/">
+<title>6-Cierre | “ Arquitectura de computadoras y Hardware: del núcleo de procesamiento a los dispositivos periféricos y de almacenamiento”</title>
+<link rel="icon" type="image/x-icon" href="../libs/favicon.ico">
+<meta name="description" content="Aborda el estudio integral del hardware de un sistema informático, estructurado desde sus principios teóricos fundamentales hasta la clasificación de sus componentes y periféricos.">
+<script>document.querySelector("html").classList.add("js");</script><script src="../libs/jquery/jquery.min.js"> </script><script src="../libs/common_i18n.js"> </script><script src="../libs/common.js"> </script><script src="../libs/exe_export.js"> </script><script src="../libs/bootstrap/bootstrap.bundle.min.js"> </script><link rel="stylesheet" href="../libs/bootstrap/bootstrap.min.css">
+<script src="../idevices/adaptative-quiz/adaptative-quiz.js"></script><link rel="stylesheet" href="../idevices/adaptative-quiz/adaptative-quiz.css">
+<link rel="stylesheet" href="../content/css/base.css"><script src="../theme/style.js"> </script><link rel="stylesheet" href="../theme/style.css">
+<style>
+
+/* Personalización de botones y navegación  - Tonos Lila y Celeste Pastel */
+.nav-container, .pagination, .node-name, .iDevice_header 
+{
+    --primary-color: #9b87f5;
+    --secondary-color: #b5c7ed;
+    --accent-color: #dcd6f7;
+}
+
+/* Botones de navegación y pestañas (Inicio, Presentación, Motivación, etc.) */
+.ui-tabs-nav li a, 
+.pagination a, 
+.pagination span,
+.node a,
+.iDevice_header h2 
+{
+    background-color: #e8e4f8 !important; /* Lila pastel muy suave */
+    color: #4a4563 !important;
+    border-color: #b5c7ed !important;
+    transition: all 0.3s ease;
+}
+
+/* Estado activo o al pasar el cursor sobre los botones */
+.ui-tabs-nav li.ui-state-active a, 
+.ui-tabs-nav li a:hover,
+.pagination a:hover,
+.node.current > a 
+{
+    background: linear-gradient(135deg, #b5c7ed 0%, #d4b5ed 100%) !important; /* Degradado suave celeste y lila pastel */
+    color: #2c264a !important;
+    border-color: #9b87f5 !important;
+    font-weight: bold;
+}
+
+/* Forzar la eliminación de tonos verdes o naranjas heredados */
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default 
+{
+    background: #f3f0ff !important;
+    border: 1px solid #dcd6f7 !important;
+    color: #5c5470 !important;
+}
+
+/* Personalización del menú lateral y enlaces en estilo Neo - Tonos Azules */
+.node a, 
+.ui-widget-content .node a, 
+#siteNav ul li a 
+{
+    color: #2b4c7e !important; /* Color principal del texto de los enlaces */
+    transition: all 0.2s ease;
+}
+
+/* Efecto al pasar el cursor por encima de las opciones del menú */
+.node a:hover, 
+#siteNav ul li a:hover 
+{
+    color: #1a365d !important;
+    background-color: #e2ecf8 !important; /* Fondo azul pastel muy suave al pasar el mouse */
+    border-radius: 4px;
+}
+
+/* Estilo para la página o sección seleccionada actualmente (activa) */
+.node.current > a, 
+#siteNav ul li.current > a,
+.ui-state-active 
+{
+    background: linear-gradient(135deg, #3182ce 0%, #2b6cb0 100%) !important; /* Degradado en tonos azules */
+    color: #ffffff !important; /* Texto blanco para destacar perfectamente */
+    font-weight: bold !important;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(49, 130, 206, 0.2);
+}
+
+/* Ajuste general de los iconos o elementos del árbol de contenidos */
+#siteNav .node
+ {
+    margin-bottom: 2px;
+}
+
+
+
+
+  .cc-footer-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 15px;
+  }
+
+  .btn-print-footer {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #555555; /* Gris oscuro idéntico a tus referencias */
+    color: #ffffff !important;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-family: inherit;
+    cursor: pointer;
+    text-decoration: none !important;
+    transition: background-color 0.2s ease;
+  }
+
+  .btn-print-footer:hover {
+    background-color: #333333;
+  }
+
+  .btn-print-footer svg {
+    width: 16px;
+    height: 16px;
+    fill: #ffffff;
+  }
+
+
+<!-- Botón de impresión ubicado abajo junto al pie de página -->
+
+<div class="cc-footer-container">
+  <button class="btn-print-footer" onclick="window.print()" title="Imprimir o guardar como PDF">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/>
+    </svg>
+    Imprimir página
+  </button>
+</div>
+
+
+
+
+<div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; width: 100%; margin: 20px 0;">
+  
+  <style>
+    .titulo-principal {
+      font-size: 32px;
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 8px;
+      text-align: justify; /* Título justificado a ambos márgenes */
+      color: #1e3a8a;
+      transition: color 0.3s ease;
+      cursor: default;
+    }
+    /* Cambio de color automático al pasar el mouse por encima */
+    .titulo-principal:hover {
+      color: #2563eb;
+    }
+  </style>
+
+  <!-- Título principal justificado -->
+  <h1 class="titulo-principal">
+    “Arquitectura de computadoras y Hardware: del núcleo de procesamiento a los dispositivos periféricos y de almacenamiento”
+  </h1>
+
+  
+  <!-- Doble línea azul en todo el ancho -->
+  <hr style="border: none; border-top: 4px double #1d4ed8; width: 100%; margin: 0;">
+
+
+<style>
+  a:active,
+  a:focus,
+  button:active,
+  button:focus {
+    background-color: #dbeafe !important;
+    color: #1e3a8a !important;
+    outline: 2px solid #2563eb !important;
+  }
+</style>
+
+
+
+<style>
+  /* Selectores generales del árbol de navegación / menú lateral */
+  nav a,
+  nav button,
+  aside a,
+  aside button,
+  .exe-navigation a,
+  .exe-navigation button,
+  [role="navigation"] a,
+  [role="navigation"] button,
+  .tree-node a,
+  .tree-node span,
+  .node-label {
+    font-size: 1.08rem !important; /* Letra más grande */
+    color: #1d4ed8 !important;     /* Color azul */
+    font-weight: 500 !important;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease !important;
+  }
+
+  /* Al pasar el cursor o presionar (clic sostenido / foco) */
+  nav a:hover,
+  nav a:active,
+  nav a:focus,
+  aside a:hover,
+  aside a:active,
+  aside a:focus,
+  .exe-navigation a:hover,
+  .exe-navigation a:active,
+  .exe-navigation a:focus,
+  [role="navigation"] a:hover,
+  [role="navigation"] a:active,
+  [role="navigation"] a:focus,
+  .menu-presionado {
+    background-color: #bae6fd !important; /* Celeste fuerte al presionar/pasar */
+    color: #0c4a6e !important;
+    border-radius: 8px !important;
+    font-weight: 700 !important;
+  }
+
+  /* Elemento seleccionado / página activa: celeste más fuerte y definido */
+  .menu-seleccionado-celeste,
+  .active > a,
+  .current > a,
+  [aria-current="page"],
+  .selected {
+    background-color: #7dd3fc !important; /* Celeste más fuerte al seleccionar */
+    color: #082f49 !important;
+    border: 2px solid #0284c7 !important;
+    border-radius: 8px !important;
+    font-weight: 700 !important;
+    font-size: 1.1rem !important;
+  }
+</style>
+
+<script>
+  (function () {
+    function aplicarEstiloMenu() {
+      const selectores = 'nav a, aside a, .exe-navigation a, [role="navigation"] a, .tree-node a, .tree-node span';
+      const items = document.querySelectorAll(selectores);
+      const paginaActual = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase();
+
+      items.forEach(function (item) {
+        const href = (item.getAttribute('href') || '').split('/').pop().toLowerCase();
+
+        // Marca en celeste fuerte si corresponde a la página actual
+        if (href && paginaActual && href === paginaActual) {
+          item.classList.add('menu-seleccionado-celeste');
+          if (item.parentElement) {
+            item.parentElement.classList.add('menu-seleccionado-celeste');
+          }
+        }
+
+        // Al hacer clic o presionar, destaca en celeste más fuerte
+        item.addEventListener('pointerdown', function () {
+          items.forEach(function (el) {
+            el.classList.remove('menu-seleccionado-celeste');
+            el.classList.remove('menu-presionado');
+            if (el.parentElement) {
+              el.parentElement.classList.remove('menu-seleccionado-celeste');
+            }
+          });
+
+          item.classList.add('menu-seleccionado-celeste');
+          if (item.parentElement) {
+            item.parentElement.classList.add('menu-seleccionado-celeste');
+          }
+        });
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', aplicarEstiloMenu);
+    } else {
+      aplicarEstiloMenu();
+    }
+  })();
+</script>
+
+
+
+
+
+
+</div>
+
+
+  
+
+
+
+
+</style>
+</head>
+<body class="exe-export exe-web-site">
+<script>document.body.className+=" js"</script>
+<div class="exe-content exe-export pre-js siteNav-hidden"><a href="#page-mvvhs8ts-h1vsmr83v" id="skipNav">Skip to content</a> <nav id="siteNav">
+<ul>
+<li> <a href="../index.html" class="main-node daddy">Inicio</a>
+<ul class="other-section">
+<li> <a href="../html/1-presentacion.html" class="daddy">1-Presentación</a>
+<ul class="other-section">
+<li> <a href="../html/11-objetivos.html" class="no-ch">1.1 Objetivos</a>
+</li>
+<li> <a href="../html/12-conocimientos-previos.html" class="no-ch">1.2 Conocimientos Previos</a>
+</li>
+<li> <a href="../html/13-hoja-de-ruta.html" class="no-ch">1.3 Hoja de Ruta</a>
+</li>
+<li> <a href="../html/14-motivacion.html" class="no-ch">1.4-Motivación</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li> <a href="../html/2-fundamentos-de-hardware-y-su-arquitectura.html" class="no-ch">2-Fundamentos de Hardware y su Arquitectura</a>
+</li>
+<li> <a href="../html/3-perifericos-y-sistemas-de-almacenamiento.html" class="no-ch">3-Periféricos y Sistemas de Almacenamiento</a>
+</li>
+<li> <a href="../html/4-actividades.html" class="daddy">4-Actividades</a>
+<ul class="other-section">
+<li> <a href="../html/41-video-interactivo.html" class="no-ch">4.1 Vídeo Interactivo</a>
+</li>
+<li> <a href="../html/42-panel-grafico-interactivo.html" class="no-ch">4.2 Panel Gráfico interactivo</a>
+</li>
+<li> <a href="../html/43-edpuzzle.html" class="no-ch">4.3 Edpuzzle</a>
+</li>
+<li> <a href="../html/44-el-rosco-hardware.html" class="no-ch">4.4 El Rosco hardware</a>
+</li>
+<li> <a href="../html/45-realidad-aumentada.html" class="no-ch">4.5 Realidad Aumentada</a>
+</li>
+</ul>
+</li>
+<li> <a href="../html/5-autoevaluacion.html" class="no-ch">5-Autoevaluación</a>
+</li>
+<li class="active"> <a href="../html/6-cierre.html" class="active no-ch">6-Cierre</a>
+</li>
+<li> <a href="../html/7-informe-de-progreso.html" class="no-ch">7-Informe de Progreso</a>
+</li>
+<li> <a href="../html/8-bibliografia-y-creditos.html" class="no-ch">8-Bibliografía y Créditos</a>
+</li>
+</ul>
+</nav><main id="page-mvvhs8ts-h1vsmr83v" class="page"> 
+<header class="main-header">
+<div class="package-header"><p class="package-title">“ Arquitectura de computadoras y Hardware: del núcleo de procesamiento a los dispositivos periféricos y de almacenamiento”</p></div>
+<div class="page-header"><h1 class="page-title">6-Cierre</h1></div>
+</header><div id="page-content-page-mvvhs8ts-h1vsmr83v" class="page-content">
+<article id="block-mw7troae-0c4yh487l" class="box">
+<header class="box-head">
+<div class="box-icon exe-icon">
+<span class="exe-material-icon" style="--exe-material-icon-url:url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2248%22%20height%3D%2248%22%20viewBox%3D%220%20-960%20960%20960%22%3E%3Cpath%20d%3D%22M400-80v-60h520v60H400Zm40-120q0-81%2051-141.5T620-416v-24q0-17%2011.5-28.5T660-480q17%200%2028.5%2011.5T700-440v24q77%2014%20128.5%2074.5T880-200H440ZM40-442h154v-394H40v394Zm215%200h94l290-109q14-5%2021.5-16.5T668-593q0-17-12.5-29.5T626-635h-98l-116%2038-10-28%20116-40h302q25%200%2042.5-17.5T880-725v-47l-314-96-311%2089v337Z%22%2F%3E%3C%2Fsvg%3E');" aria-hidden="true"></span>
+</div>
+<h1 class="box-title">Desafío Final: El Laberinto de los Dispositivos y la Arquitectura</h1>
+<button class="box-toggle box-toggle-on" title="Toggle content">
+<span>Toggle content</span>
+</button></header>
+<div class="box-content">
+<div id="idevice-mw7troae-rnp06i6x8" class="idevice_node adaptative-quiz" data-idevice-path="../idevices/adaptative-quiz/" data-idevice-type="adaptative-quiz" data-idevice-component-type="json" data-idevice-json-data="{&quot;id&quot;:&quot;idevice-mw7troae-rnp06i6x8&quot;,&quot;ideviceId&quot;:&quot;idevice-mw7troae-rnp06i6x8&quot;,&quot;typeGame&quot;:&quot;Adaptative Quiz&quot;,&quot;version&quot;:2,&quot;eXeFormInstructions&quot;:&quot;&lt;div style=\&quot;font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #2d3748; line-height: 1.6; max-width: 900px; margin: 0 auto;\&quot;&gt;&lt;!-- Encabezado de cierre épico --&gt;\n&lt;div style=\&quot;background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%); color: #ffffff; padding: 18px 22px; border-radius: 12px; margin-bottom: 18px; box-shadow: 0 4px 12px rgba(30, 58, 138, 0.18); display: flex; align-items: center; gap: 14px;\&quot;&gt;&lt;span style=\&quot;font-size: 1.9em; background: rgba(255,255,255,0.18); padding: 6px 12px; border-radius: 10px;\&quot;&gt;🏆&lt;/span&gt;\n&lt;div&gt;&lt;span style=\&quot;display: block; font-size: 0.75em; text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.9; font-weight: 600;\&quot;&gt;Etapa de cierre&lt;/span&gt;\n&lt;h3 style=\&quot;margin: 2px 0 0 0; font-size: 1.28em; font-weight: bold; color: #ffffff;\&quot;&gt;La recta final: Pon a prueba tu nivel experto&lt;/h3&gt;\n&lt;/div&gt;\n&lt;/div&gt;\n&lt;!-- Párrafo introductorio unificado y sin repeticiones --&gt;\n&lt;p style=\&quot;font-size: 1.03em; color: #334155; margin: 0 0 18px 0;\&quot;&gt;Llegamos a la última etapa de nuestro recorrido. Ya exploraste la Realidad Aumentada, resolviste el crucigrama y analizaste los conceptos clave. Ahora te invitamos a superar este &lt;strong&gt;cuestionario adaptativo&lt;/strong&gt;: un desafío inteligente de &lt;strong&gt;12 preguntas&lt;/strong&gt; que se ajusta a tus respuestas para acompañarte a consolidar todo lo aprendido.&lt;/p&gt;\n&lt;!-- Bloque 1: Propósitos del desafío --&gt;\n&lt;div style=\&quot;background: linear-gradient(135deg, #f0f7ff 0%, #e6f0fa 100%); border-left: 5px solid #1e3a8a; padding: 18px 22px; border-radius: 0 12px 12px 0; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(30, 58, 138, 0.08);\&quot;&gt;&lt;span style=\&quot;display: inline-block; background-color: #1e3a8a; color: #ffffff; font-size: 0.75em; font-weight: bold; text-transform: uppercase; letter-spacing: 0.05em; padding: 3px 10px; border-radius: 20px; margin-bottom: 10px;\&quot;&gt; 🎯 Propósitos de esta instancia final &lt;/span&gt;\n&lt;p style=\&quot;margin: 0 0 8px 0; font-weight: 600; font-size: 0.96em; color: #1e3a8a;\&quot;&gt;En este desafío te proponemos:&lt;/p&gt;\n&lt;ul style=\&quot;margin: 0; padding-left: 20px; color: #1e293b; font-size: 0.96em;\&quot;&gt;\n&lt;li style=\&quot;margin-bottom: 6px;\&quot;&gt;&lt;strong&gt;Analizar y comparar&lt;/strong&gt; de forma crítica el comportamiento lógico de los dispositivos de entrada, salida y mixtos frente a situaciones del mundo real.&lt;/li&gt;\n&lt;li style=\&quot;margin: 0;\&quot;&gt;&lt;strong&gt;Autorregular tu aprendizaje&lt;/strong&gt; mediante la reflexión sobre tus propios aciertos y errores, utilizando cada pausa como una oportunidad para afianzar tu comprensión de la arquitectura tecnológica.&lt;/li&gt;\n&lt;/ul&gt;\n&lt;/div&gt;\n&lt;!-- Bloque 2: Reglas del sistema adaptativo --&gt;\n&lt;div style=\&quot;background-color: #f8fafc; border: 1px solid #cbd5e1; border-top: 4px solid #0284c7; border-radius: 12px; padding: 18px 22px; margin-bottom: 20px; box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);\&quot;&gt;\n&lt;p style=\&quot;margin: 0 0 8px 0; font-weight: bold; font-size: 1.03em; color: #0369a1;\&quot;&gt;⚙️ ¿Cómo funciona el juego y cómo debes avanzar?&lt;/p&gt;\n&lt;p style=\&quot;margin: 0 0 14px 0; font-size: 0.95em; color: #334155;\&quot;&gt;El recorrido cuenta con &lt;strong&gt;12 preguntas en total&lt;/strong&gt; (4 por cada nivel de dificultad: &lt;em&gt;Fácil, Medio y Difícil&lt;/em&gt;) y se adapta dinámicamente a tu desempeño:&lt;/p&gt;\n&lt;!-- Regla de ascenso --&gt;\n&lt;div style=\&quot;background-color: #ffffff; border: 1px solid #a7f3d0; border-left: 4px solid #059669; border-radius: 0 8px 8px 0; padding: 12px 16px; margin-bottom: 10px;\&quot;&gt;\n&lt;p style=\&quot;margin: 0; font-size: 0.94em; color: #334155;\&quot;&gt;&lt;strong style=\&quot;color: #047857;\&quot;&gt;⬆️ ¿Cómo se avanza de nivel?&lt;/strong&gt; Para subir al siguiente escalón y acercarte a la cima, deberás responder correctamente &lt;strong&gt;dos preguntas seguidas&lt;/strong&gt;. Esto confirmará que ya dominas los conceptos de esa etapa.&lt;/p&gt;\n&lt;/div&gt;\n&lt;!-- Regla de retroalimentación y descenso --&gt;\n&lt;div style=\&quot;background-color: #ffffff; border: 1px solid #fde68a; border-left: 4px solid #f59e0b; border-radius: 0 8px 8px 0; padding: 12px 16px;\&quot;&gt;\n&lt;p style=\&quot;margin: 0; font-size: 0.94em; color: #334155;\&quot;&gt;&lt;strong style=\&quot;color: #b45309;\&quot;&gt;🔄 ¿Qué pasa si te equivocas?&lt;/strong&gt; Cada error incluye una &lt;strong&gt;retroalimentación reflexiva&lt;/strong&gt; para que analices por qué fallaste antes de seguir. Como es un espacio de acompañamiento, si acumulas &lt;strong&gt;tres errores seguidos&lt;/strong&gt;, bajarás al nivel anterior para afianzar las bases antes de volver a subir.&lt;/p&gt;\n&lt;/div&gt;\n&lt;/div&gt;\n&lt;!-- Bloque 3: Los 3 niveles del desafío en tarjetas progresivas --&gt;\n&lt;p style=\&quot;font-weight: bold; font-size: 1.02em; color: #1e293b; margin: 0 0 12px 0;\&quot;&gt;📊 Los 3 niveles del desafío:&lt;/p&gt;\n&lt;div style=\&quot;display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 20px;\&quot;&gt;&lt;!-- Nivel 1 --&gt;\n&lt;div style=\&quot;flex: 1 1 250px; background-color: #ecfdf5; border: 1px solid #a7f3d0; border-top: 4px solid #059669; border-radius: 10px; padding: 14px 16px;\&quot;&gt;&lt;span style=\&quot;display: inline-block; background-color: #059669; color: #ffffff; font-size: 0.72em; font-weight: bold; text-transform: uppercase; padding: 2px 9px; border-radius: 12px; margin-bottom: 6px;\&quot;&gt;Nivel 1 · Inicial&lt;/span&gt;\n&lt;p style=\&quot;margin: 0; font-size: 0.93em; color: #064e3b;\&quot;&gt;Ponemos a prueba tu &lt;strong&gt;reconocimiento básico&lt;/strong&gt; sobre la estructura y el flujo de los dispositivos.&lt;/p&gt;\n&lt;/div&gt;\n&lt;!-- Nivel 2 --&gt;\n&lt;div style=\&quot;flex: 1 1 250px; background-color: #fffbeb; border: 1px solid #fde68a; border-top: 4px solid #f59e0b; border-radius: 10px; padding: 14px 16px;\&quot;&gt;&lt;span style=\&quot;display: inline-block; background-color: #d97706; color: #ffffff; font-size: 0.72em; font-weight: bold; text-transform: uppercase; padding: 2px 9px; border-radius: 12px; margin-bottom: 6px;\&quot;&gt;Nivel 2 · Intermedio&lt;/span&gt;\n&lt;p style=\&quot;margin: 0; font-size: 0.93em; color: #78350f;\&quot;&gt;Deberás &lt;strong&gt;comparar el comportamiento lógico&lt;/strong&gt; de los periféricos frente a situaciones cotidianas.&lt;/p&gt;\n&lt;/div&gt;\n&lt;!-- Nivel 3 --&gt;\n&lt;div style=\&quot;flex: 1 1 250px; background-color: #f5f3ff; border: 1px solid #ddd6fe; border-top: 4px solid #7c3aed; border-radius: 10px; padding: 14px 16px;\&quot;&gt;&lt;span style=\&quot;display: inline-block; background-color: #7c3aed; color: #ffffff; font-size: 0.72em; font-weight: bold; text-transform: uppercase; padding: 2px 9px; border-radius: 12px; margin-bottom: 6px;\&quot;&gt;Nivel 3 · Experto&lt;/span&gt;\n&lt;p style=\&quot;margin: 0; font-size: 0.93em; color: #4c1d95;\&quot;&gt;Analizarás &lt;strong&gt;casos complejos en instituciones&lt;/strong&gt; para demostrar que comprendes la arquitectura de hardware en la vida real.&lt;/p&gt;\n&lt;/div&gt;\n&lt;/div&gt;\n&lt;!-- Bloque 4: Cierre motivador --&gt;\n&lt;div style=\&quot;background: linear-gradient(135deg, #1e293b 0%, #334155 100%); color: #ffffff; border-radius: 10px; padding: 15px 20px; display: flex; align-items: center; gap: 12px; box-shadow: 0 3px 10px rgba(15, 23, 42, 0.12);\&quot;&gt;&lt;span style=\&quot;font-size: 1.5em;\&quot;&gt;🚀&lt;/span&gt;\n&lt;p style=\&quot;margin: 0; font-size: 0.96em; color: #f8fafc;\&quot;&gt;&lt;strong&gt;¡Confía en el conocimiento que construiste paso a paso!&lt;/strong&gt; Lee cada pregunta con atención, analiza las opciones y demuestra todo lo que eres capaz de lograr. ¡Mucho éxito en la cima!&lt;/p&gt;\n&lt;/div&gt;\n&lt;/div&gt;&quot;,&quot;eXeIdeviceTextAfter&quot;:&quot;&quot;,&quot;questionsGame&quot;:[{&quot;type&quot;:0,&quot;typeSelect&quot;:0,&quot;url&quot;:&quot;&quot;,&quot;author&quot;:&quot;&quot;,&quot;alt&quot;:&quot;&quot;,&quot;audio&quot;:&quot;&quot;,&quot;question&quot;:&quot;Dentro de los dispositivos de entrada encargados de la digitalización del mundo real, ¿Cuál de los siguientes elementos cumple la función de capturar información impresa o física para transformarla en datos digitales editables?&quot;,&quot;numberOptions&quot;:3,&quot;options&quot;:[{&quot;text&quot;:&quot;Los parlantes multimedia.&quot;,&quot;audio&quot;:&quot;&quot;},{&quot;text&quot;:&quot;El puerto USB de alta velocidad.&quot;,&quot;audio&quot;:&quot;&quot;},{&quot;text&quot;:&quot;El escáner y los lectores de códigos de barras.&quot;,&quot;audio&quot;:&quot;&quot;},{&quot;text&quot;:&quot;El monitor de pantalla táctil unidireccional.&quot;,&quot;audio&quot;:&quot;&quot;},{&quot;text&quot;:&quot;&quot;,&quot;audio&quot;:&quot;&quot;},{&quot;text&quot;:&quot;&quot;,&quot;audio&quot;:&quot;&quot;}],&quot;solution&quot;:0,&quot;solutionMulti&quot;:[2],&quot;solutionOrder&quot;:[],&quot;solutionWord&quot;:&quot;&quot;,&quot;solutionWordAudio&quot;:&quot;&quot;,&quot;percentageShow&quot;:35,&quot;difficulty&quot;:1,&quot;msgHit&quot;:&quot;Felicitaciones!!! Son dispositivos de entrada diseñados específicamente para capturar documentos físicos, imágenes o códigos impresos en el mundo real y transformarlos en datos digitales que la computadora puede procesar y editar.&quot;,&quot;msgHitAudio&quot;:&quot;&quot;,&quot;msgError&quot;:&quot;Vuelva a intentarlo!!&quot;,&quot;msgErrorAudio&quot;:&quot;&quot;},{&quot;type&quot;:0,&quot;typeSelect&quot;:0,&quot;url&quot;:&quot;&quot;,&quot;author&quot;:&quot;&quot;,&quot;alt&quot;:&quot;&quot;,&quot;audio&quot;:&quot;&quot;,&quot;question&quot;:&quot;¿Cómo se clasifica correctamente un dispositivo cuya única función es la reproducción de ondas sonoras perceptibles por el usuario a partir de señales eléctricas procesadas por el equipo?&quot;,&quot;numberOptions&quot;:3,&quot;options&quot;:[{&quot;text&quot;:&quot;Dispositivo de Entrada de datos analógicos.&quot;,&quot;audio&quot;:&quot;&quot;},{&quot;text&quot;:&quot;Dispositivo de Entrada / Salida bidireccional.&quot;,&quot;audio&quot;:&quot;&quot;},{&quot;text&quot;:&quot;Dispositivo de Salida por audio.&quot;,&quot;audio&quot;:&quot;&quot;},{&quot;text&quot;:&quot;Dispositivo de almacenamiento temporal.&quot;,&quot;audio&quot;:&quot;&quot;},{&quot;text&quot;:&quot;&quot;,&quot;audio&quot;:&quot;&quot;},{&quot;text&quot;:&quot;&quot;,&quot;audio&quot;:&quot;&quot;}],&quot;solution&quot;:0,&quot;solutionMulti&quot;:[2],&quot;solutionOrder&quot;:[],&quot;solutionWord&quot;:&quot;&quot;,&quot;solutionWordAudio&quot;:&quot;&quot;,&quot;percentageShow&quot;:35,&quot;difficulty&quot;:1,&quot;msgHit&quot;:&quot;Felicitaciones!! Los parlantes o auriculares son dispositivos de salida porque reciben señales eléctricas procesadas por la computadora y las convierten en ondas sonoras (audio) para que el usuario pueda escucharlas.&quot;,&quot;msgHitAudio&quot;:&quot;&quot;,&quot;msgError&quot;:&quot;Vuelva a intentarlo!!&quot;,&quot;msgErrorAudio&quot;:&quot;&quot;},{&quot;type&quot;:0,&quot;typeSelect&quot;:0,&quot;url&quot;:&quot;&quot;,&quot;author&quot;:&quot;&quot;,&quot;alt&quot;:&quot;&quot;,&quot;audio&quot;:&quot;&quot;,&quot;question&quot;:&quot;¿Por qué el módem es considerado un dispositivo de Entrada / Salida (Mixto) dentro de la arquitectura de red?&quot;,&quot;numberOptions&quot;:3,&quot;options&quot;:[{&quot;text&quot;:&quot;Porque solo permite imprimir documentos de texto a distancia.&quot;,&quot;audio&quot;:&quot;&quot;},{&quot;text&quot;:&quot;Porque funciona únicamente como un teclado extendido por cable USB.&quot;,&quot;audio&quot;:&quot;&quot;},{&quot;text&quot;:&quot;Porque modula señales digitales a analógicas (salida) y demodula señales analógicas a digitales (entrada) para la comunicación.&quot;,&quot;audio&quot;:&quot;&quot;},{&quot;text&quot;:&quot;Porque reemplaza por completo a la memoria RAM principal del equipo.&quot;,&quot;audio&quot;:&quot;&quot;},{&quot;text&quot;:&quot;&quot;,&quot;audio&quot;:&quot;&quot;},{&quot;text&quot;:&quot;&quot;,&quot;audio&quot;:&quot;&quot;}],&quot;solution&quot;:0,&quot;solutionMulti&quot;:[2],&quot;solutionOrder&quot;:[],&quot;solutionWord&quot;:&quot;&quot;,&quot;solutionWordAudio&quot;:&quot;&quot;,&quot;percentageShow&quot;:35,&quot;difficulty&quot;:1,&quot;msgHit&quot;:&quot;Felicitaciones!! El módem (modulador-demodulador) cumple un rol bidireccional (E/S): envía información desde la computadora transformándola para la línea de red (salida) y recibe datos de la red transformándolos para que la computadora los pueda procesar (entrada).&quot;,&quot;msgHitAudio&quot;:&quot;&quot;,&quot;msgError&quot;:&quot;Vuelva a intentarlo!!&quot;,&quot;msgErrorAudio&quot;:&quot;&quot;},{&quot;type&quot;:0,&quot;typeSelect&quot;:0,&quot;url&quot;:&quot;&quot;,&quot;author&quot;:&quot;&quot;,&quot;alt&quot;:&quot;&quot;,&quot;audio&quot;:&quot;&quot;,&quot;question&quot;:&quot;Respecto al puerto USB (Universal Serial Bus), ¿cuál es su principal característica tecnológica que revolucionó la conectividad de hardware?&quot;,&quot;numberOptions&quot;:3,&quot;options&quot;:[{&quot;text&quot;:&quot;Obliga a reiniciar obligatoriamente la computadora cada vez que se conecta un periférico nuevo.&quot;,&quot;audio&quot;:&quot;&quot;},{&quot;text&quot;:&quot;Funciona exclusivamente para conectar impresoras de matriz de puntos.&quot;,&quot;audio&quot;:&quot;&quot;},{&quot;text&quot;:&quot;Actúa como un estándar de conectividad universal que soporta conexión en caliente (hot-swapping) y transmisión de datos y energía.&quot;,&quot;audio&quot;:&quot;&quot;},{&quot;text&quot;:&quot;Convierte señales de audio en video de alta definición de forma analógica.&quot;,&quot;audio&quot;:&quot;&quot;},{&quot;text&quot;:&quot;&quot;,&quot;audio&quot;:&quot;&quot;},{&quot;text&quot;:&quot;&quot;,&quot;audio&quot;:&quot;&quot;}],&quot;solution&quot;:0,&quot;solutionMulti&quot;:[2],&quot;solutionOrder&quot;:[],&quot;solutionWord&quot;:&quot;&quot;,&quot;solutionWordAudio&quot;:&quot;&quot;,&quot;percentageShow&quot;:35,&quot;difficulty&quot;:1,&quot;msgHit&quot;:&quot;Felicitaciones!! El puerto USB (Universal Serial Bus) revolucionó la conectividad de hardware al unificar los tipos de puertos, permitir la conexión y desconexión de periféricos con el equipo encendido sin necesidad de reiniciarlo, y transmitir tanto flujos de datos como alimentación eléctrica a través de un mismo cable.&quot;,&quot;msgHitAudio&quot;:&quot;&quot;,&quot;msgError&quot;:&quot;Vuelva a intentarlo!!&quot;,&quot;msgErrorAudio&quot;:&quot;&quot;},{&quot;type&quot;:0,&quot;typeSelect&quot;:0,&quot;url&quot;:&quot;&quot;,&quot;author&quot;:&quot;&quot;,&quot;alt&quot;:&quot;&quot;,&quot;audio&quot;:&quot;&quot;,&quot;question&quot;:&quot;En un entorno industrial automatizado, un sistema requiere capturar de forma simultánea un documento físico de plano técnico y el código de identificación de piezas mediante sensores ópticos de alta precisión para transformarlos en estructuras de datos procesables. Desde la perspectiva de la arquitectura de hardware, ¿cómo se tipifica conceptualmente esta función?&quot;,&quot;numberOptions&quot;:3,&quot;options&quot;:[{&quot;text&quot;:&quot;Como un proceso exclusivo de almacenamiento secundario no volátil de estado sólido.&quot;,&quot;audio&quot;:&quot;&quot;},{&quot;text&quot;:&quot;Como un mecanismo de retroalimentación de salida que emite señales analógicas hacia el bus central.&quot;,&quot;audio&quot;:&quot;&quot;},{&quot;text&quot;:&quot;Como una tarea de digitalización y entrada de datos que traduce propiedades físicas del mundo real en flujos binarios comprensibles para el sistema.&quot;,&quot;audio&quot;:&quot;&quot;},{&quot;text&quot;:&quot;Como una función de control exclusivo gestionada internamente por la Unidad Aritmético-Lógica (ALU).&quot;,&quot;audio&quot;:&quot;&quot;},{&quot;text&quot;:&quot;&quot;,&quot;audio&quot;:&quot;&quot;},{&quot;text&quot;:&quot;&quot;,&quot;audio&quot;:&quot;&quot;}],&quot;solution&quot;:0,&quot;solutionMulti&quot;:[2],&quot;solutionOrder&quot;:[],&quot;solutionWord&quot;:&quot;&quot;,&quot;solutionWordAudio&quot;:&quot;&quot;,&quot;percentageShow&quot;:35,&quot;difficulty&quot;:2,&quot;msgHit&quot;:&quot;Felicitaciones!! Requiere comprender que los escáneres y lectores actúan como traductores de elementos físicos (analógicos) del mundo real hacia formatos digitales de entrada.&quot;,&quot;msgHitAudio&quot;:&quot;&quot;,&quot;msgError&quot;:&quot;Vuelva a intentarlo!!&quot;,&quot;msgErrorAudio&quot;:&quot;&quot;},{&quot;type&quot;:0,&quot;typeSelect&quot;:0,&quot;url&quot;:&quot;&quot;,&quot;author&quot;:&quot;&quot;,&quot;alt&quot;:&quot;&quot;,&quot;audio&quot;:&quot;&quot;,&quot;question&quot;:&quot;Durante el monitoreo de una central de seguridad crítica, el equipo emite de manera simultánea una representación gráfica de vectores en pantalla, un registro físico de eventos en papel térmico y una alerta vocal sintetizada. Si analizas la naturaleza operativa de estos tres periféricos, ¿qué característica arquitectónica comparten?&quot;,&quot;numberOptions&quot;:3,&quot;options&quot;:[{&quot;text&quot;:&quot;Todos operan exclusivamente mediante modulación y demodulación de paquetes de red de área local.&quot;,&quot;audio&quot;:&quot;&quot;},{&quot;text&quot;:&quot;Todos requieren obligatoriamente una conexión de bus serie universal con alimentación eléctrica bidireccional.&quot;,&quot;audio&quot;:&quot;&quot;},{&quot;text&quot;:&quot;Todos actúan como canales unidireccionales de salida que transforman señales eléctricas procesadas por el procesador en estímulos perceptibles o registros tangibles para el usuario.&quot;,&quot;audio&quot;:&quot;&quot;},{&quot;text&quot;:&quot;Todos cumplen un rol mixto de Entrada/Salida debido a la realimentación constante generada por el operador.&quot;,&quot;audio&quot;:&quot;&quot;},{&quot;text&quot;:&quot;&quot;,&quot;audio&quot;:&quot;&quot;},{&quot;text&quot;:&quot;&quot;,&quot;audio&quot;:&quot;&quot;}],&quot;solution&quot;:0,&quot;solutionMulti&quot;:[2],&quot;solutionOrder&quot;:[],&quot;solutionWord&quot;:&quot;&quot;,&quot;solutionWordAudio&quot;:&quot;&quot;,&quot;percentageShow&quot;:35,&quot;difficulty&quot;:2,&quot;msgHit&quot;:&quot;Felicitaciones Obliga al estudiante a agrupar tres periféricos aparentemente distintos (monitor, impresora, parlantes) bajo un mismo concepto técnico estructural: la salida unidireccional de datos procesados.&quot;,&quot;msgHitAudio&quot;:&quot;&quot;,&quot;msgError&quot;:&quot;Vuelve a intentarlo!!&quot;,&quot;msgErrorAudio&quot;:&quot;&quot;},{&quot;type&quot;:0,&quot;typeSelect&quot;:0,&quot;url&quot;:&quot;&quot;,&quot;author&quot;:&quot;&quot;,&quot;alt&quot;:&quot;&quot;,&quot;audio&quot;:&quot;&quot;,&quot;question&quot;:&quot;Desde el punto de vista de la topología de red y el flujo de información, ¿por qué un módem tradicional no puede clasificarse bajo ningún punto de vista como un dispositivo puramente de entrada o de salida unidireccional?&quot;,&quot;numberOptions&quot;:3,&quot;options&quot;:[{&quot;text&quot;:&quot;Porque almacena permanentemente los datos en celdas de memoria caché de nivel 2 para acelerar la navegación.&quot;,&quot;audio&quot;:&quot;&quot;},{&quot;text&quot;:&quot;Porque su única función es expandir los puertos físicos USB de la placa madre mediante un protocolo de interrupción de hardware.&quot;,&quot;audio&quot;:&quot;&quot;},{&quot;text&quot;:&quot;Porque opera de manera bidireccional transformando flujos digitales internos en señales analógicas para la transmisión hacia el exterior (salida) y viceversa para la recepción (entrada).&quot;,&quot;audio&quot;:&quot;&quot;},{&quot;text&quot;:&quot;Porque reemplaza por completo la función lógica del microprocesador al interpretar instrucciones de software en tiempo real.&quot;,&quot;audio&quot;:&quot;&quot;},{&quot;text&quot;:&quot;&quot;,&quot;audio&quot;:&quot;&quot;},{&quot;text&quot;:&quot;&quot;,&quot;audio&quot;:&quot;&quot;}],&quot;solution&quot;:0,&quot;solutionMulti&quot;:[2],&quot;solutionOrder&quot;:[],&quot;solutionWord&quot;:&quot;&quot;,&quot;solutionWordAudio&quot;:&quot;&quot;,&quot;percentageShow&quot;:35,&quot;difficulty&quot;:2,&quot;msgHit&quot;:&quot;Felicitaciones!! Evalúa la comprensión profunda del concepto de modulación y demodulación, exigiendo entender el doble flujo de datos (E/S) que realiza este componente.&quot;,&quot;msgHitAudio&quot;:&quot;&quot;,&quot;msgError&quot;:&quot;Vuelve a intentarlo!!&quot;,&quot;msgErrorAudio&quot;:&quot;&quot;},{&quot;type&quot;:0,&quot;typeSelect&quot;:0,&quot;url&quot;:&quot;&quot;,&quot;author&quot;:&quot;&quot;,&quot;alt&quot;:&quot;&quot;,&quot;audio&quot;:&quot;&quot;,&quot;question&quot;:&quot;La transición histórica hacia el estándar de conectividad USB (Universal Serial Bus) transformó la arquitectura de las computadoras modernas. Más allá de la conocida conexión en caliente (hot-swapping), ¿cuál es la razón técnica estructural por la que este estándar reemplazó a los múltiples puertos especializados antiguos (serial, paralelo y PS/2)?&quot;,&quot;numberOptions&quot;:3,&quot;options&quot;:[{&quot;text&quot;:&quot;Porque utiliza una arquitectura de bus paralelo de ultra alta velocidad que elimina por completo el uso de la memoria RAM principal.&quot;,&quot;audio&quot;:&quot;&quot;},{&quot;text&quot;:&quot;Porque convierte automáticamente cualquier periférico de salida analógica en un dispositivo de almacenamiento masivo independiente.&quot;,&quot;audio&quot;:&quot;&quot;},{&quot;text&quot;:&quot;Porque implementa un protocolo de comunicación basado en paquetes serie que centraliza eficientemente la transmisión de datos y la alimentación eléctrica mediante un controlador unificado.&quot;,&quot;audio&quot;:&quot;&quot;},{&quot;text&quot;:&quot;Porque desactiva la Unidad de Control del microprocesador para gestionar de forma autónoma los periféricos sin intervención del sistema.&quot;,&quot;audio&quot;:&quot;&quot;},{&quot;text&quot;:&quot;&quot;,&quot;audio&quot;:&quot;&quot;},{&quot;text&quot;:&quot;&quot;,&quot;audio&quot;:&quot;&quot;}],&quot;solution&quot;:0,&quot;solutionMulti&quot;:[2],&quot;solutionOrder&quot;:[],&quot;solutionWord&quot;:&quot;&quot;,&quot;solutionWordAudio&quot;:&quot;&quot;,&quot;percentageShow&quot;:35,&quot;difficulty&quot;:2,&quot;msgHit&quot;:&quot;Felicitaciones!! Va más allá de la definición básica del USB, relacionando el bus serie, la gestión de energía y la unificación de protocolos que revolucionaron el diseño de hardware.&quot;,&quot;msgHitAudio&quot;:&quot;&quot;,&quot;msgError&quot;:&quot;Vuelve a intentarlo!!&quot;,&quot;msgErrorAudio&quot;:&quot;&quot;},{&quot;type&quot;:0,&quot;typeSelect&quot;:0,&quot;url&quot;:&quot;&quot;,&quot;author&quot;:&quot;&quot;,&quot;alt&quot;:&quot;&quot;,&quot;audio&quot;:&quot;&quot;,&quot;question&quot;:&quot;En un quirófano, un monitor multiparamétrico muestra en tiempo real la frecuencia cardíaca del paciente en una pantalla LED, emite una alarma sonora intermitente si hay riesgo y genera de forma automática un reporte impreso en papel térmico de las anomalías detectadas. Si analizamos la ingeniería de estos tres periféricos de salida, ¿cuál de las siguientes afirmaciones es falsa respecto a su comportamiento operativo?&quot;,&quot;numberOptions&quot;:3,&quot;options&quot;:[{&quot;text&quot;:&quot;Todos comparten la misma naturaleza arquitectónica al ser periféricos de salida unidireccional que transforman señales digitales procesadas en estímulos tangibles o perceptibles.&quot;,&quot;audio&quot;:&quot;&quot;},{&quot;text&quot;:&quot;Operan como dispositivos mixtos (Entrada/Salida) porque el médico interactúa visualmente con la pantalla para retroalimentar el sistema de manera bidireccional continua.&quot;,&quot;audio&quot;:&quot;&quot;},{&quot;text&quot;:&quot;Dependen estrictamente de la recepción previa de datos procesados por la Unidad de Control y la ALU para poder emitir luz, sonido o impresiones.&quot;,&quot;audio&quot;:&quot;&quot;},{&quot;text&quot;:&quot;Ninguno de ellos realiza operaciones de modulación de señales analógicas hacia redes externas de telecomunicación por sí mismos.&quot;,&quot;audio&quot;:&quot;&quot;},{&quot;text&quot;:&quot;&quot;,&quot;audio&quot;:&quot;&quot;},{&quot;text&quot;:&quot;&quot;,&quot;audio&quot;:&quot;&quot;}],&quot;solution&quot;:0,&quot;solutionMulti&quot;:[1],&quot;solutionOrder&quot;:[],&quot;solutionWord&quot;:&quot;&quot;,&quot;solutionWordAudio&quot;:&quot;&quot;,&quot;percentageShow&quot;:35,&quot;difficulty&quot;:3,&quot;msgHit&quot;:&quot;Felicitaciones!! Evalúa la capacidad de distinguir entre el rol puramente de salida del dispositivo (el monitor, la bocina y la impresora en ese instante) frente a la acción humana posterior, evitando confundir la interpretación del usuario con la naturaleza técnica del hardware.&quot;,&quot;msgHitAudio&quot;:&quot;&quot;,&quot;msgError&quot;:&quot;Vuelve a intentarlo!! &quot;,&quot;msgErrorAudio&quot;:&quot;&quot;},{&quot;type&quot;:0,&quot;typeSelect&quot;:0,&quot;url&quot;:&quot;&quot;,&quot;author&quot;:&quot;&quot;,&quot;alt&quot;:&quot;&quot;,&quot;audio&quot;:&quot;&quot;,&quot;question&quot;:&quot;Antes de la estandarización masiva impulsada a finales de los 90, conectar un mouse, una impresora, un teclado o una unidad externa a una computadora implicaba utilizar puertos diferentes (Serial, Paralelo, PS/2), apagar el equipo para conectarlos y lidiar con conflictos de interrupciones de hardware (IRQ). Hoy en día, el estándar USB permite conectar cualquiera de estos periféricos con el equipo encendido (hot-swapping), gestionando energía y datos simultáneamente. Desde el punto de vista del diseño de sistemas, ¿cuál fue la verdadera disrupción estructural de este estándar?&quot;,&quot;numberOptions&quot;:3,&quot;options&quot;:[{&quot;text&quot;:&quot;La eliminación total de la necesidad de utilizar unidades de almacenamiento secundario en la placa madre.&quot;,&quot;audio&quot;:&quot;&quot;},{&quot;text&quot;:&quot;La unificación de la arquitectura de buses serie bajo un controlador centralizado que gestiona de manera transparente protocolos de comunicación mixtos de datos y suministro eléctrico.&quot;,&quot;audio&quot;:&quot;&quot;},{&quot;text&quot;:&quot;La transformación de cualquier dispositivo de salida en un componente de entrada analógica bidireccional autónomo.&quot;,&quot;audio&quot;:&quot;&quot;},{&quot;text&quot;:&quot;a delegación de todas las tareas lógicas de la CPU hacia el periférico conectado, anulando la Arquitectura de Von Neumann.&quot;,&quot;audio&quot;:&quot;&quot;},{&quot;text&quot;:&quot;&quot;,&quot;audio&quot;:&quot;&quot;},{&quot;text&quot;:&quot;&quot;,&quot;audio&quot;:&quot;&quot;}],&quot;solution&quot;:0,&quot;solutionMulti&quot;:[1],&quot;solutionOrder&quot;:[],&quot;solutionWord&quot;:&quot;&quot;,&quot;solutionWordAudio&quot;:&quot;&quot;,&quot;percentageShow&quot;:35,&quot;difficulty&quot;:3,&quot;msgHit&quot;:&quot;Plantea un análisis histórico-tecnológico de alto nivel. Evalúa si el estudiante comprende que el USB no es solo un \&quot;enchufe cómodo\&quot;, sino una arquitectura de bus serie inteligente que unificó energía, protocolos y control de periféricos de entrada y salida.&quot;,&quot;msgHitAudio&quot;:&quot;&quot;,&quot;msgError&quot;:&quot;Vuelve a intentarlo!!&quot;,&quot;msgErrorAudio&quot;:&quot;&quot;},{&quot;type&quot;:0,&quot;typeSelect&quot;:0,&quot;url&quot;:&quot;&quot;,&quot;author&quot;:&quot;&quot;,&quot;alt&quot;:&quot;&quot;,&quot;audio&quot;:&quot;&quot;,&quot;question&quot;:&quot;¿Por qué conceptualmente un escáner óptico de documentos difiere radicalmente de un dispositivo de entrada como el mouse, a pesar de que ambos se clasifiquen bajo la misma categoría general?&quot;,&quot;numberOptions&quot;:3,&quot;options&quot;:[{&quot;text&quot;:&quot;Porque el mouse es un periférico de salida analógica y el escáner actúa como memoria caché secundaria.&quot;,&quot;audio&quot;:&quot;&quot;},{&quot;text&quot;:&quot;Porque el escáner realiza un doble flujo de modulación y demodulación de paquetes de red, rol exclusivo de los puertos USB.&quot;,&quot;audio&quot;:&quot;&quot;},{&quot;text&quot;:&quot;Porque el mouse traduce coordenadas relativas de desplazamiento manual en tiempo real, mientras que el escáner digitaliza propiedades ópticas y físicas estáticas del mundo real para convertirlas en archivos de datos.&quot;,&quot;audio&quot;:&quot;&quot;},{&quot;text&quot;:&quot;La delegación de todas las tareas lógicas de la CPU hacia el periférico conectado, anulando la Arquitectura de Von Neumann.&quot;,&quot;audio&quot;:&quot;&quot;},{&quot;text&quot;:&quot;&quot;,&quot;audio&quot;:&quot;&quot;},{&quot;text&quot;:&quot;&quot;,&quot;audio&quot;:&quot;&quot;}],&quot;solution&quot;:0,&quot;solutionMulti&quot;:[2],&quot;solutionOrder&quot;:[],&quot;solutionWord&quot;:&quot;&quot;,&quot;solutionWordAudio&quot;:&quot;&quot;,&quot;percentageShow&quot;:35,&quot;difficulty&quot;:3,&quot;msgHit&quot;:&quot;Felicitaciones!! El mouse captura movimiento continuo; el escáner digitaliza objetos estáticos.&quot;,&quot;msgHitAudio&quot;:&quot;&quot;,&quot;msgError&quot;:&quot;Vuelve a intentarlo!!&quot;,&quot;msgErrorAudio&quot;:&quot;&quot;},{&quot;type&quot;:0,&quot;typeSelect&quot;:0,&quot;url&quot;:&quot;&quot;,&quot;author&quot;:&quot;&quot;,&quot;alt&quot;:&quot;&quot;,&quot;audio&quot;:&quot;&quot;,&quot;question&quot;:&quot;En un sistema de automatización escolar, un tótem interactivo procesa la asistencia de los alumnos mediante biometría dactilar, proyecta los resultados en una pizarra digital y sincroniza las actas con el servidor de la nube. Si analizamos la naturaleza operativa de sus periféricos, ¿cómo se contrastan funcionalmente?&quot;,&quot;numberOptions&quot;:3,&quot;options&quot;:[{&quot;text&quot;:&quot;El tótem utiliza exclusivamente dispositivos de almacenamiento masivo y un bus de control de alta velocidad.&quot;,&quot;audio&quot;:&quot;&quot;},{&quot;text&quot;:&quot;La captura dactilar traduce propiedades físicas del usuario al sistema (entrada), la pizarra emite datos procesados (salida) y la sincronización requiere una gestión bidireccional de red (mixto).&quot;,&quot;audio&quot;:&quot;&quot;},{&quot;text&quot;:&quot;Todos operan bajo el mismo principio de modulación analógica unidireccional gestionado directamente por la ALU.&quot;,&quot;audio&quot;:&quot;&quot;},{&quot;text&quot;:&quot;&quot;,&quot;audio&quot;:&quot;&quot;},{&quot;text&quot;:&quot;&quot;,&quot;audio&quot;:&quot;&quot;},{&quot;text&quot;:&quot;&quot;,&quot;audio&quot;:&quot;&quot;}],&quot;solution&quot;:0,&quot;solutionMulti&quot;:[1],&quot;solutionOrder&quot;:[],&quot;solutionWord&quot;:&quot;&quot;,&quot;solutionWordAudio&quot;:&quot;&quot;,&quot;percentageShow&quot;:35,&quot;difficulty&quot;:3,&quot;msgHit&quot;:&quot;Felicitaciones!! El lector ingresa datos físicos, la pizarra emite información visual y la red comunica bidireccionalmente.&quot;,&quot;msgHitAudio&quot;:&quot;&quot;,&quot;msgError&quot;:&quot;Vuelve a intentarlo!!&quot;,&quot;msgErrorAudio&quot;:&quot;&quot;}],&quot;numRound&quot;:12,&quot;time&quot;:7,&quot;shuffle&quot;:false,&quot;caseSensitive&quot;:false,&quot;accentSensitive&quot;:true,&quot;showSolution&quot;:true,&quot;timeShowSolution&quot;:5,&quot;customMessages&quot;:true,&quot;numLevels&quot;:3,&quot;initialLevel&quot;:1,&quot;levelNames&quot;:[&quot;Fácil&quot;,&quot;Medio&quot;,&quot;Difícil&quot;],&quot;minQuestionsShown&quot;:5,&quot;evaluation&quot;:true,&quot;evaluationID&quot;:&quot;f33ae91f-a166-464c-be7d-8160fda1b8c9&quot;,&quot;passScoreMode&quot;:&quot;global&quot;,&quot;passScoreCustom&quot;:5,&quot;itinerary&quot;:{&quot;showClue&quot;:false,&quot;clueGame&quot;:&quot;&quot;,&quot;percentageClue&quot;:40,&quot;showCodeAccess&quot;:false,&quot;codeAccess&quot;:&quot;&quot;,&quot;messageCodeAccess&quot;:&quot;&quot;},&quot;isScorm&quot;:0,&quot;textButtonScorm&quot;:&quot;Guardar la puntuación&quot;,&quot;repeatActivity&quot;:true,&quot;weighted&quot;:89,&quot;msgs&quot;:{&quot;msgReady&quot;:&quot;¿Preparado?&quot;,&quot;msgStartGame&quot;:&quot;Pulsa aquí para jugar&quot;,&quot;msgCheck&quot;:&quot;Comprobar&quot;,&quot;msgSelectOption&quot;:&quot;Haz clic en una opción para elegir tu respuesta.&quot;,&quot;msgNext&quot;:&quot;Siguiente pregunta&quot;,&quot;msgPlayAgain&quot;:&quot;Jugar otra vez&quot;,&quot;msgHits&quot;:&quot;Aciertos&quot;,&quot;msgErrors&quot;:&quot;Errores&quot;,&quot;msgScore&quot;:&quot;Puntuación&quot;,&quot;msgLevel&quot;:&quot;Nivel&quot;,&quot;msgMaxLevel&quot;:&quot;Nivel más alto alcanzado&quot;,&quot;msgAnswered&quot;:&quot;Contestadas&quot;,&quot;msgGameOver&quot;:&quot;¡Fin de la partida!&quot;,&quot;msgSuccesses&quot;:&quot;¡Correcto! | ¡Excelente! | ¡Genial! | ¡Muy bien! | ¡Perfecto!&quot;,&quot;msgFailures&quot;:&quot;¡No era eso! | ¡Incorrecto! | ¡No es correcto! | ¡Lo sentimos! | ¡Error!&quot;,&quot;msgQuestion&quot;:&quot;Pregunta&quot;,&quot;msgDifficulty&quot;:&quot;Dificultad&quot;,&quot;msgLevelEasy&quot;:&quot;Fácil&quot;,&quot;msgLevelMedium&quot;:&quot;Medio&quot;,&quot;msgLevelHard&quot;:&quot;Difícil&quot;,&quot;msgLevelExpert&quot;:&quot;Experto&quot;,&quot;msgLevelMaster&quot;:&quot;Maestro&quot;,&quot;msgLevelUp&quot;:&quot;¡Subes de nivel!&quot;,&quot;msgLevelDown&quot;:&quot;Bajas de nivel&quot;,&quot;msgReportTitle&quot;:&quot;Informe final&quot;,&quot;msgReportHigh&quot;:&quot;Excelente. Dominas los contenidos de mayor nivel.&quot;,&quot;msgReportMedium&quot;:&quot;Bien hecho. Has alcanzado el nivel intermedio.&quot;,&quot;msgReportLow&quot;:&quot;Necesitas un poco más de práctica. Repasa los contenidos básicos.&quot;,&quot;msgEndGameScore&quot;:&quot;Comience la partida antes de guardar la puntuación.&quot;,&quot;msgScoreScorm&quot;:&quot;La puntuación no se puede guardar porque esta página no forma parte  de un paquete SCORM.&quot;,&quot;msgOnlySaveScore&quot;:&quot;¡Solo puede guardar la puntuación una vez!&quot;,&quot;msgOnlySave&quot;:&quot;Solo puede guardar una vez&quot;,&quot;msgInformation&quot;:&quot;Información&quot;,&quot;msgYouScore&quot;:&quot;Su puntuación&quot;,&quot;msgOnlySaveAuto&quot;:&quot;Su puntuación se guardará después de cada pregunta. Solo puede jugar una vez.&quot;,&quot;msgSaveAuto&quot;:&quot;Su puntuación se guardará automáticamente después de cada pregunta.&quot;,&quot;msgSeveralScore&quot;:&quot;Puede guardar la puntuación tantas veces como quiera&quot;,&quot;msgYouLastScore&quot;:&quot;La última puntuación guardada es&quot;,&quot;msgActityComply&quot;:&quot;Ya ha realizado esta actividad.&quot;,&quot;msgPlaySeveralTimes&quot;:&quot;Puede realizar esta actividad cuantas veces quiera&quot;,&quot;msgUncompletedActivity&quot;:&quot;Actividad no completada&quot;,&quot;msgSuccessfulActivity&quot;:&quot;Actividad superada. Puntuación: %s&quot;,&quot;msgUnsuccessfulActivity&quot;:&quot;Actividad no superada. Puntuación: %s&quot;,&quot;msgPassScore&quot;:&quot;Puntuación mínima necesaria para aprobar esta actividad: %s&quot;,&quot;msgTypeGame&quot;:&quot;Cuestionario adaptativo&quot;,&quot;msgCorrect&quot;:&quot;Correcto&quot;,&quot;msgIncorrect&quot;:&quot;Incorrecto&quot;,&quot;msgPlayAudio&quot;:&quot;Reproducir audio&quot;,&quot;msgPauseAudio&quot;:&quot;Pausar audio&quot;,&quot;msgImageAlt&quot;:&quot;Ilustración&quot;,&quot;msgTime&quot;:&quot;Hora&quot;,&quot;msgStart&quot;:&quot;Inicio&quot;,&quot;msgTimeUp&quot;:&quot;¡Se acabó el tiempo!&quot;}}" data-idevice-template="adaptative-quiz.html">
+<div class="exe-adaptative-quiz-template">
+    
+            <div class="game-evaluation-ids js-hidden" data-id="idevice-mw7troae-rnp06i6x8" data-evaluationb="true" data-evaluationid="f33ae91f-a166-464c-be7d-8160fda1b8c9"></div>
+            <div id="adaptativeQuizRoot-idevice-mw7troae-rnp06i6x8" class="adaptative-quiz-IDevice" data-id="idevice-mw7troae-rnp06i6x8">
+                <div class="adaptative-quiz-instructions"><div style="font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #2d3748; line-height: 1.6; max-width: 900px; margin: 0 auto;"><!-- Encabezado de cierre épico -->
+<div style="background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%); color: #ffffff; padding: 18px 22px; border-radius: 12px; margin-bottom: 18px; box-shadow: 0 4px 12px rgba(30, 58, 138, 0.18); display: flex; align-items: center; gap: 14px;"><span style="font-size: 1.9em; background: rgba(255,255,255,0.18); padding: 6px 12px; border-radius: 10px;">🏆</span>
+<div><span style="display: block; font-size: 0.75em; text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.9; font-weight: 600;">Etapa de cierre</span>
+<h3 style="margin: 2px 0 0 0; font-size: 1.28em; font-weight: bold; color: #ffffff;">La recta final: Pon a prueba tu nivel experto</h3>
+</div>
+</div>
+<!-- Párrafo introductorio unificado y sin repeticiones -->
+<p style="font-size: 1.03em; color: #334155; margin: 0 0 18px 0;">Llegamos a la última etapa de nuestro recorrido. Ya exploraste la Realidad Aumentada, resolviste el crucigrama y analizaste los conceptos clave. Ahora te invitamos a superar este <strong>cuestionario adaptativo</strong>: un desafío inteligente de <strong>12 preguntas</strong> que se ajusta a tus respuestas para acompañarte a consolidar todo lo aprendido.</p>
+<!-- Bloque 1: Propósitos del desafío -->
+<div style="background: linear-gradient(135deg, #f0f7ff 0%, #e6f0fa 100%); border-left: 5px solid #1e3a8a; padding: 18px 22px; border-radius: 0 12px 12px 0; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(30, 58, 138, 0.08);"><span style="display: inline-block; background-color: #1e3a8a; color: #ffffff; font-size: 0.75em; font-weight: bold; text-transform: uppercase; letter-spacing: 0.05em; padding: 3px 10px; border-radius: 20px; margin-bottom: 10px;"> 🎯 Propósitos de esta instancia final </span>
+<p style="margin: 0 0 8px 0; font-weight: 600; font-size: 0.96em; color: #1e3a8a;">En este desafío te proponemos:</p>
+<ul style="margin: 0; padding-left: 20px; color: #1e293b; font-size: 0.96em;">
+<li style="margin-bottom: 6px;"><strong>Analizar y comparar</strong> de forma crítica el comportamiento lógico de los dispositivos de entrada, salida y mixtos frente a situaciones del mundo real.</li>
+<li style="margin: 0;"><strong>Autorregular tu aprendizaje</strong> mediante la reflexión sobre tus propios aciertos y errores, utilizando cada pausa como una oportunidad para afianzar tu comprensión de la arquitectura tecnológica.</li>
+</ul>
+</div>
+<!-- Bloque 2: Reglas del sistema adaptativo -->
+<div style="background-color: #f8fafc; border: 1px solid #cbd5e1; border-top: 4px solid #0284c7; border-radius: 12px; padding: 18px 22px; margin-bottom: 20px; box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);">
+<p style="margin: 0 0 8px 0; font-weight: bold; font-size: 1.03em; color: #0369a1;">⚙️ ¿Cómo funciona el juego y cómo debes avanzar?</p>
+<p style="margin: 0 0 14px 0; font-size: 0.95em; color: #334155;">El recorrido cuenta con <strong>12 preguntas en total</strong> (4 por cada nivel de dificultad: <em>Fácil, Medio y Difícil</em>) y se adapta dinámicamente a tu desempeño:</p>
+<!-- Regla de ascenso -->
+<div style="background-color: #ffffff; border: 1px solid #a7f3d0; border-left: 4px solid #059669; border-radius: 0 8px 8px 0; padding: 12px 16px; margin-bottom: 10px;">
+<p style="margin: 0; font-size: 0.94em; color: #334155;"><strong style="color: #047857;">⬆️ ¿Cómo se avanza de nivel?</strong> Para subir al siguiente escalón y acercarte a la cima, deberás responder correctamente <strong>dos preguntas seguidas</strong>. Esto confirmará que ya dominas los conceptos de esa etapa.</p>
+</div>
+<!-- Regla de retroalimentación y descenso -->
+<div style="background-color: #ffffff; border: 1px solid #fde68a; border-left: 4px solid #f59e0b; border-radius: 0 8px 8px 0; padding: 12px 16px;">
+<p style="margin: 0; font-size: 0.94em; color: #334155;"><strong style="color: #b45309;">🔄 ¿Qué pasa si te equivocas?</strong> Cada error incluye una <strong>retroalimentación reflexiva</strong> para que analices por qué fallaste antes de seguir. Como es un espacio de acompañamiento, si acumulas <strong>tres errores seguidos</strong>, bajarás al nivel anterior para afianzar las bases antes de volver a subir.</p>
+</div>
+</div>
+<!-- Bloque 3: Los 3 niveles del desafío en tarjetas progresivas -->
+<p style="font-weight: bold; font-size: 1.02em; color: #1e293b; margin: 0 0 12px 0;">📊 Los 3 niveles del desafío:</p>
+<div style="display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 20px;"><!-- Nivel 1 -->
+<div style="flex: 1 1 250px; background-color: #ecfdf5; border: 1px solid #a7f3d0; border-top: 4px solid #059669; border-radius: 10px; padding: 14px 16px;"><span style="display: inline-block; background-color: #059669; color: #ffffff; font-size: 0.72em; font-weight: bold; text-transform: uppercase; padding: 2px 9px; border-radius: 12px; margin-bottom: 6px;">Nivel 1 · Inicial</span>
+<p style="margin: 0; font-size: 0.93em; color: #064e3b;">Ponemos a prueba tu <strong>reconocimiento básico</strong> sobre la estructura y el flujo de los dispositivos.</p>
+</div>
+<!-- Nivel 2 -->
+<div style="flex: 1 1 250px; background-color: #fffbeb; border: 1px solid #fde68a; border-top: 4px solid #f59e0b; border-radius: 10px; padding: 14px 16px;"><span style="display: inline-block; background-color: #d97706; color: #ffffff; font-size: 0.72em; font-weight: bold; text-transform: uppercase; padding: 2px 9px; border-radius: 12px; margin-bottom: 6px;">Nivel 2 · Intermedio</span>
+<p style="margin: 0; font-size: 0.93em; color: #78350f;">Deberás <strong>comparar el comportamiento lógico</strong> de los periféricos frente a situaciones cotidianas.</p>
+</div>
+<!-- Nivel 3 -->
+<div style="flex: 1 1 250px; background-color: #f5f3ff; border: 1px solid #ddd6fe; border-top: 4px solid #7c3aed; border-radius: 10px; padding: 14px 16px;"><span style="display: inline-block; background-color: #7c3aed; color: #ffffff; font-size: 0.72em; font-weight: bold; text-transform: uppercase; padding: 2px 9px; border-radius: 12px; margin-bottom: 6px;">Nivel 3 · Experto</span>
+<p style="margin: 0; font-size: 0.93em; color: #4c1d95;">Analizarás <strong>casos complejos en instituciones</strong> para demostrar que comprendes la arquitectura de hardware en la vida real.</p>
+</div>
+</div>
+<!-- Bloque 4: Cierre motivador -->
+<div style="background: linear-gradient(135deg, #1e293b 0%, #334155 100%); color: #ffffff; border-radius: 10px; padding: 15px 20px; display: flex; align-items: center; gap: 12px; box-shadow: 0 3px 10px rgba(15, 23, 42, 0.12);"><span style="font-size: 1.5em;">🚀</span>
+<p style="margin: 0; font-size: 0.96em; color: #f8fafc;"><strong>¡Confía en el conocimiento que construiste paso a paso!</strong> Lee cada pregunta con atención, analiza las opciones y demuestra todo lo que eres capaz de lograr. ¡Mucho éxito en la cima!</p>
+</div>
+</div></div>
+                
+            <div class="ADAPTATIVEQUIZ-MainContainer" id="adaptativeQuizMainContainer-idevice-mw7troae-rnp06i6x8" style="display:none">
+                <div class="ADAPTATIVEQUIZ-GameContainer" id="adaptativeQuizGameContainer-idevice-mw7troae-rnp06i6x8">
+                    <div class="ADAPTATIVEQUIZ-ScoreBoard" id="adaptativeQuizScoreBoard-idevice-mw7troae-rnp06i6x8">
+                        <span class="ADAPTATIVEQUIZ-ScoreLabel">Pregunta: <strong id="adaptativeQuizRound-idevice-mw7troae-rnp06i6x8">0 / 0</strong></span>
+                        <span class="ADAPTATIVEQUIZ-ScoreLabel">Nivel: <strong class="ADAPTATIVEQUIZ-LevelValue" id="adaptativeQuizLevel-idevice-mw7troae-rnp06i6x8">—</strong></span>
+                        <span class="ADAPTATIVEQUIZ-ScoreLabel">Aciertos: <strong id="adaptativeQuizHits-idevice-mw7troae-rnp06i6x8">0</strong></span>
+                        <span class="ADAPTATIVEQUIZ-ScoreLabel">Errores: <strong id="adaptativeQuizErrors-idevice-mw7troae-rnp06i6x8">0</strong></span>
+                        <span class="ADAPTATIVEQUIZ-ScoreLabel">Puntuación: <strong id="adaptativeQuizScore-idevice-mw7troae-rnp06i6x8">0</strong></span>
+                        <span class="ADAPTATIVEQUIZ-ScoreLabel ADAPTATIVEQUIZ-TimeBox" id="adaptativeQuizTimeBox-idevice-mw7troae-rnp06i6x8" style="display:inline-flex">
+                            <strong><span class="sr-av">Hora:</span></strong>
+                            <span id="adaptativeQuizTime-idevice-mw7troae-rnp06i6x8" class="ADAPTATIVEQUIZ-Time">07:00</span>
+                        </span>
+                    </div>
+                    <div class="ADAPTATIVEQUIZ-ShowClue" id="adaptativeQuizShowClue-idevice-mw7troae-rnp06i6x8" style="display:none" aria-live="polite">
+                        <span class="sr-av">Información:</span>
+                        <p class="ADAPTATIVEQUIZ-ShowClueText" id="adaptativeQuizShowClueText-idevice-mw7troae-rnp06i6x8"></p>
+                    </div>
+                    <div class="ADAPTATIVEQUIZ-StartGameDiv" id="adaptativeQuizStartGameDiv-idevice-mw7troae-rnp06i6x8" style="display:none">
+                        <p class="ADAPTATIVEQUIZ-Ready">¿Preparado?</p>
+                        <button type="button" class="ADAPTATIVEQUIZ-BtnStart" id="adaptativeQuizBtnStart-idevice-mw7troae-rnp06i6x8">Inicio</button>
+                    </div>
+                    <div class="ADAPTATIVEQUIZ-QuestionContainer" id="adaptativeQuizQuestionContainer-idevice-mw7troae-rnp06i6x8"></div>
+                    <div class="ADAPTATIVEQUIZ-ButtonsContainer" id="adaptativeQuizButtonsContainer-idevice-mw7troae-rnp06i6x8">
+                        <button type="button" class="ADAPTATIVEQUIZ-BtnCheck" id="adaptativeQuizBtnCheck-idevice-mw7troae-rnp06i6x8">Comprobar</button>
+                        <button type="button" class="ADAPTATIVEQUIZ-BtnNewGame" id="adaptativeQuizBtnNewGame-idevice-mw7troae-rnp06i6x8" style="display:none">Jugar otra vez</button>
+                    </div>
+                    <div class="ADAPTATIVEQUIZ-Report" id="adaptativeQuizReport-idevice-mw7troae-rnp06i6x8" style="display:none" aria-live="polite"></div>
+                    <div class="ADAPTATIVEQUIZ-Cubierta" id="adaptativeQuizCubierta-idevice-mw7troae-rnp06i6x8" style="display:none">
+                        <div class="ADAPTATIVEQUIZ-CodeAccessDiv" id="adaptativeQuizCodeAccessDiv-idevice-mw7troae-rnp06i6x8" style="display:none">
+                            <div class="ADAPTATIVEQUIZ-MessageCodeAccess" id="adaptativeQuizMessageCodeAccess-idevice-mw7troae-rnp06i6x8"></div>
+                            <div class="ADAPTATIVEQUIZ-DataCodeAccessE">
+                                <label class="sr-av" for="adaptativeQuizCodeAccessInput-idevice-mw7troae-rnp06i6x8">Access code:</label>
+                                <input type="text" class="ADAPTATIVEQUIZ-CodeAccessInput form-control" id="adaptativeQuizCodeAccessInput-idevice-mw7troae-rnp06i6x8" placeholder="Access code" />
+                                <a href="#" id="adaptativeQuizCodeAccessButton-idevice-mw7troae-rnp06i6x8" title="Submit">
+                                    <strong class="sr-av">Submit</strong>
+                                    <img class="ADAPTATIVEQUIZ-IconSubmit" alt="" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+                <div class="Games-BottonContainer d-flex align-items-center justify-content-end mx-auto p-0 w-100"></div>
+                
+            </div>
+        
+</div>
+
+</div>
+</div>
+</article>
+</div></main><div class="nav-buttons">
+<a href="../html/5-autoevaluacion.html" title="Anterior" class="nav-button nav-button-left"><span>Anterior</span></a>
+<a href="../html/7-informe-de-progreso.html" title="Siguiente" class="nav-button nav-button-right"><span>Siguiente</span></a>
+</div>
+<footer id="siteFooter"><div id="siteFooterContent"> <div id="packageLicense" class="cc cc-by-sa"> <p> <span class="license-label">Licencia: </span><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="license">Creative Commons: Reconocimiento - compartir igual 4.0</a></p>
+</div>
+<div id="siteUserFooter"> <div><style>
+
+<div style="background-color: #f0f9ff; border: 1px solid #bae6fd; border-left: 6px solid #0284c7; border-radius: 6px; padding: 18px 22px; margin: 10px 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #1e293b; font-size: 15px; line-height: 1.6; text-align: justify;">
+  <p style="margin: 0;">
+    En esta sección encontrarás actividades interactivas para poner en práctica lo aprendido sobre <strong>Hardware y Arquitectura</strong>: analizar el ciclo de instrucción en un vídeo interactivo, explorar componentes en un panel gráfico, resolver desafíos en Edpuzzle, jugar a <em>El Rosco</em> e interactuar con modelos en Realidad Aumentada. Cada propuesta te ayudará a fortalecer tu comprensión sobre el funcionamiento interno del computador. <strong>¡Explorá, probá y aprendé haciendo!</strong>
+  </p>
+</div>
+
+
+<div style="background-color: #f0f9ff; border: 1px solid #bae6fd; border-left: 6px solid #0284c7; border-radius: 6px; padding: 18px 22px; margin: 10px 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #1e293b; font-size: 15px; line-height: 1.6; text-align: justify;">
+  <p style="margin: 0;">
+    Aquí escribes tu texto o consigna de la sección. Este tono celeste suave cuida la vista de los estudiantes y mantiene la coherencia visual con todo tu módulo de Hardware y Arquitectura. <strong>¡Explorá, probá y aprendé haciendo!</strong>
+  </p>
+</div>
+
+
+  .print-banner-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 15px;
+  }
+
+  .btn-print-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #334155; /* Gris pizarra profesional */
+    color: #ffffff !important;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    text-decoration: none !important;
+  }
+
+  .btn-print-action:hover {
+    background-color: #1e293b;
+    transform: translateY(-1px);
+  }
+
+  .btn-print-action svg {
+    width: 18px;
+    height: 18px;
+    fill: #ffffff;
+  }
+</style>
+
+<!-- Botón de impresión visible y garantizado -->
+<div class="print-banner-container">
+  <button class="btn-print-action" onclick="window.print()" title="Imprimir o guardar como PDF esta página">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/>
+    </svg>
+    Imprimir página
+  </button>
+</div></div>
+</div></div></footer>
+</div>
+<p id="made-with-eXe"> <a href="https://exelearning.net/" target="_blank" rel="noopener"> <span>Creado con eXeLearning <span>(Ventana nueva)</span></span></a></p>
+</body>
+</html>

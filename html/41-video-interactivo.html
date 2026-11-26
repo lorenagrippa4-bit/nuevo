@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="es" id="exe-page-mvjvvlgw-to1ly9xib">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="eXeLearning v4.0.6">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="exe-pass-score" content="5">
+<link rel="license" type="text/html" href="https://creativecommons.org/licenses/by-sa/4.0/">
+<title>4.1 Vídeo Interactivo | “ Arquitectura de computadoras y Hardware: del núcleo de procesamiento a los dispositivos periféricos y de almacenamiento”</title>
+<link rel="icon" type="image/x-icon" href="../libs/favicon.ico">
+<meta name="description" content="Aborda el estudio integral del hardware de un sistema informático, estructurado desde sus principios teóricos fundamentales hasta la clasificación de sus componentes y periféricos.">
+<script>document.querySelector("html").classList.add("js");</script><script src="../libs/jquery/jquery.min.js"> </script><script src="../libs/common_i18n.js"> </script><script src="../libs/common.js"> </script><script src="../libs/exe_export.js"> </script><script src="../libs/bootstrap/bootstrap.bundle.min.js"> </script><link rel="stylesheet" href="../libs/bootstrap/bootstrap.min.css">
+<script src="../idevices/text/text.js"></script><link rel="stylesheet" href="../idevices/text/text.css">
+<script src="../idevices/interactive-video/interactive-video.js"></script><link rel="stylesheet" href="../idevices/interactive-video/interactive-video.css">
+<link rel="stylesheet" href="../content/css/base.css"><script src="../theme/style.js"> </script><link rel="stylesheet" href="../theme/style.css">
+<style>
+
+/* Personalización de botones y navegación  - Tonos Lila y Celeste Pastel */
+.nav-container, .pagination, .node-name, .iDevice_header 
+{
+    --primary-color: #9b87f5;
+    --secondary-color: #b5c7ed;
+    --accent-color: #dcd6f7;
+}
+
+/* Botones de navegación y pestañas (Inicio, Presentación, Motivación, etc.) */
+.ui-tabs-nav li a, 
+.pagination a, 
+.pagination span,
+.node a,
+.iDevice_header h2 
+{
+    background-color: #e8e4f8 !important; /* Lila pastel muy suave */
+    color: #4a4563 !important;
+    border-color: #b5c7ed !important;
+    transition: all 0.3s ease;
+}
+
+/* Estado activo o al pasar el cursor sobre los botones */
+.ui-tabs-nav li.ui-state-active a, 
+.ui-tabs-nav li a:hover,
+.pagination a:hover,
+.node.current > a 
+{
+    background: linear-gradient(135deg, #b5c7ed 0%, #d4b5ed 100%) !important; /* Degradado suave celeste y lila pastel */
+    color: #2c264a !important;
+    border-color: #9b87f5 !important;
+    font-weight: bold;
+}
+
+/* Forzar la eliminación de tonos verdes o naranjas heredados */
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default 
+{
+    background: #f3f0ff !important;
+    border: 1px solid #dcd6f7 !important;
+    color: #5c5470 !important;
+}
+
+/* Personalización del menú lateral y enlaces en estilo Neo - Tonos Azules */
+.node a, 
+.ui-widget-content .node a, 
+#siteNav ul li a 
+{
+    color: #2b4c7e !important; /* Color principal del texto de los enlaces */
+    transition: all 0.2s ease;
+}
+
+/* Efecto al pasar el cursor por encima de las opciones del menú */
+.node a:hover, 
+#siteNav ul li a:hover 
+{
+    color: #1a365d !important;
+    background-color: #e2ecf8 !important; /* Fondo azul pastel muy suave al pasar el mouse */
+    border-radius: 4px;
+}
+
+/* Estilo para la página o sección seleccionada actualmente (activa) */
+.node.current > a, 
+#siteNav ul li.current > a,
+.ui-state-active 
+{
+    background: linear-gradient(135deg, #3182ce 0%, #2b6cb0 100%) !important; /* Degradado en tonos azules */
+    color: #ffffff !important; /* Texto blanco para destacar perfectamente */
+    font-weight: bold !important;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(49, 130, 206, 0.2);
+}
+
+/* Ajuste general de los iconos o elementos del árbol de contenidos */
+#siteNav .node
+ {
+    margin-bottom: 2px;
+}
+
+
+
+
+  .cc-footer-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 15px;
+  }
+
+  .btn-print-footer {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #555555; /* Gris oscuro idéntico a tus referencias */
+    color: #ffffff !important;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-family: inherit;
+    cursor: pointer;
+    text-decoration: none !important;
+    transition: background-color 0.2s ease;
+  }
+
+  .btn-print-footer:hover {
+    background-color: #333333;
+  }
+
+  .btn-print-footer svg {
+    width: 16px;
+    height: 16px;
+    fill: #ffffff;
+  }
+
+
+<!-- Botón de impresión ubicado abajo junto al pie de página -->
+
+<div class="cc-footer-container">
+  <button class="btn-print-footer" onclick="window.print()" title="Imprimir o guardar como PDF">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/>
+    </svg>
+    Imprimir página
+  </button>
+</div>
+
+
+
+
+<div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; width: 100%; margin: 20px 0;">
+  
+  <style>
+    .titulo-principal {
+      font-size: 32px;
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 8px;
+      text-align: justify; /* Título justificado a ambos márgenes */
+      color: #1e3a8a;
+      transition: color 0.3s ease;
+      cursor: default;
+    }
+    /* Cambio de color automático al pasar el mouse por encima */
+    .titulo-principal:hover {
+      color: #2563eb;
+    }
+  </style>
+
+  <!-- Título principal justificado -->
+  <h1 class="titulo-principal">
+    “Arquitectura de computadoras y Hardware: del núcleo de procesamiento a los dispositivos periféricos y de almacenamiento”
+  </h1>
+
+  
+  <!-- Doble línea azul en todo el ancho -->
+  <hr style="border: none; border-top: 4px double #1d4ed8; width: 100%; margin: 0;">
+
+
+<style>
+  a:active,
+  a:focus,
+  button:active,
+  button:focus {
+    background-color: #dbeafe !important;
+    color: #1e3a8a !important;
+    outline: 2px solid #2563eb !important;
+  }
+</style>
+
+
+
+<style>
+  /* Selectores generales del árbol de navegación / menú lateral */
+  nav a,
+  nav button,
+  aside a,
+  aside button,
+  .exe-navigation a,
+  .exe-navigation button,
+  [role="navigation"] a,
+  [role="navigation"] button,
+  .tree-node a,
+  .tree-node span,
+  .node-label {
+    font-size: 1.08rem !important; /* Letra más grande */
+    color: #1d4ed8 !important;     /* Color azul */
+    font-weight: 500 !important;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease !important;
+  }
+
+  /* Al pasar el cursor o presionar (clic sostenido / foco) */
+  nav a:hover,
+  nav a:active,
+  nav a:focus,
+  aside a:hover,
+  aside a:active,
+  aside a:focus,
+  .exe-navigation a:hover,
+  .exe-navigation a:active,
+  .exe-navigation a:focus,
+  [role="navigation"] a:hover,
+  [role="navigation"] a:active,
+  [role="navigation"] a:focus,
+  .menu-presionado {
+    background-color: #bae6fd !important; /* Celeste fuerte al presionar/pasar */
+    color: #0c4a6e !important;
+    border-radius: 8px !important;
+    font-weight: 700 !important;
+  }
+
+  /* Elemento seleccionado / página activa: celeste más fuerte y definido */
+  .menu-seleccionado-celeste,
+  .active > a,
+  .current > a,
+  [aria-current="page"],
+  .selected {
+    background-color: #7dd3fc !important; /* Celeste más fuerte al seleccionar */
+    color: #082f49 !important;
+    border: 2px solid #0284c7 !important;
+    border-radius: 8px !important;
+    font-weight: 700 !important;
+    font-size: 1.1rem !important;
+  }
+</style>
+
+<script>
+  (function () {
+    function aplicarEstiloMenu() {
+      const selectores = 'nav a, aside a, .exe-navigation a, [role="navigation"] a, .tree-node a, .tree-node span';
+      const items = document.querySelectorAll(selectores);
+      const paginaActual = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase();
+
+      items.forEach(function (item) {
+        const href = (item.getAttribute('href') || '').split('/').pop().toLowerCase();
+
+        // Marca en celeste fuerte si corresponde a la página actual
+        if (href && paginaActual && href === paginaActual) {
+          item.classList.add('menu-seleccionado-celeste');
+          if (item.parentElement) {
+            item.parentElement.classList.add('menu-seleccionado-celeste');
+          }
+        }
+
+        // Al hacer clic o presionar, destaca en celeste más fuerte
+        item.addEventListener('pointerdown', function () {
+          items.forEach(function (el) {
+            el.classList.remove('menu-seleccionado-celeste');
+            el.classList.remove('menu-presionado');
+            if (el.parentElement) {
+              el.parentElement.classList.remove('menu-seleccionado-celeste');
+            }
+          });
+
+          item.classList.add('menu-seleccionado-celeste');
+          if (item.parentElement) {
+            item.parentElement.classList.add('menu-seleccionado-celeste');
+          }
+        });
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', aplicarEstiloMenu);
+    } else {
+      aplicarEstiloMenu();
+    }
+  })();
+</script>
+
+
+
+
+
+
+</div>
+
+
+  
+
+
+
+
+</style>
+</head>
+<body class="exe-export exe-web-site">
+<script>document.body.className+=" js"</script>
+<div class="exe-content exe-export pre-js siteNav-hidden"><a href="#page-mvjvvlgw-to1ly9xib" id="skipNav">Skip to content</a> <nav id="siteNav">
+<ul>
+<li> <a href="../index.html" class="main-node daddy">Inicio</a>
+<ul class="other-section">
+<li> <a href="../html/1-presentacion.html" class="daddy">1-Presentación</a>
+<ul class="other-section">
+<li> <a href="../html/11-objetivos.html" class="no-ch">1.1 Objetivos</a>
+</li>
+<li> <a href="../html/12-conocimientos-previos.html" class="no-ch">1.2 Conocimientos Previos</a>
+</li>
+<li> <a href="../html/13-hoja-de-ruta.html" class="no-ch">1.3 Hoja de Ruta</a>
+</li>
+<li> <a href="../html/14-motivacion.html" class="no-ch">1.4-Motivación</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li> <a href="../html/2-fundamentos-de-hardware-y-su-arquitectura.html" class="no-ch">2-Fundamentos de Hardware y su Arquitectura</a>
+</li>
+<li> <a href="../html/3-perifericos-y-sistemas-de-almacenamiento.html" class="no-ch">3-Periféricos y Sistemas de Almacenamiento</a>
+</li>
+<li class="current-page-parent"> <a href="../html/4-actividades.html" class="daddy">4-Actividades</a>
+<ul class="other-section">
+<li class="active"> <a href="../html/41-video-interactivo.html" class="active no-ch">4.1 Vídeo Interactivo</a>
+</li>
+<li> <a href="../html/42-panel-grafico-interactivo.html" class="no-ch">4.2 Panel Gráfico interactivo</a>
+</li>
+<li> <a href="../html/43-edpuzzle.html" class="no-ch">4.3 Edpuzzle</a>
+</li>
+<li> <a href="../html/44-el-rosco-hardware.html" class="no-ch">4.4 El Rosco hardware</a>
+</li>
+<li> <a href="../html/45-realidad-aumentada.html" class="no-ch">4.5 Realidad Aumentada</a>
+</li>
+</ul>
+</li>
+<li> <a href="../html/5-autoevaluacion.html" class="no-ch">5-Autoevaluación</a>
+</li>
+<li> <a href="../html/6-cierre.html" class="no-ch">6-Cierre</a>
+</li>
+<li> <a href="../html/7-informe-de-progreso.html" class="no-ch">7-Informe de Progreso</a>
+</li>
+<li> <a href="../html/8-bibliografia-y-creditos.html" class="no-ch">8-Bibliografía y Créditos</a>
+</li>
+</ul>
+</nav><main id="page-mvjvvlgw-to1ly9xib" class="page"> 
+<header class="main-header">
+<div class="package-header"><p class="package-title">“ Arquitectura de computadoras y Hardware: del núcleo de procesamiento a los dispositivos periféricos y de almacenamiento”</p></div>
+<div class="page-header"><h1 class="page-title">4.1 Vídeo Interactivo</h1></div>
+</header><div id="page-content-page-mvjvvlgw-to1ly9xib" class="page-content">
+<article id="block-mvn1h41b-16068j02s" class="box">
+<header class="box-head">
+<div class="box-icon exe-icon">
+<span class="exe-material-icon" style="--exe-material-icon-url:url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2248%22%20height%3D%2248%22%20viewBox%3D%220%20-960%20960%20960%22%3E%3Cpath%20d%3D%22M513-140H140q-24%200-42-18t-18-42v-540q0-24%2018-42t42-18h694q24%200%2042%2018t18%2042v246h-60v-246H140v540h373v60ZM395-297v-346l263%20173-263%20173ZM730-40l-5-48q-20-6-41-17.5T650-131l-42%2020-35-54%2038-30q-5-23-5-41.5t5-41.5l-38-30%2035-55%2042%2020q13-12%2034-24t41-18l5-49h60l6%2049q20%206%2041%2018t34%2024l42-20%2035%2055-38%2030q5%2023%205%2041.5t-5%2041.5l38%2030-35%2054-42-20q-13%2014-34%2025.5T796-88l-6%2048h-60Zm30-95q44%200%2073-29t29-73q0-44-29-73t-73-29q-44%200-73%2029t-29%2073q0%2044%2029%2073t73%2029Z%22%2F%3E%3C%2Fsvg%3E');" aria-hidden="true"></span>
+</div>
+<h1 class="box-title">Enfoque de descubrimiento</h1>
+<button class="box-toggle box-toggle-on" title="Toggle content">
+<span>Toggle content</span>
+</button></header>
+<div class="box-content">
+<div id="idevice-1792885062574-kizz2qvhz" class="idevice_node text" data-idevice-path="../idevices/text/" data-idevice-type="text" data-idevice-component-type="json" data-idevice-json-data="{&quot;ideviceId&quot;:&quot;idevice-1792885062574-kizz2qvhz&quot;}">
+<div class="exe-text-template">
+    <div style="font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #2d3748; line-height: 1.6; max-width: 900px; margin: 0px auto; text-align: justify;"><!-- Párrafo introductorio cercano y motivador -->
+<p style="font-size: 1.03em; color: #334155; margin: 0px 0px 18px; text-align: justify;">A continuación, explorarás un <strong>video interactivo</strong> diseñado con pausas estratégicas y preguntas guía para que construyas tu aprendizaje paso a paso mientras observas el sistema en acción.</p>
+<!-- Bloque 1: Propósitos / Lo que vas a lograr -->
+<div style="background: linear-gradient(135deg, #f0f7ff 0%, #e6f0fa 100%); border-left: 5px solid #1e3a8a; padding: 18px 22px; border-radius: 0 12px 12px 0; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(30, 58, 138, 0.08);"><span style="display: inline-block; background-color: #1e3a8a; color: #ffffff; font-size: 0.75em; font-weight: bold; text-transform: uppercase; letter-spacing: 0.05em; padding: 3px 10px; border-radius: 20px; margin-bottom: 10px;"> 🎯 Propósitos de esta actividad </span>
+<p style="margin: 0px 0px 8px; font-weight: 600; font-size: 0.96em; color: #1e3a8a; text-align: justify;">En este recorrido te invitamos a:</p>
+<ul style="margin: 0px; padding-left: 20px; color: #1e293b; font-size: 0.96em; text-align: justify;">
+<li style="margin-bottom: 6px;"><strong>Identificar y esquematizar</strong> los bloques funcionales básicos de una computadora (UCP, memoria principal, caché y buses) a partir de sus especificaciones técnicas.</li>
+<li style="margin-bottom: 6px;"><strong>Comprender de forma dinámica</strong> el recorrido, transporte y procesamiento de las instrucciones y los datos dentro del núcleo del sistema.</li>
+<li style="margin: 0;"><strong>Reflexionar</strong> sobre el funcionamiento real del equipo resolviendo las preguntas guía durante el video.</li>
+</ul>
+</div>
+<!-- Bloque 2: Consigna estructurada en 3 pasos visuales -->
+<div style="background-color: #f8fafc; border-width: 4px 1px 1px; border-style: solid; border-color: #0284c7 #cbd5e1 #cbd5e1; border-radius: 12px; padding: 18px 22px; box-shadow: rgba(15, 23, 42, 0.04) 0px 2px 6px; text-align: justify;">
+<p style="margin: 0px 0px 14px; font-weight: bold; font-size: 1.02em; color: #0369a1; text-align: justify;">🎬 Consigna de trabajo: ¿cómo interactuar con el video?</p>
+<!-- Paso 1 -->
+<div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px; text-align: justify;"><span style="background-color: #e0f2fe; color: #0369a1; font-weight: bold; font-size: 0.85em; min-width: 24px; height: 24px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-top: 2px;">1</span>
+<p style="margin: 0; font-size: 0.95em; color: #334155;"><strong>Observa y escucha con atención:</strong> sigue la explicación analizando el flujo operativo entre los componentes del hardware.</p>
+</div>
+<!-- Paso 2 -->
+<div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px; text-align: justify;"><span style="background-color: #e0f2fe; color: #0369a1; font-weight: bold; font-size: 0.85em; min-width: 24px; height: 24px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-top: 2px;">2</span>
+<p style="margin: 0; font-size: 0.95em; color: #334155;"><strong>Responde en cada pausa:</strong> a medida que avance la reproducción, el video se detendrá en momentos clave para plantearte interrogantes; resuélvelos de manera activa para comprobar tu comprensión antes de continuar. En la herramienta de Rellenar huecos debes escribir en minúsculas, para evitar que pierdas puntos.</p>
+</div>
+<!-- Paso 3 -->
+<div style="display: flex; align-items: flex-start; gap: 12px; text-align: justify;"><span style="background-color: #fef3c7; color: #b45309; font-weight: bold; font-size: 0.85em; min-width: 24px; height: 24px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-top: 2px;">3</span>
+<p style="margin: 0px; font-size: 0.95em; color: #334155; text-align: justify;"><strong>Registra tus dudas:</strong> si alguna pregunta te genera inquietudes o notas un concepto nuevo, anótalo para profundizarlo en clase.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article><article id="block-mwr3jrvp-o7f9fpc2z" class="box">
+<header class="box-head">
+<div class="box-icon exe-icon">
+<span class="exe-material-icon" style="--exe-material-icon-url:url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2248%22%20height%3D%2248%22%20viewBox%3D%220%20-960%20960%20960%22%3E%3Cpath%20d%3D%22M513-140H140q-24%200-42-18t-18-42v-540q0-24%2018-42t42-18h694q24%200%2042%2018t18%2042v246h-60v-246H140v540h373v60ZM395-297v-346l263%20173-263%20173ZM730-40l-5-48q-20-6-41-17.5T650-131l-42%2020-35-54%2038-30q-5-23-5-41.5t5-41.5l-38-30%2035-55%2042%2020q13-12%2034-24t41-18l5-49h60l6%2049q20%206%2041%2018t34%2024l42-20%2035%2055-38%2030q5%2023%205%2041.5t-5%2041.5l38%2030-35%2054-42-20q-13%2014-34%2025.5T796-88l-6%2048h-60Zm30-95q44%200%2073-29t29-73q0-44-29-73t-73-29q-44%200-73%2029t-29%2073q0%2044%2029%2073t73%2029Z%22%2F%3E%3C%2Fsvg%3E');" aria-hidden="true"></span>
+</div>
+<h1 class="box-title">Vídeo interactivo</h1>
+<button class="box-toggle box-toggle-on" title="Toggle content">
+<span>Toggle content</span>
+</button></header>
+<div class="box-content">
+<div id="idevice-1795307193060-2oxjg51m1" class="idevice_node interactive-video" data-idevice-path="../idevices/interactive-video/" data-idevice-type="interactive-video">
+<div class="game-evaluation-ids js-hidden" data-id="idevice-1795307193060-2oxjg51m1" data-evaluationb="true" data-evaluationid="f33ae91f-a166-464c-be7d-8160fda1b8c9"></div>			<div class="exe-interactive-video">				<p id="exe-interactive-video-file" class="js-hidden">					<a href="https://www.youtube.com/watch?v=-URf73z9tKY?si=ga6zs0uOHzCoHOr7">com/watch?v=-URf73z9tKY?si=ga6zs0uOHzCoHOr7</a>				</p>				<script id="exe-interactive-video-contents" type="application/json">					
+{"slides":[{"type":"cloze","text":"<p dir=\"ltr\" style=\"text-align: left;\" data-path-to-node=\"8,0,0\">Completá los espacios en blanco sobre los componentes internos de la CPU y la función de sus registros:</p>\n<p dir=\"ltr\" style=\"text-align: left;\" data-path-to-node=\"8,0,0\">Para que la CPU realice operaciones, necesita comunicarse con la memoria principal y los dispositivos de entrada/salida a través de los <span style=\"text-decoration: line-through;\"><code data-path-to-node=\"8,0,1,0\" data-index-in-node=\"136\">buses</code></span> .Dentro del procesador, los <span style=\"text-decoration: line-through;\"><code data-path-to-node=\"8,0,1,0\" data-index-in-node=\"172\">registros</code></span> son unidades de almacenamiento temporal de velocidad muy alta donde se guarda la información que se está procesando en cada momento, como ocurre al sumar 7+3.</p>","startTime":85},{"type":"singleChoice","question":"<p>Dentro de la Unidad Aritmético-Lógica (ALU), ¿cuál es la función específica del <strong data-path-to-node=\"10,0,0\" data-index-in-node=\"90\">registro de estado</strong>?</p>","answers":[["Guardar la dirección de memoria de la próxima instrucción que debe ejecutarse.",0],["Registrar información sobre el resultado de la última operación realizada (por ejemplo, si fue cero, negativo o si hubo desbordamiento).",1],["Reemplazar a la memoria principal para almacenar de forma permanente los programas del usuario.",0]],"startTime":165},{"type":"multipleChoice","question":"<p>Cuál es la función del <strong data-path-to-node=\"2,0,0\" data-index-in-node=\"68\">registro contador de programa</strong> dentro de la Unidad de Control:</p>","answers":[["El registro contador de programa se encarga de guardar la dirección de memoria de la siguiente instrucción a ejecutar.",1],["Almacenar de forma permanente el sistema operativo y los archivos del usuario.",0],["Realizar sumas, restas y comparaciones lógicas entre dos números.",0],["Convertir las señales digitales en imágenes sobre la pantalla.",0]],"startTime":280},{"type":"sortableList","text":"<p style=\"text-align: left;\"><span class=\"animating\">Ordená cronológicamente los pasos explicados en el video para buscar y ejecutar una instrucción (tomando como referencia el ejemplo de la dirección 8 </span><span class=\"animating\">hacia la 9</span><span class=\"animating\">):</span></p>","startTime":400,"items":["Se toma la dirección guardada en el registro contador de programa (por ejemplo, dirección 8) y se copia la instrucción de esa posición de la memoria RAM al registro de instrucción.","Se actualiza el registro contador de programa para que apunte a la siguiente instrucción (por ejemplo, pasa a 9).","Se decodifica el código de la instrucción almacenada en el registro de instrucción para saber qué operación realizar.","Se generan y envían las señales de control a través del bus de control hacia los dispositivos que correspondan (como la ALU, la memoria principal o los canales de E/S) para ejecutarla."]}],"title":"Fases de Ejecución de una instrucción","description":"<p style=\"text-align: left;\">Observá con atención el video «La CPU: UC, ALU y las fases de ejecución de una instrucción». A medida que avance la reproducción, el video se detendrá en momentos clave para proponerte desafíos interactivos sobre cómo trabaja la CPU y cómo viajan los datos e instrucciones. Respondé cada actividad, revisá la retroalimentación inmediata que aparece al validar y, si alguna explicación o término te genera dudas, anotalo en tu registro de consultas para retomarlo en clase.</p>","coverType":"text","i18n":{"start":"Inicio","results":"Resultados","slide":"Diapositiva (fotograma)","score":"Puntuación","seen":"Visto","total":"Total","seeAll":"debe ver todo el contenido y contestar a las preguntas","noSlides":"El vídeo no tiene contenidos interactivos.","goOn":"Continuar","error":"Error","dataError":"Código no compatible","onlyOne":"Solo un vídeo interactivo por página.","cover":"Portada","fsWarning":"Salga del modo pantalla completa (tecla Esc) para ver la diapositiva","right":"¡Correcto!","wrong":"Incorrecto","sortableListInstructions":"Pinche y arrastre o use las flechas.","up":"Subir","down":"Bajar","rightAnswer":"Respuesta correcta:","notAnswered":"Por favor termine la actividad","check":"Comprobar","newWindow":"Ventana nueva","msgSaveAuto":"Su puntuación se guardará automáticamente después de cada pregunta.","msgYouScore":"Su puntuación","msgYouLastScore":"La última puntuación guardada es","msgActityComply":"Ya ha realizado esta actividad.","msgPlaySeveralTimes":"Puede realizar esta actividad cuantas veces quiera","msgScoreScorm":"La puntuación no se puede guardar porque esta página no forma parte  de un paquete SCORM.","msgEndGameScore":"Comience la partida antes de guardar la puntuación.","msgSeveralScore":"Puede guardar la puntuación tantas veces como quiera","msgOnlySaveScore":"¡Solo puede guardar la puntuación una vez!","msgOnlySave":"Solo puede guardar una vez","msgOnlySaveAuto":"Su puntuación se guardará después de cada pregunta. Solo puede jugar una vez.","msgUncompletedActivity":"Actividad no completada","msgSuccessfulActivity":"Actividad superada. Puntuación: %s","msgUnsuccessfulActivity":"Actividad no superada. Puntuación: %s","msgPassScore":"Puntuación mínima necesaria para aprobar esta actividad: %s","msgTypeGame":"Vídeo interactivo","youtubePreviewNotice":"YouTube videos cannot be embedded in preview mode. They will work correctly when exported and served from a web server."},"scorm":{"isScorm":0,"textButtonScorm":"Guardar la puntuación","repeatActivity":true,"weighted":100},"scoreNIA":false,"evaluation":true,"evaluationID":"f33ae91f-a166-464c-be7d-8160fda1b8c9","passScoreMode":"global","passScoreCustom":5,"ideviceID":"idevice-1795307193060-2oxjg51m1"}				</script>			</div>
+</div>
+</div>
+</article>
+</div></main><div class="nav-buttons">
+<a href="../html/4-actividades.html" title="Anterior" class="nav-button nav-button-left"><span>Anterior</span></a>
+<a href="../html/42-panel-grafico-interactivo.html" title="Siguiente" class="nav-button nav-button-right"><span>Siguiente</span></a>
+</div>
+<footer id="siteFooter"><div id="siteFooterContent"> <div id="packageLicense" class="cc cc-by-sa"> <p> <span class="license-label">Licencia: </span><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="license">Creative Commons: Reconocimiento - compartir igual 4.0</a></p>
+</div>
+<div id="siteUserFooter"> <div><style>
+
+<div style="background-color: #f0f9ff; border: 1px solid #bae6fd; border-left: 6px solid #0284c7; border-radius: 6px; padding: 18px 22px; margin: 10px 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #1e293b; font-size: 15px; line-height: 1.6; text-align: justify;">
+  <p style="margin: 0;">
+    En esta sección encontrarás actividades interactivas para poner en práctica lo aprendido sobre <strong>Hardware y Arquitectura</strong>: analizar el ciclo de instrucción en un vídeo interactivo, explorar componentes en un panel gráfico, resolver desafíos en Edpuzzle, jugar a <em>El Rosco</em> e interactuar con modelos en Realidad Aumentada. Cada propuesta te ayudará a fortalecer tu comprensión sobre el funcionamiento interno del computador. <strong>¡Explorá, probá y aprendé haciendo!</strong>
+  </p>
+</div>
+
+
+<div style="background-color: #f0f9ff; border: 1px solid #bae6fd; border-left: 6px solid #0284c7; border-radius: 6px; padding: 18px 22px; margin: 10px 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #1e293b; font-size: 15px; line-height: 1.6; text-align: justify;">
+  <p style="margin: 0;">
+    Aquí escribes tu texto o consigna de la sección. Este tono celeste suave cuida la vista de los estudiantes y mantiene la coherencia visual con todo tu módulo de Hardware y Arquitectura. <strong>¡Explorá, probá y aprendé haciendo!</strong>
+  </p>
+</div>
+
+
+  .print-banner-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 15px;
+  }
+
+  .btn-print-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #334155; /* Gris pizarra profesional */
+    color: #ffffff !important;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    text-decoration: none !important;
+  }
+
+  .btn-print-action:hover {
+    background-color: #1e293b;
+    transform: translateY(-1px);
+  }
+
+  .btn-print-action svg {
+    width: 18px;
+    height: 18px;
+    fill: #ffffff;
+  }
+</style>
+
+<!-- Botón de impresión visible y garantizado -->
+<div class="print-banner-container">
+  <button class="btn-print-action" onclick="window.print()" title="Imprimir o guardar como PDF esta página">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/>
+    </svg>
+    Imprimir página
+  </button>
+</div></div>
+</div></div></footer>
+</div>
+<p id="made-with-eXe"> <a href="https://exelearning.net/" target="_blank" rel="noopener"> <span>Creado con eXeLearning <span>(Ventana nueva)</span></span></a></p>
+</body>
+</html>

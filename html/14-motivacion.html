@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="es" id="exe-page-mwrs4h0w-tn09jt1xf">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="eXeLearning v4.0.6">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="exe-pass-score" content="5">
+<link rel="license" type="text/html" href="https://creativecommons.org/licenses/by-sa/4.0/">
+<title>1.4-Motivación | “ Arquitectura de computadoras y Hardware: del núcleo de procesamiento a los dispositivos periféricos y de almacenamiento”</title>
+<link rel="icon" type="image/x-icon" href="../libs/favicon.ico">
+<meta name="description" content="Aborda el estudio integral del hardware de un sistema informático, estructurado desde sus principios teóricos fundamentales hasta la clasificación de sus componentes y periféricos.">
+<script>document.querySelector("html").classList.add("js");</script><script src="../libs/jquery/jquery.min.js"> </script><script src="../libs/common_i18n.js"> </script><script src="../libs/common.js"> </script><script src="../libs/exe_export.js"> </script><script src="../libs/bootstrap/bootstrap.bundle.min.js"> </script><link rel="stylesheet" href="../libs/bootstrap/bootstrap.min.css">
+<script src="../idevices/udl-content/udl-content.js"></script><link rel="stylesheet" href="../idevices/udl-content/udl-content.css">
+<script src="../idevices/text/text.js"></script><link rel="stylesheet" href="../idevices/text/text.css">
+<script src="../idevices/image-gallery/simple-lightbox.min.js"></script><link rel="stylesheet" href="../idevices/image-gallery/simple-lightbox.min.css">
+<script src="../idevices/image-gallery/image-gallery.js"></script><link rel="stylesheet" href="../idevices/image-gallery/image-gallery.css">
+<script src="../libs/exe_lightbox/exe_lightbox.js"> </script>
+<link rel="stylesheet" href="../libs/exe_lightbox/exe_lightbox.css">
+<link rel="stylesheet" href="../content/css/base.css"><script src="../theme/style.js"> </script><link rel="stylesheet" href="../theme/style.css">
+<style>
+
+/* Personalización de botones y navegación  - Tonos Lila y Celeste Pastel */
+.nav-container, .pagination, .node-name, .iDevice_header 
+{
+    --primary-color: #9b87f5;
+    --secondary-color: #b5c7ed;
+    --accent-color: #dcd6f7;
+}
+
+/* Botones de navegación y pestañas (Inicio, Presentación, Motivación, etc.) */
+.ui-tabs-nav li a, 
+.pagination a, 
+.pagination span,
+.node a,
+.iDevice_header h2 
+{
+    background-color: #e8e4f8 !important; /* Lila pastel muy suave */
+    color: #4a4563 !important;
+    border-color: #b5c7ed !important;
+    transition: all 0.3s ease;
+}
+
+/* Estado activo o al pasar el cursor sobre los botones */
+.ui-tabs-nav li.ui-state-active a, 
+.ui-tabs-nav li a:hover,
+.pagination a:hover,
+.node.current > a 
+{
+    background: linear-gradient(135deg, #b5c7ed 0%, #d4b5ed 100%) !important; /* Degradado suave celeste y lila pastel */
+    color: #2c264a !important;
+    border-color: #9b87f5 !important;
+    font-weight: bold;
+}
+
+/* Forzar la eliminación de tonos verdes o naranjas heredados */
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default 
+{
+    background: #f3f0ff !important;
+    border: 1px solid #dcd6f7 !important;
+    color: #5c5470 !important;
+}
+
+/* Personalización del menú lateral y enlaces en estilo Neo - Tonos Azules */
+.node a, 
+.ui-widget-content .node a, 
+#siteNav ul li a 
+{
+    color: #2b4c7e !important; /* Color principal del texto de los enlaces */
+    transition: all 0.2s ease;
+}
+
+/* Efecto al pasar el cursor por encima de las opciones del menú */
+.node a:hover, 
+#siteNav ul li a:hover 
+{
+    color: #1a365d !important;
+    background-color: #e2ecf8 !important; /* Fondo azul pastel muy suave al pasar el mouse */
+    border-radius: 4px;
+}
+
+/* Estilo para la página o sección seleccionada actualmente (activa) */
+.node.current > a, 
+#siteNav ul li.current > a,
+.ui-state-active 
+{
+    background: linear-gradient(135deg, #3182ce 0%, #2b6cb0 100%) !important; /* Degradado en tonos azules */
+    color: #ffffff !important; /* Texto blanco para destacar perfectamente */
+    font-weight: bold !important;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(49, 130, 206, 0.2);
+}
+
+/* Ajuste general de los iconos o elementos del árbol de contenidos */
+#siteNav .node
+ {
+    margin-bottom: 2px;
+}
+
+
+
+
+  .cc-footer-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 15px;
+  }
+
+  .btn-print-footer {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #555555; /* Gris oscuro idéntico a tus referencias */
+    color: #ffffff !important;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-family: inherit;
+    cursor: pointer;
+    text-decoration: none !important;
+    transition: background-color 0.2s ease;
+  }
+
+  .btn-print-footer:hover {
+    background-color: #333333;
+  }
+
+  .btn-print-footer svg {
+    width: 16px;
+    height: 16px;
+    fill: #ffffff;
+  }
+
+
+<!-- Botón de impresión ubicado abajo junto al pie de página -->
+
+<div class="cc-footer-container">
+  <button class="btn-print-footer" onclick="window.print()" title="Imprimir o guardar como PDF">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/>
+    </svg>
+    Imprimir página
+  </button>
+</div>
+
+
+
+
+<div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; width: 100%; margin: 20px 0;">
+  
+  <style>
+    .titulo-principal {
+      font-size: 32px;
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 8px;
+      text-align: justify; /* Título justificado a ambos márgenes */
+      color: #1e3a8a;
+      transition: color 0.3s ease;
+      cursor: default;
+    }
+    /* Cambio de color automático al pasar el mouse por encima */
+    .titulo-principal:hover {
+      color: #2563eb;
+    }
+  </style>
+
+  <!-- Título principal justificado -->
+  <h1 class="titulo-principal">
+    “Arquitectura de computadoras y Hardware: del núcleo de procesamiento a los dispositivos periféricos y de almacenamiento”
+  </h1>
+
+  
+  <!-- Doble línea azul en todo el ancho -->
+  <hr style="border: none; border-top: 4px double #1d4ed8; width: 100%; margin: 0;">
+
+
+<style>
+  a:active,
+  a:focus,
+  button:active,
+  button:focus {
+    background-color: #dbeafe !important;
+    color: #1e3a8a !important;
+    outline: 2px solid #2563eb !important;
+  }
+</style>
+
+
+
+<style>
+  /* Selectores generales del árbol de navegación / menú lateral */
+  nav a,
+  nav button,
+  aside a,
+  aside button,
+  .exe-navigation a,
+  .exe-navigation button,
+  [role="navigation"] a,
+  [role="navigation"] button,
+  .tree-node a,
+  .tree-node span,
+  .node-label {
+    font-size: 1.08rem !important; /* Letra más grande */
+    color: #1d4ed8 !important;     /* Color azul */
+    font-weight: 500 !important;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease !important;
+  }
+
+  /* Al pasar el cursor o presionar (clic sostenido / foco) */
+  nav a:hover,
+  nav a:active,
+  nav a:focus,
+  aside a:hover,
+  aside a:active,
+  aside a:focus,
+  .exe-navigation a:hover,
+  .exe-navigation a:active,
+  .exe-navigation a:focus,
+  [role="navigation"] a:hover,
+  [role="navigation"] a:active,
+  [role="navigation"] a:focus,
+  .menu-presionado {
+    background-color: #bae6fd !important; /* Celeste fuerte al presionar/pasar */
+    color: #0c4a6e !important;
+    border-radius: 8px !important;
+    font-weight: 700 !important;
+  }
+
+  /* Elemento seleccionado / página activa: celeste más fuerte y definido */
+  .menu-seleccionado-celeste,
+  .active > a,
+  .current > a,
+  [aria-current="page"],
+  .selected {
+    background-color: #7dd3fc !important; /* Celeste más fuerte al seleccionar */
+    color: #082f49 !important;
+    border: 2px solid #0284c7 !important;
+    border-radius: 8px !important;
+    font-weight: 700 !important;
+    font-size: 1.1rem !important;
+  }
+</style>
+
+<script>
+  (function () {
+    function aplicarEstiloMenu() {
+      const selectores = 'nav a, aside a, .exe-navigation a, [role="navigation"] a, .tree-node a, .tree-node span';
+      const items = document.querySelectorAll(selectores);
+      const paginaActual = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase();
+
+      items.forEach(function (item) {
+        const href = (item.getAttribute('href') || '').split('/').pop().toLowerCase();
+
+        // Marca en celeste fuerte si corresponde a la página actual
+        if (href && paginaActual && href === paginaActual) {
+          item.classList.add('menu-seleccionado-celeste');
+          if (item.parentElement) {
+            item.parentElement.classList.add('menu-seleccionado-celeste');
+          }
+        }
+
+        // Al hacer clic o presionar, destaca en celeste más fuerte
+        item.addEventListener('pointerdown', function () {
+          items.forEach(function (el) {
+            el.classList.remove('menu-seleccionado-celeste');
+            el.classList.remove('menu-presionado');
+            if (el.parentElement) {
+              el.parentElement.classList.remove('menu-seleccionado-celeste');
+            }
+          });
+
+          item.classList.add('menu-seleccionado-celeste');
+          if (item.parentElement) {
+            item.parentElement.classList.add('menu-seleccionado-celeste');
+          }
+        });
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', aplicarEstiloMenu);
+    } else {
+      aplicarEstiloMenu();
+    }
+  })();
+</script>
+
+
+
+
+
+
+</div>
+
+
+  
+
+
+
+
+</style>
+</head>
+<body class="exe-export exe-web-site">
+<script>document.body.className+=" js"</script>
+<div class="exe-content exe-export pre-js siteNav-hidden"><a href="#page-mwrs4h0w-tn09jt1xf" id="skipNav">Skip to content</a> <nav id="siteNav">
+<ul>
+<li class="current-page-parent"> <a href="../index.html" class="main-node daddy">Inicio</a>
+<ul class="other-section">
+<li class="current-page-parent"> <a href="../html/1-presentacion.html" class="daddy">1-Presentación</a>
+<ul class="other-section">
+<li> <a href="../html/11-objetivos.html" class="no-ch">1.1 Objetivos</a>
+</li>
+<li> <a href="../html/12-conocimientos-previos.html" class="no-ch">1.2 Conocimientos Previos</a>
+</li>
+<li> <a href="../html/13-hoja-de-ruta.html" class="no-ch">1.3 Hoja de Ruta</a>
+</li>
+<li class="active"> <a href="../html/14-motivacion.html" class="active no-ch">1.4-Motivación</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li> <a href="../html/2-fundamentos-de-hardware-y-su-arquitectura.html" class="no-ch">2-Fundamentos de Hardware y su Arquitectura</a>
+</li>
+<li> <a href="../html/3-perifericos-y-sistemas-de-almacenamiento.html" class="no-ch">3-Periféricos y Sistemas de Almacenamiento</a>
+</li>
+<li> <a href="../html/4-actividades.html" class="daddy">4-Actividades</a>
+<ul class="other-section">
+<li> <a href="../html/41-video-interactivo.html" class="no-ch">4.1 Vídeo Interactivo</a>
+</li>
+<li> <a href="../html/42-panel-grafico-interactivo.html" class="no-ch">4.2 Panel Gráfico interactivo</a>
+</li>
+<li> <a href="../html/43-edpuzzle.html" class="no-ch">4.3 Edpuzzle</a>
+</li>
+<li> <a href="../html/44-el-rosco-hardware.html" class="no-ch">4.4 El Rosco hardware</a>
+</li>
+<li> <a href="../html/45-realidad-aumentada.html" class="no-ch">4.5 Realidad Aumentada</a>
+</li>
+</ul>
+</li>
+<li> <a href="../html/5-autoevaluacion.html" class="no-ch">5-Autoevaluación</a>
+</li>
+<li> <a href="../html/6-cierre.html" class="no-ch">6-Cierre</a>
+</li>
+<li> <a href="../html/7-informe-de-progreso.html" class="no-ch">7-Informe de Progreso</a>
+</li>
+<li> <a href="../html/8-bibliografia-y-creditos.html" class="no-ch">8-Bibliografía y Créditos</a>
+</li>
+</ul>
+</nav><main id="page-mwrs4h0w-tn09jt1xf" class="page"> 
+<header class="main-header">
+<div class="package-header"><p class="package-title">“ Arquitectura de computadoras y Hardware: del núcleo de procesamiento a los dispositivos periféricos y de almacenamiento”</p></div>
+<div class="page-header"><h1 class="page-title">1.4-Motivación</h1></div>
+</header><div id="page-content-page-mwrs4h0w-tn09jt1xf" class="page-content">
+<article id="block-mv4m0hmq-9pdqdv2jt" class="box">
+<header class="box-head">
+<div class="box-icon exe-icon">
+<span class="exe-material-icon" style="--exe-material-icon-url:url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2248%22%20height%3D%2248%22%20viewBox%3D%220%20-960%20960%20960%22%3E%3Cpath%20d%3D%22m490-439%20212-141-212-141v282ZM213-81q-25%203-44.5-11.5T146-132L82-630q-3-25%2012-45t40-23l64-7v387q0%2050%2034.5%2085t84.5%2035h489q0%2020-12%2034.5T762-147L213-81Zm105-177q-24%200-42-18t-18-42v-502q0-24%2018-42t42-18h502q24%200%2042%2018t18%2042v502q0%2024-18%2042t-42%2018H318Z%22%2F%3E%3C%2Fsvg%3E');" aria-hidden="true"></span>
+</div>
+<h1 class="box-title">Motivación</h1>
+<button class="box-toggle box-toggle-on" title="Toggle content">
+<span>Toggle content</span>
+</button></header>
+<div class="box-content">
+<div id="idevice-1791770701634-jik0j5s0x" class="idevice_node udl-content" data-idevice-path="../idevices/udl-content/" data-idevice-type="udl-content">
+<div class="exe-udlContent exe-udlContent-engagement"><section class="exe-udlContent-block"><div class="exe-udlContent-content"><div class="exe-udlContent-content-main"><div style="font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #2d3748; line-height: 1.6; max-width: 900px; margin: 0px auto; text-align: justify;"><!-- Encabezado tipo banner (sin parecer un botón cliqueable) -->
+<div style="background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%); color: #ffffff; padding: 18px 24px; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(30, 58, 138, 0.15); display: flex; align-items: center; gap: 14px;"><span style="font-size: 1.8em; background: rgba(255,255,255,0.15); padding: 8px 12px; border-radius: 10px;">⚡</span>
+<div><span style="display: block; font-size: 0.75em; text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.85; font-weight: 600;">Disparador audiovisual</span>
+<h3 style="margin: 2px 0 0 0; font-size: 1.3em; font-weight: bold; color: #ffffff;">¿Cómo cobra vida una computadora?</h3>
+</div>
+</div>
+<!-- Párrafo introductorio pulido -->
+<p style="font-size: 1.03em; color: #334155; margin-bottom: 20px; text-align: justify;">Usamos computadoras en todos lados, todo el tiempo y en múltiples formatos: para comunicarnos, editar videos, estudiar o enviar mensajes. Sin embargo, estamos tan acostumbrados a ellas como herramientas cotidianas que pocas veces nos detenemos a pensar <strong>qué ocurre realmente en su interior</strong> cada vez que tocamos una tecla o hacemos clic.</p>
+<!-- Caja de consigna de observación activa -->
+<div style="background-color: #f8fafc; border-width: 1px 1px 1px 5px; border-style: solid; border-color: #cbd5e1 #cbd5e1 #cbd5e1 #2563eb; border-radius: 0px 12px 12px 0px; padding: 20px 22px; margin-bottom: 22px; box-shadow: rgba(15, 23, 42, 0.04) 0px 2px 6px; text-align: justify;">
+<p style="margin: 0 0 14px 0; font-weight: bold; font-size: 1.05em; color: #1e3a8a;">👀 Tu consigna antes de reproducir el video:</p>
+<!-- Paso 1 -->
+<div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;"><span style="background-color: #dbeafe; color: #1e40af; font-weight: bold; font-size: 0.85em; min-width: 24px; height: 24px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-top: 2px;">1</span>
+<p style="margin: 0; font-size: 0.96em; color: #334155;"><strong>Sigue el viaje de la información:</strong> presta atención a cómo se transforman los impulsos eléctricos y el lenguaje binario (ceros y unos) mientras viajan por los <strong>buses de datos</strong>.</p>
+</div>
+<!-- Paso 2 -->
+<div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;"><span style="background-color: #dbeafe; color: #1e40af; font-weight: bold; font-size: 0.85em; min-width: 24px; height: 24px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-top: 2px;">2</span>
+<p style="margin: 0; font-size: 0.96em; color: #334155;"><strong>Identifica al "cerebro" del equipo:</strong> observa qué funciones cumple la <strong>UCP (Unidad Central de Procesamiento)</strong> durante ese recorrido.</p>
+</div>
+<!-- Paso 3 -->
+<div style="display: flex; align-items: flex-start; gap: 12px;"><span style="background-color: #dbeafe; color: #1e40af; font-weight: bold; font-size: 0.85em; min-width: 24px; height: 24px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-top: 2px;">3</span>
+<p style="margin: 0; font-size: 0.96em; color: #334155;"><strong>Toma nota de tus dudas:</strong> registra los conceptos nuevos o aquello que te genere curiosidad sobre cómo dialogan los componentes internos.</p>
+</div>
+</div>
+<!-- Cierre conector hacia el video incrustado debajo -->
+<div style="background-color: #eff6ff; border: 1px solid #bfdbfe; border-radius: 10px; padding: 12px 16px; display: flex; align-items: center; gap: 10px; color: #1e40af; font-size: 0.95em; text-align: justify;"><span style="font-size: 1.3em;">🎬</span> <span>En el siguiente recurso del portal <strong>Educ.ar</strong> verás de forma dinámica cómo trabajan en conjunto el hardware y el software para hacer posible cada acción frente a la pantalla:</span></div>
+</div>
+<div style="max-width: 800px; margin: 18px auto 0px; text-align: justify;"><iframe width="800" height="450" style="width: 100%; max-width: 800px; height: auto; aspect-ratio: 16 / 9; border-radius: 12px; border: 1px solid #cbd5e1; box-shadow: 0 6px 18px rgba(15, 23, 42, 0.12);" src="https://www.youtube-nocookie.com/embed/oYxE3L-6-a8?rel=0" title="Microaprendizaje: ¿Cómo funciona una computadora?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="allowfullscreen">
+  </iframe></div></div></div></section></div>
+</div>
+</div>
+</article><article id="block-mwrs7acv-r9a6kh14x" class="box">
+<header class="box-head">
+<div class="box-icon exe-icon">
+<span class="exe-material-icon" style="--exe-material-icon-url:url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2248%22%20height%3D%2248%22%20viewBox%3D%220%20-960%20960%20960%22%3E%3Cpath%20d%3D%22M223-40H100q-24%200-42-18t-18-42v-123h60v123h123v60Zm514%200v-60h123v-123h60v123q0%2024-18%2042t-42%2018H737ZM479.17-225Q360-225%20264-293.5%20168-362%20119-480q49-119%20145-187.5T479.5-736q119.5%200%20216%2068.5T840-480q-48%20118-144.83%20186.5-96.83%2068.5-216%2068.5Zm1.05-123Q535-348%20574-386.72t39-93.5Q613-535%20574.07-574t-94-39q-55.07%200-93.57%2038.93-38.5%2038.93-38.5%2094t38.72%2093.57q38.72%2038.5%2093.5%2038.5Zm-.22-60q-30%200-51-21t-21-51q0-30%2021-51.5t51-21.5q30%200%2051.5%2021.29T553-480q0%2030-21.29%2051T480-408ZM40-737v-123q0-24%2018-42t42-18h123v60H100v123H40Zm820%200v-123H737v-60h123q24%200%2042%2018t18%2042v123h-60Z%22%2F%3E%3C%2Fsvg%3E');" aria-hidden="true"></span>
+</div>
+<h1 class="box-title">Exploración</h1>
+<button class="box-toggle box-toggle-on" title="Toggle content">
+<span>Toggle content</span>
+</button></header>
+<div class="box-content">
+<div id="idevice-1791774251086-ql68ilbto" class="idevice_node text" data-idevice-path="../idevices/text/" data-idevice-type="text" data-idevice-component-type="json" data-idevice-json-data="{&quot;ideviceId&quot;:&quot;idevice-1791774251086-ql68ilbto&quot;}">
+<div class="exe-text-template">
+    <div style="font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #2d3748; line-height: 1.6; max-width: 900px; margin: 0 auto;"><!-- Separador visual con subtítulo de sección -->
+<div style="border-top: 2px solid #e2e8f0; margin: 28px 0 20px 0; padding-top: 20px;"><span style="background-color: #e0e7ff; color: #1e3a8a; font-size: 0.78em; font-weight: bold; text-transform: uppercase; letter-spacing: 0.05em; padding: 4px 12px; border-radius: 20px;"> 🔍 Exploración visual de la arquitectura </span>
+<h3 style="margin: 10px 0 0 0; font-size: 1.25em; color: #1e293b;">Del video a los esquemas técnicos: ¿cómo se conectan las piezas?</h3>
+</div>
+<!-- Bloque de Objetivos -->
+<div style="background: linear-gradient(135deg, #f0f7ff 0%, #e6f0fa 100%); border-left: 5px solid #1e3a8a; padding: 16px 20px; border-radius: 0 10px 10px 0; margin-bottom: 22px; box-shadow: 0 2px 6px rgba(30, 58, 138, 0.06);">
+<p style="margin: 0 0 8px 0; font-weight: bold; font-size: 1.02em; color: #1e3a8a;">🎯 Propósitos de esta exploración:</p>
+<ul style="margin: 0; padding-left: 20px; color: #1e293b; font-size: 0.96em;">
+<li style="margin-bottom: 6px;">Relacionar la <strong>arquitectura interna del computador</strong> con el flujo operativo de los periféricos y el almacenamiento secundario mediante el análisis de diagramas.</li>
+<li style="margin: 0;">Examinar cómo interactúan los componentes de <strong>procesamiento, memoria y almacenamiento</strong> para explicar el funcionamiento práctico del equipo.</li>
+</ul>
+</div>
+<!-- Consigna de la Galería Interactiva -->
+<div style="background-color: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 20px 24px; margin-bottom: 22px;">
+<p style="margin: 0 0 16px 0; font-size: 0.98em; color: #334155;">A continuación, encontrarás una <strong>galería interactiva con tres diagramas técnicos</strong>. Cada esquema se enfoca en un nivel diferente del hardware e incluye una descripción detallada de las estructuras que lo componen. Explóralos con atención, observa cómo se vinculan entre sí y utiliza los siguientes interrogantes como guía de análisis:</p>
+<!-- Nivel 1: Conexión entre diagramas -->
+<div style="background-color: #ffffff; border: 1px solid #e2e8f0; border-top: 4px solid #2563eb; border-radius: 10px; padding: 16px 18px; margin-bottom: 16px;">
+<p style="margin: 0 0 12px 0; font-weight: bold; font-size: 0.98em; color: #1d4ed8;">🧩 Parte 1 · Conectando los tres diagramas</p>
+<div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px;"><span style="background-color: #dbeafe; color: #1e40af; font-weight: bold; font-size: 0.82em; min-width: 22px; height: 22px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-top: 2px;">1</span>
+<p style="margin: 0; font-size: 0.94em; color: #334155;"><strong>Periféricos y comunicación:</strong> Observa los dispositivos del <em>Diagrama 2</em> (teclado, pantalla, periféricos mixtos). ¿En qué bloque específico del <em>Diagrama 1</em> encajan dentro del sistema? ¿A través de qué elemento del Modelo de Von Neumann se comunican con la <strong>Unidad Central de Procesamiento (UCP)</strong>?</p>
+</div>
+<div style="display: flex; align-items: flex-start; gap: 10px;"><span style="background-color: #dbeafe; color: #1e40af; font-weight: bold; font-size: 0.82em; min-width: 22px; height: 22px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-top: 2px;">2</span>
+<p style="margin: 0; font-size: 0.94em; color: #334155;"><strong>El viaje de los datos:</strong> Compara los medios de almacenamiento secundario del <em>Diagrama 3</em> (discos magnéticos, pendrives, SSD) con el sistema de buses del <em>Diagrama 1</em> y la placa madre del <em>Diagrama 2</em>. ¿Por qué vías viaja la información desde un pendrive hasta la <strong>Memoria Principal</strong> para que el procesador pueda ejecutar un archivo?</p>
+</div>
+</div>
+<!-- Nivel 2: Escenarios prácticos -->
+<div style="background-color: #ffffff; border: 1px solid #e2e8f0; border-top: 4px solid #f59e0b; border-radius: 10px; padding: 16px 18px;">
+<p style="margin: 0 0 12px 0; font-weight: bold; font-size: 0.98em; color: #b45309;">⚡ Parte 2 · Poniendo a prueba tus conclusiones en situaciones reales</p>
+<div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px;"><span style="background-color: #fef3c7; color: #b45309; font-weight: bold; font-size: 0.82em; min-width: 22px; height: 22px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-top: 2px;">3</span>
+<p style="margin: 0; font-size: 0.94em; color: #334155;"><strong>Memoria volátil vs. persistente:</strong> Al comparar la <strong>Memoria RAM</strong> (<em>Diagrama 1</em>) con un SSD o disco rígido (<em>Diagrama 3</em>), ¿por qué el sistema necesita ambos tipos de memoria y qué ocurre con los datos en cada una cuando apagas la computadora?</p>
+</div>
+<div style="display: flex; align-items: flex-start; gap: 10px;"><span style="background-color: #fef3c7; color: #b45309; font-weight: bold; font-size: 0.82em; min-width: 22px; height: 22px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-top: 2px;">4</span>
+<p style="margin: 0; font-size: 0.94em; color: #334155;"><strong>El recorrido de una tecla:</strong> Imagina que presionas una tecla en el teclado (<em>Diagrama 2</em>). ¿Qué bloque del <em>Diagrama 1</em> recibe y decide qué hacer con esa instrucción, y en qué caso esa información terminaría guardada en un medio del <em>Diagrama 3</em>?</p>
+</div>
+</div>
+</div>
+<!-- ========================================================= --> <!-- SECCIÓN DE ACORDEONES DESPLEGABLES (3 DIAGRAMAS TÉCNICOS) --> <!-- ========================================================= -->
+<p style="font-weight: bold; font-size: 1.02em; color: #1e3a8a; margin: 0 0 12px 0;">📂 Haz clic en cada diagrama para desplegar su descripción técnica:</p>
+<!-- Acordeón 1: Diagrama 1 --><details style="background-color: #ffffff; border: 1px solid #cbd5e1; border-left: 5px solid #0284c7; border-radius: 8px; margin-bottom: 12px; box-shadow: 0 2px 5px rgba(15, 23, 42, 0.04); overflow: hidden;">
+<summary style="padding: 14px 18px; font-weight: bold; font-size: 1.02em; color: #0369a1; background-color: #f0f9ff; cursor: pointer; list-style: none; display: flex; align-items: center; justify-content: space-between;"><span>🖥️ Diagrama 1: El Modelo de Von Neumann</span> <span style="font-size: 0.82em; background-color: #e0f2fe; color: #0369a1; padding: 3px 10px; border-radius: 12px; font-weight: 600;">Ver detalle ▾</span></summary>
+<div style="padding: 16px 20px; border-top: 1px solid #e2e8f0; color: #334155; font-size: 0.95em;"><!-- Si deseas insertar la imagen del Diagrama 1 dentro del acordeón, pégala aquí arriba -->
+<p style="margin: 0 0 10px 0;">Este diagrama ilustra la <strong>Arquitectura de Von Neumann</strong>, el diseño conceptual sobre el que se basan casi todas las computadoras modernas. Es el "plano de planta" de la computadora y muestra cómo el sistema se organiza en bloques:</p>
+<ul style="margin: 0 0 10px 0; padding-left: 20px;">
+<li style="margin-bottom: 6px;"><strong>Unidad Central de Procesamiento (CPU):</strong> Contiene la <em>Unidad de Control</em> ("el jefe"), la <em>Unidad Aritmética Lógica o ALU</em> ("el matemático") y los <em>Registros</em> (pequeñas memorias superrápidas).</li>
+<li style="margin-bottom: 6px;"><strong>Memoria Principal:</strong> Dividida en <em>RAM</em> (volátil y rápida para el trabajo actual) y <em>ROM</em> (permanente con instrucciones básicas de arranque).</li>
+<li style="margin: 0;"><strong>Buses de comunicación:</strong> Canales de datos, direcciones y control que conectan los bloques internos con los periféricos de Entrada/Salida.</li>
+</ul>
+</div>
+</details><!-- Acordeón 2: Diagrama 2 --><details style="background-color: #ffffff; border: 1px solid #cbd5e1; border-left: 5px solid #7c3aed; border-radius: 8px; margin-bottom: 12px; box-shadow: 0 2px 5px rgba(15, 23, 42, 0.04); overflow: hidden;">
+<summary style="padding: 14px 18px; font-weight: bold; font-size: 1.02em; color: #6d28d9; background-color: #f5f3ff; cursor: pointer; list-style: none; display: flex; align-items: center; justify-content: space-between;"><span>⌨️ Diagrama 2: Periféricos e Interacción</span> <span style="font-size: 0.82em; background-color: #ede9fe; color: #6d28d9; padding: 3px 10px; border-radius: 12px; font-weight: 600;">Ver detalle ▾</span></summary>
+<div style="padding: 16px 20px; border-top: 1px solid #e2e8f0; color: #334155; font-size: 0.95em;"><!-- Si deseas insertar la imagen del Diagrama 2 dentro del acordeón, pégala aquí arriba -->
+<p style="margin: 0 0 10px 0;">Este diagrama se enfoca en cómo los datos entran y salen del núcleo de procesamiento central. Presenta una clasificación clara según la dirección del flujo de información:</p>
+<ul style="margin: 0 0 10px 0; padding-left: 20px;">
+<li style="margin-bottom: 6px;"><strong>Dispositivos de Entrada:</strong> Herramientas como el teclado, el mouse (dispositivo apuntador) o lectores de códigos de barras que capturan información y la envían al equipo.</li>
+<li style="margin-bottom: 6px;"><strong>Dispositivos de Salida:</strong> Pantallas, impresoras y parlantes que muestran o reproducen la información procesada (<em>Output</em>).</li>
+<li style="margin: 0;"><strong>Dispositivos Mixtos (E/S):</strong> Componentes como el módem (que modula y demodula señales para internet) o los puertos USB, que actúan tanto para entrada como para salida de datos.</li>
+</ul>
+<p style="margin: 0; background-color: #faf5ff; padding: 8px 12px; border-radius: 6px; color: #5b21b6; font-size: 0.92em;"><strong>💡 Dato clave:</strong> Observa en el esquema cómo todos estos dispositivos se conectan a la <strong>placa madre</strong>, el circuito principal que vincula todos los elementos del sistema.</p>
+</div>
+</details><!-- Acordeón 3: Diagrama 3 --><details style="background-color: #ffffff; border: 1px solid #cbd5e1; border-left: 5px solid #059669; border-radius: 8px; margin-bottom: 12px; box-shadow: 0 2px 5px rgba(15, 23, 42, 0.04); overflow: hidden;">
+<summary style="padding: 14px 18px; font-weight: bold; font-size: 1.02em; color: #047857; background-color: #ecfdf5; cursor: pointer; list-style: none; display: flex; align-items: center; justify-content: space-between;"><span>💾 Diagrama 3: Medios de Almacenamiento Secundario</span> <span style="font-size: 0.82em; background-color: #d1fae5; color: #047857; padding: 3px 10px; border-radius: 12px; font-weight: 600;">Ver detalle ▾</span></summary>
+<div style="padding: 16px 20px; border-top: 1px solid #e2e8f0; color: #334155; font-size: 0.95em;"><!-- Si deseas insertar la imagen del Diagrama 3 dentro del acordeón, pégala aquí arriba -->
+<p style="margin: 0 0 10px 0;">Este esquema presenta los diferentes tipos de <strong>Almacenamiento Secundario</strong>. A diferencia de la memoria RAM, estos medios conservan la información de manera permanente incluso cuando la computadora está apagada. Se clasifican según su tecnología:</p>
+<ul style="margin: 0; padding-left: 20px;">
+<li style="margin-bottom: 6px;"><strong>Medios Magnéticos:</strong> Cintas (para copias de seguridad masivas), discos magnéticos (como el disco rígido tradicional) y las antiguas unidades Zip. Utilizan campos magnéticos para leer y escribir datos.</li>
+<li style="margin-bottom: 6px;"><strong>Medios Ópticos y Magneto-Ópticos:</strong> Evolución del CD-ROM (CD-R, CD-RW), tecnología WORM (escribir una vez, leer muchas) y DVD. Usan láseres para grabar datos en superficies reflexivas.</li>
+<li style="margin: 0;"><strong>Memorias Flash:</strong> Pendrives y unidades de estado sólido (<strong>SSD</strong>) modernas, que son rápidas, no tienen partes móviles y constituyen la base del almacenamiento actual.</li>
+</ul>
+</div>
+</details></div>
+</div>
+</div>
+</div>
+</article><article id="block-mv4nvjvr-gi3x1vv3h" class="box">
+<header class="box-head">
+<div class="box-icon exe-icon">
+<span class="exe-material-icon" style="--exe-material-icon-url:url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2248%22%20height%3D%2248%22%20viewBox%3D%220%20-960%20960%20960%22%3E%3Cpath%20d%3D%22M180-120q-24%200-42-18t-18-42v-600q0-24%2018-42t42-18h283q-19%2028-28%2060t-9%2066q0%2096%2065%20161t161%2065q23%200%2042.5-3.5T731-502l109%20110v212q0%2024-18%2042t-42%2018H180Zm695-322L742-575q-21%2014-41.5%2020.5T652-548q-70%200-118-48t-48-118q0-70%2048-118t118-48q70%200%20118%2048t48%20118q0%2028-8%2053t-22%2046l130%20130-43%2043ZM652-608q46%200%2076-30t30-76q0-46-30-76t-76-30q-46%200-76%2030t-30%2076q0%2046%2030%2076t76%2030ZM237-277h487L577-472%20447-302l-93-126-117%20151Z%22%2F%3E%3C%2Fsvg%3E');" aria-hidden="true"></span>
+</div>
+<h1 class="box-title">Galería de imágenes</h1>
+<button class="box-toggle box-toggle-on" title="Toggle content">
+<span>Toggle content</span>
+</button></header>
+<div class="box-content">
+<div id="idevice-1791773830502-acvh5o57p" class="idevice_node image-gallery" data-idevice-path="../idevices/image-gallery/" data-idevice-type="image-gallery" data-idevice-component-type="json" data-idevice-json-data="{&quot;ideviceId&quot;:&quot;idevice-1791773830502-acvh5o57p&quot;,&quot;img_0&quot;:{&quot;img&quot;:&quot;../content/resources/Fundamentos y Arquitectura Central.jpg&quot;,&quot;thumbnail&quot;:&quot;../content/resources/Fundamentos y Arquitectura Central.jpg&quot;,&quot;title&quot;:&quot;Fundamentos y Arquitectura Central (UCP, memoria principal y buses de datos)&quot;,&quot;linktitle&quot;:&quot;&quot;,&quot;author&quot;:&quot;&quot;,&quot;linkauthor&quot;:&quot;&quot;,&quot;license&quot;:&quot;&quot;},&quot;img_1&quot;:{&quot;img&quot;:&quot;../content/resources/Periféricos de Entrada y Salida.jpg&quot;,&quot;thumbnail&quot;:&quot;../content/resources/Periféricos de Entrada y Salida.jpg&quot;,&quot;title&quot;:&quot;Periféricos de Entrada y Salida&quot;,&quot;linktitle&quot;:&quot;&quot;,&quot;author&quot;:&quot;&quot;,&quot;linkauthor&quot;:&quot;&quot;,&quot;license&quot;:&quot;&quot;},&quot;img_2&quot;:{&quot;img&quot;:&quot;../content/resources/Sistemas de Almacenamiento Secundario.jpg&quot;,&quot;thumbnail&quot;:&quot;../content/resources/Sistemas de Almacenamiento Secundario.jpg&quot;,&quot;title&quot;:&quot;Sistemas de Almacenamiento Secundario&quot;,&quot;linktitle&quot;:&quot;&quot;,&quot;author&quot;:&quot;&quot;,&quot;linkauthor&quot;:&quot;&quot;,&quot;license&quot;:&quot;&quot;}}" data-idevice-template="image-gallery.html">
+<!-- Idevice Example template start -->
+<div class="exe-image-gallery-template">
+  <!-- Idevice content start -->
+  
+            <div class="imageGallery-IDevice">
+                <div class="imageGallery-body"><div id="imageContainer_0" class="imageContainer"> <a idevice-id="idevice-1791773830502-acvh5o57p" title="Fundamentos y Arquitectura Central (UCP, memoria principal y buses de datos)" href="../content/resources/Fundamentos y Arquitectura Central.jpg" class="imageLink">  <div class="imageElement">   <img src="../content/resources/Fundamentos y Arquitectura Central.jpg" height="128" width="128" title="Fundamentos y Arquitectura Central (UCP, memoria principal y buses de datos)" alt="Fundamentos y Arquitectura Central (UCP, memoria principal y buses de datos)" titlelink="" author="" authorlink="" license="" licenselink=""/>  </div> </a></div><div id="imageContainer_1" class="imageContainer"> <a idevice-id="idevice-1791773830502-acvh5o57p" title="Periféricos de Entrada y Salida" href="../content/resources/Periféricos de Entrada y Salida.jpg" class="imageLink">  <div class="imageElement">   <img src="../content/resources/Periféricos de Entrada y Salida.jpg" height="128" width="128" title="Periféricos de Entrada y Salida" alt="Periféricos de Entrada y Salida" titlelink="" author="" authorlink="" license="" licenselink=""/>  </div> </a></div><div id="imageContainer_2" class="imageContainer"> <a idevice-id="idevice-1791773830502-acvh5o57p" title="Sistemas de Almacenamiento Secundario" href="../content/resources/Sistemas de Almacenamiento Secundario.jpg" class="imageLink">  <div class="imageElement">   <img src="../content/resources/Sistemas de Almacenamiento Secundario.jpg" height="128" width="128" title="Sistemas de Almacenamiento Secundario" alt="Sistemas de Almacenamiento Secundario" titlelink="" author="" authorlink="" license="" licenselink=""/>  </div> </a></div>
+                </div>
+            </div>
+  <!-- Idevice content end -->
+</div>
+<!-- Idevice Example template end -->
+</div>
+</div>
+</article>
+</div></main><div class="nav-buttons">
+<a href="../html/13-hoja-de-ruta.html" title="Anterior" class="nav-button nav-button-left"><span>Anterior</span></a>
+<a href="../html/2-fundamentos-de-hardware-y-su-arquitectura.html" title="Siguiente" class="nav-button nav-button-right"><span>Siguiente</span></a>
+</div>
+<footer id="siteFooter"><div id="siteFooterContent"> <div id="packageLicense" class="cc cc-by-sa"> <p> <span class="license-label">Licencia: </span><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="license">Creative Commons: Reconocimiento - compartir igual 4.0</a></p>
+</div>
+<div id="siteUserFooter"> <div><style>
+
+<div style="background-color: #f0f9ff; border: 1px solid #bae6fd; border-left: 6px solid #0284c7; border-radius: 6px; padding: 18px 22px; margin: 10px 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #1e293b; font-size: 15px; line-height: 1.6; text-align: justify;">
+  <p style="margin: 0;">
+    En esta sección encontrarás actividades interactivas para poner en práctica lo aprendido sobre <strong>Hardware y Arquitectura</strong>: analizar el ciclo de instrucción en un vídeo interactivo, explorar componentes en un panel gráfico, resolver desafíos en Edpuzzle, jugar a <em>El Rosco</em> e interactuar con modelos en Realidad Aumentada. Cada propuesta te ayudará a fortalecer tu comprensión sobre el funcionamiento interno del computador. <strong>¡Explorá, probá y aprendé haciendo!</strong>
+  </p>
+</div>
+
+
+<div style="background-color: #f0f9ff; border: 1px solid #bae6fd; border-left: 6px solid #0284c7; border-radius: 6px; padding: 18px 22px; margin: 10px 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #1e293b; font-size: 15px; line-height: 1.6; text-align: justify;">
+  <p style="margin: 0;">
+    Aquí escribes tu texto o consigna de la sección. Este tono celeste suave cuida la vista de los estudiantes y mantiene la coherencia visual con todo tu módulo de Hardware y Arquitectura. <strong>¡Explorá, probá y aprendé haciendo!</strong>
+  </p>
+</div>
+
+
+  .print-banner-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 15px;
+  }
+
+  .btn-print-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #334155; /* Gris pizarra profesional */
+    color: #ffffff !important;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    text-decoration: none !important;
+  }
+
+  .btn-print-action:hover {
+    background-color: #1e293b;
+    transform: translateY(-1px);
+  }
+
+  .btn-print-action svg {
+    width: 18px;
+    height: 18px;
+    fill: #ffffff;
+  }
+</style>
+
+<!-- Botón de impresión visible y garantizado -->
+<div class="print-banner-container">
+  <button class="btn-print-action" onclick="window.print()" title="Imprimir o guardar como PDF esta página">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/>
+    </svg>
+    Imprimir página
+  </button>
+</div></div>
+</div></div></footer>
+</div>
+<p id="made-with-eXe"> <a href="https://exelearning.net/" target="_blank" rel="noopener"> <span>Creado con eXeLearning <span>(Ventana nueva)</span></span></a></p>
+</body>
+</html>

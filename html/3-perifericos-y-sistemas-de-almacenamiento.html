@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="es" id="exe-page-mv4kkvs1-w1d9hu5ga">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="eXeLearning v4.0.6">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="exe-pass-score" content="5">
+<link rel="license" type="text/html" href="https://creativecommons.org/licenses/by-sa/4.0/">
+<title>3-Periféricos y Sistemas de Almacenamiento | “ Arquitectura de computadoras y Hardware: del núcleo de procesamiento a los dispositivos periféricos y de almacenamiento”</title>
+<link rel="icon" type="image/x-icon" href="../libs/favicon.ico">
+<meta name="description" content="Aborda el estudio integral del hardware de un sistema informático, estructurado desde sus principios teóricos fundamentales hasta la clasificación de sus componentes y periféricos.">
+<script>document.querySelector("html").classList.add("js");</script><script src="../libs/jquery/jquery.min.js"> </script><script src="../libs/common_i18n.js"> </script><script src="../libs/common.js"> </script><script src="../libs/exe_export.js"> </script><script src="../libs/bootstrap/bootstrap.bundle.min.js"> </script><link rel="stylesheet" href="../libs/bootstrap/bootstrap.min.css">
+<script src="../idevices/udl-content/udl-content.js"></script><link rel="stylesheet" href="../idevices/udl-content/udl-content.css">
+<script src="../idevices/text/text.js"></script><link rel="stylesheet" href="../idevices/text/text.css">
+<link rel="stylesheet" href="../content/css/base.css"><script src="../theme/style.js"> </script><link rel="stylesheet" href="../theme/style.css">
+<style>
+
+/* Personalización de botones y navegación  - Tonos Lila y Celeste Pastel */
+.nav-container, .pagination, .node-name, .iDevice_header 
+{
+    --primary-color: #9b87f5;
+    --secondary-color: #b5c7ed;
+    --accent-color: #dcd6f7;
+}
+
+/* Botones de navegación y pestañas (Inicio, Presentación, Motivación, etc.) */
+.ui-tabs-nav li a, 
+.pagination a, 
+.pagination span,
+.node a,
+.iDevice_header h2 
+{
+    background-color: #e8e4f8 !important; /* Lila pastel muy suave */
+    color: #4a4563 !important;
+    border-color: #b5c7ed !important;
+    transition: all 0.3s ease;
+}
+
+/* Estado activo o al pasar el cursor sobre los botones */
+.ui-tabs-nav li.ui-state-active a, 
+.ui-tabs-nav li a:hover,
+.pagination a:hover,
+.node.current > a 
+{
+    background: linear-gradient(135deg, #b5c7ed 0%, #d4b5ed 100%) !important; /* Degradado suave celeste y lila pastel */
+    color: #2c264a !important;
+    border-color: #9b87f5 !important;
+    font-weight: bold;
+}
+
+/* Forzar la eliminación de tonos verdes o naranjas heredados */
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default 
+{
+    background: #f3f0ff !important;
+    border: 1px solid #dcd6f7 !important;
+    color: #5c5470 !important;
+}
+
+/* Personalización del menú lateral y enlaces en estilo Neo - Tonos Azules */
+.node a, 
+.ui-widget-content .node a, 
+#siteNav ul li a 
+{
+    color: #2b4c7e !important; /* Color principal del texto de los enlaces */
+    transition: all 0.2s ease;
+}
+
+/* Efecto al pasar el cursor por encima de las opciones del menú */
+.node a:hover, 
+#siteNav ul li a:hover 
+{
+    color: #1a365d !important;
+    background-color: #e2ecf8 !important; /* Fondo azul pastel muy suave al pasar el mouse */
+    border-radius: 4px;
+}
+
+/* Estilo para la página o sección seleccionada actualmente (activa) */
+.node.current > a, 
+#siteNav ul li.current > a,
+.ui-state-active 
+{
+    background: linear-gradient(135deg, #3182ce 0%, #2b6cb0 100%) !important; /* Degradado en tonos azules */
+    color: #ffffff !important; /* Texto blanco para destacar perfectamente */
+    font-weight: bold !important;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(49, 130, 206, 0.2);
+}
+
+/* Ajuste general de los iconos o elementos del árbol de contenidos */
+#siteNav .node
+ {
+    margin-bottom: 2px;
+}
+
+
+
+
+  .cc-footer-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 15px;
+  }
+
+  .btn-print-footer {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #555555; /* Gris oscuro idéntico a tus referencias */
+    color: #ffffff !important;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-family: inherit;
+    cursor: pointer;
+    text-decoration: none !important;
+    transition: background-color 0.2s ease;
+  }
+
+  .btn-print-footer:hover {
+    background-color: #333333;
+  }
+
+  .btn-print-footer svg {
+    width: 16px;
+    height: 16px;
+    fill: #ffffff;
+  }
+
+
+<!-- Botón de impresión ubicado abajo junto al pie de página -->
+
+<div class="cc-footer-container">
+  <button class="btn-print-footer" onclick="window.print()" title="Imprimir o guardar como PDF">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/>
+    </svg>
+    Imprimir página
+  </button>
+</div>
+
+
+
+
+<div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; width: 100%; margin: 20px 0;">
+  
+  <style>
+    .titulo-principal {
+      font-size: 32px;
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 8px;
+      text-align: justify; /* Título justificado a ambos márgenes */
+      color: #1e3a8a;
+      transition: color 0.3s ease;
+      cursor: default;
+    }
+    /* Cambio de color automático al pasar el mouse por encima */
+    .titulo-principal:hover {
+      color: #2563eb;
+    }
+  </style>
+
+  <!-- Título principal justificado -->
+  <h1 class="titulo-principal">
+    “Arquitectura de computadoras y Hardware: del núcleo de procesamiento a los dispositivos periféricos y de almacenamiento”
+  </h1>
+
+  
+  <!-- Doble línea azul en todo el ancho -->
+  <hr style="border: none; border-top: 4px double #1d4ed8; width: 100%; margin: 0;">
+
+
+<style>
+  a:active,
+  a:focus,
+  button:active,
+  button:focus {
+    background-color: #dbeafe !important;
+    color: #1e3a8a !important;
+    outline: 2px solid #2563eb !important;
+  }
+</style>
+
+
+
+<style>
+  /* Selectores generales del árbol de navegación / menú lateral */
+  nav a,
+  nav button,
+  aside a,
+  aside button,
+  .exe-navigation a,
+  .exe-navigation button,
+  [role="navigation"] a,
+  [role="navigation"] button,
+  .tree-node a,
+  .tree-node span,
+  .node-label {
+    font-size: 1.08rem !important; /* Letra más grande */
+    color: #1d4ed8 !important;     /* Color azul */
+    font-weight: 500 !important;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease !important;
+  }
+
+  /* Al pasar el cursor o presionar (clic sostenido / foco) */
+  nav a:hover,
+  nav a:active,
+  nav a:focus,
+  aside a:hover,
+  aside a:active,
+  aside a:focus,
+  .exe-navigation a:hover,
+  .exe-navigation a:active,
+  .exe-navigation a:focus,
+  [role="navigation"] a:hover,
+  [role="navigation"] a:active,
+  [role="navigation"] a:focus,
+  .menu-presionado {
+    background-color: #bae6fd !important; /* Celeste fuerte al presionar/pasar */
+    color: #0c4a6e !important;
+    border-radius: 8px !important;
+    font-weight: 700 !important;
+  }
+
+  /* Elemento seleccionado / página activa: celeste más fuerte y definido */
+  .menu-seleccionado-celeste,
+  .active > a,
+  .current > a,
+  [aria-current="page"],
+  .selected {
+    background-color: #7dd3fc !important; /* Celeste más fuerte al seleccionar */
+    color: #082f49 !important;
+    border: 2px solid #0284c7 !important;
+    border-radius: 8px !important;
+    font-weight: 700 !important;
+    font-size: 1.1rem !important;
+  }
+</style>
+
+<script>
+  (function () {
+    function aplicarEstiloMenu() {
+      const selectores = 'nav a, aside a, .exe-navigation a, [role="navigation"] a, .tree-node a, .tree-node span';
+      const items = document.querySelectorAll(selectores);
+      const paginaActual = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase();
+
+      items.forEach(function (item) {
+        const href = (item.getAttribute('href') || '').split('/').pop().toLowerCase();
+
+        // Marca en celeste fuerte si corresponde a la página actual
+        if (href && paginaActual && href === paginaActual) {
+          item.classList.add('menu-seleccionado-celeste');
+          if (item.parentElement) {
+            item.parentElement.classList.add('menu-seleccionado-celeste');
+          }
+        }
+
+        // Al hacer clic o presionar, destaca en celeste más fuerte
+        item.addEventListener('pointerdown', function () {
+          items.forEach(function (el) {
+            el.classList.remove('menu-seleccionado-celeste');
+            el.classList.remove('menu-presionado');
+            if (el.parentElement) {
+              el.parentElement.classList.remove('menu-seleccionado-celeste');
+            }
+          });
+
+          item.classList.add('menu-seleccionado-celeste');
+          if (item.parentElement) {
+            item.parentElement.classList.add('menu-seleccionado-celeste');
+          }
+        });
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', aplicarEstiloMenu);
+    } else {
+      aplicarEstiloMenu();
+    }
+  })();
+</script>
+
+
+
+
+
+
+</div>
+
+
+  
+
+
+
+
+</style>
+</head>
+<body class="exe-export exe-web-site">
+<script>document.body.className+=" js"</script>
+<div class="exe-content exe-export pre-js siteNav-hidden"><a href="#page-mv4kkvs1-w1d9hu5ga" id="skipNav">Skip to content</a> <nav id="siteNav">
+<ul>
+<li> <a href="../index.html" class="main-node daddy">Inicio</a>
+<ul class="other-section">
+<li> <a href="../html/1-presentacion.html" class="daddy">1-Presentación</a>
+<ul class="other-section">
+<li> <a href="../html/11-objetivos.html" class="no-ch">1.1 Objetivos</a>
+</li>
+<li> <a href="../html/12-conocimientos-previos.html" class="no-ch">1.2 Conocimientos Previos</a>
+</li>
+<li> <a href="../html/13-hoja-de-ruta.html" class="no-ch">1.3 Hoja de Ruta</a>
+</li>
+<li> <a href="../html/14-motivacion.html" class="no-ch">1.4-Motivación</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li> <a href="../html/2-fundamentos-de-hardware-y-su-arquitectura.html" class="no-ch">2-Fundamentos de Hardware y su Arquitectura</a>
+</li>
+<li class="active"> <a href="../html/3-perifericos-y-sistemas-de-almacenamiento.html" class="active no-ch">3-Periféricos y Sistemas de Almacenamiento</a>
+</li>
+<li> <a href="../html/4-actividades.html" class="daddy">4-Actividades</a>
+<ul class="other-section">
+<li> <a href="../html/41-video-interactivo.html" class="no-ch">4.1 Vídeo Interactivo</a>
+</li>
+<li> <a href="../html/42-panel-grafico-interactivo.html" class="no-ch">4.2 Panel Gráfico interactivo</a>
+</li>
+<li> <a href="../html/43-edpuzzle.html" class="no-ch">4.3 Edpuzzle</a>
+</li>
+<li> <a href="../html/44-el-rosco-hardware.html" class="no-ch">4.4 El Rosco hardware</a>
+</li>
+<li> <a href="../html/45-realidad-aumentada.html" class="no-ch">4.5 Realidad Aumentada</a>
+</li>
+</ul>
+</li>
+<li> <a href="../html/5-autoevaluacion.html" class="no-ch">5-Autoevaluación</a>
+</li>
+<li> <a href="../html/6-cierre.html" class="no-ch">6-Cierre</a>
+</li>
+<li> <a href="../html/7-informe-de-progreso.html" class="no-ch">7-Informe de Progreso</a>
+</li>
+<li> <a href="../html/8-bibliografia-y-creditos.html" class="no-ch">8-Bibliografía y Créditos</a>
+</li>
+</ul>
+</nav><main id="page-mv4kkvs1-w1d9hu5ga" class="page"> 
+<header class="main-header">
+<div class="package-header"><p class="package-title">“ Arquitectura de computadoras y Hardware: del núcleo de procesamiento a los dispositivos periféricos y de almacenamiento”</p></div>
+<div class="page-header"><h1 class="page-title">3-Periféricos y Sistemas de Almacenamiento</h1></div>
+</header><div id="page-content-page-mv4kkvs1-w1d9hu5ga" class="page-content">
+<article id="block-mv5v2gkb-g4w5u2ftn" class="box no-header">
+<header class="box-head">
+<div class="box-icon exe-icon">
+<span class="exe-material-icon" style="--exe-material-icon-url:url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2248%22%20height%3D%2248%22%20viewBox%3D%220%20-960%20960%20960%22%3E%3Cpath%20d%3D%22M140-240q-24%200-42-18t-18-42v-480q0-24%2018-42t42-18h680q24%200%2042%2018t18%2042v480q0%2024-18%2042t-42%2018H140ZM40-120v-60h880v60H40Z%22%2F%3E%3C%2Fsvg%3E');" aria-hidden="true"></span>
+</div>
+<button class="box-toggle box-toggle-on" title="Toggle content">
+<span>Toggle content</span>
+</button></header>
+<div class="box-content">
+<div id="idevice-1791846376282-qa960ttso" class="idevice_node udl-content" data-idevice-path="../idevices/udl-content/" data-idevice-type="udl-content">
+<div class="exe-udlContent exe-udlContent-engagement"><section class="exe-udlContent-block"><div class="exe-udlContent-content"><div class="exe-udlContent-content-main"><style>
+    .med-bento-hw {
+      --bg-base: #0b1120;
+      --bg-panel: #111827;
+      --bg-card: #ffffff;
+      --bg-subtle: #f1f5f9;
+      --ink-dark: #0f172a;
+      --ink-body: #334155;
+      --ink-light: #f8fafc;
+      --ink-muted-light: #94a3b8;
+      --violet: #6d28d9;
+      --violet-soft: #ede9fe;
+      --cyan: #0891b2;
+      --cyan-soft: #cffafe;
+      --amber: #d97706;
+      --amber-soft: #fef3c7;
+      --emerald: #059669;
+      --emerald-soft: #d1fae5;
+      --border: #e2e8f0;
+      --radius-xl: 20px;
+      --radius-md: 14px;
+      --shadow: 0 12px 30px -10px rgba(15, 23, 42, 0.12);
+
+      font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+      color: var(--ink-dark);
+      background: #f8fafc;
+      padding: 22px;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border);
+      line-height: 1.65;
+      box-sizing: border-box;
+    }
+
+    .med-bento-hw *,
+    .med-bento-hw *::before,
+    .med-bento-hw *::after {
+      box-sizing: border-box;
+    }
+
+    /* Banner superior estilo editorial tecnológico */
+    .bento-hero {
+      background: radial-gradient(circle at top right, rgba(8, 145, 178, 0.35), transparent 55%),
+                  radial-gradient(circle at bottom left, rgba(109, 40, 217, 0.35), transparent 55%),
+                  var(--bg-base);
+      color: var(--ink-light);
+      padding: 28px;
+      border-radius: var(--radius-xl);
+      margin-bottom: 18px;
+    }
+
+    .bento-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #67e8f9;
+      background: rgba(8, 145, 178, 0.16);
+      border: 1px solid rgba(103, 232, 249, 0.3);
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+    }
+
+    .bento-hero h2 {
+      margin: 0 0 10px 0;
+      font-size: 1.65rem;
+      line-height: 1.22;
+      color: #ffffff;
+      font-weight: 800;
+    }
+
+    .bento-hero p {
+      margin: 0;
+      color: #cbd5e1;
+      font-size: 0.96rem;
+      max-width: 78ch;
+    }
+
+    /* Cinta de flujo conceptual */
+    .bento-flow {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .bento-flow-step {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 12px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .bento-flow-tag {
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .tag-in { color: var(--violet); }
+    .tag-cpu { color: var(--cyan); }
+    .tag-out { color: var(--amber); }
+    .tag-mem { color: var(--emerald); }
+
+    .bento-flow-step strong {
+      font-size: 0.92rem;
+      color: var(--ink-dark);
+    }
+
+    .bento-flow-step span {
+      font-size: 0.82rem;
+      color: var(--ink-body);
+    }
+
+    /* Navegación por pestañas */
+    .bento-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+
+    .bento-tab {
+      background: var(--bg-card);
+      color: var(--ink-body);
+      border: 1px solid var(--border);
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .bento-tab:hover {
+      border-color: var(--cyan);
+      color: var(--ink-dark);
+    }
+
+    .bento-tab.active {
+      background: var(--bg-base);
+      color: #ffffff;
+      border-color: var(--bg-base);
+      box-shadow: var(--shadow);
+    }
+
+    /* Paneles */
+    .bento-pane {
+      display: none;
+    }
+
+    .bento-pane.active {
+      display: block;
+      animation: bentoFade 0.25s ease;
+    }
+
+    @keyframes bentoFade {
+      from { opacity: 0; transform: translateY(5px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .bento-section-banner {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-left: 5px solid var(--violet);
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      margin-bottom: 16px;
+    }
+
+    .bento-section-banner.is-out {
+      border-left-color: var(--amber);
+    }
+
+    .bento-section-banner.is-io {
+      border-left-color: var(--cyan);
+    }
+
+    .bento-section-banner.is-mem {
+      border-left-color: var(--emerald);
+    }
+
+    .bento-section-banner h3 {
+      margin: 0 0 6px 0;
+      font-size: 1.18rem;
+      color: var(--ink-dark);
+    }
+
+    .bento-section-banner p {
+      margin: 0;
+      font-size: 0.93rem;
+      color: var(--ink-body);
+    }
+
+    /* Cuadrícula Bento */
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 16px;
+    }
+
+    .bento-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .bento-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .bento-card h4 {
+      margin: 0;
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--ink-dark);
+    }
+
+    .bento-pill {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: var(--violet-soft);
+      color: var(--violet);
+      white-space: nowrap;
+    }
+
+    .bento-pill.out {
+      background: var(--amber-soft);
+      color: var(--amber);
+    }
+
+    .bento-pill.io {
+      background: var(--cyan-soft);
+      color: var(--cyan);
+    }
+
+    .bento-pill.mem {
+      background: var(--emerald-soft);
+      color: var(--emerald);
+    }
+
+    .bento-label {
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #64748b;
+      margin-top: 2px;
+    }
+
+    .bento-card p {
+      margin: 0;
+      font-size: 0.92rem;
+      color: var(--ink-body);
+    }
+
+    .bento-card ul {
+      margin: 0;
+      padding-left: 18px;
+      font-size: 0.9rem;
+      color: var(--ink-body);
+    }
+
+    .bento-card li {
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 640px) {
+      .med-bento-hw {
+        padding: 14px;
+      }
+      .bento-hero {
+        padding: 20px;
+      }
+      .bento-hero h2 {
+        font-size: 1.35rem;
+      }
+    }
+  </style>
+<div class="med-bento-hw" style="text-align: justify;"><!-- Hero -->
+<div class="bento-hero" style="text-align: justify;"><span class="bento-kicker">Contenido 2</span>
+<h2>Periféricos y Sistemas de Almacenamiento</h2>
+<p style="text-align: justify;">Interacción con el entorno y persistencia de la información: cómo los dispositivos periféricos vinculan al usuario y al mundo físico con la UCP y la memoria principal, y cómo el almacenamiento secundario conserva los datos cuando el equipo se apaga.</p>
+</div>
+<!-- Esquema rápido de flujo -->
+<div class="bento-flow">
+<div class="bento-flow-step"><span class="bento-flow-tag tag-in">01 · Entrada</span> <strong>Captura y codifica</strong> <span>Señales físicas o acciones a código binario vía buses.</span></div>
+<div class="bento-flow-step"><span class="bento-flow-tag tag-cpu">02 · Núcleo</span> <strong>UCP y Memoria</strong> <span>Procesamiento de instrucciones y datos activos.</span></div>
+<div class="bento-flow-step"><span class="bento-flow-tag tag-out">03 · Salida</span> <strong>Traduce y muestra</strong> <span>Resultados en formatos visuales, sonoros o físicos.</span></div>
+<div class="bento-flow-step"><span class="bento-flow-tag tag-mem">04 · Persistencia</span> <strong>Almacenamiento</strong> <span>Conserva datos y programas sin energía eléctrica.</span></div>
+</div>
+<!-- Pestañas de navegación -->
+<div class="bento-tabs" role="tablist"><button type="button" class="bento-tab active" data-bento-tab="todos">Vista completa</button> <button type="button" class="bento-tab" data-bento-tab="entrada">1. Entrada</button> <button type="button" class="bento-tab" data-bento-tab="salida">2. Salida</button> <button type="button" class="bento-tab" data-bento-tab="mixtos">3. Mixtos (E/S)</button> <button type="button" class="bento-tab" data-bento-tab="almacenamiento">4. Almacenamiento</button></div>
+<!-- Sección 1: Dispositivos de Entrada -->
+<div class="bento-pane active" data-bento-group="entrada">
+<div class="bento-section-banner">
+<h3 style="text-align: justify;">1. Dispositivos de Entrada</h3>
+<p style="text-align: justify;">Capturan información, acciones físicas o señales del entorno y las codifican en señales eléctricas o digitales que viajan por los buses hacia la memoria principal y la UCP.</p>
+</div>
+<div class="bento-grid">
+<div class="bento-card" style="text-align: justify;">
+<div class="bento-card-top" style="text-align: justify;">
+<h4 style="text-align: justify;">Teclados</h4>
+<span class="bento-pill">Entrada</span></div>
+<span class="bento-label">Funcionamiento</span>
+<p style="text-align: justify;">Cada pulsación cierra o activa un circuito o interruptor debajo de la tecla, generando un código de exploración (<em>scan code</em>) que el controlador traduce a un código de carácter o comando (como UTF-8 o teclas de control) y envía al sistema.</p>
+<span class="bento-label">Tipos y actualidad</span>
+<ul style="text-align: justify;">
+<li><strong>Membrana:</strong> económicos, silenciosos y habituales en notebooks y uso general.</li>
+<li><strong>Mecánicos:</strong> interruptores individuales por tecla, mayor durabilidad, respuesta táctil/auditiva y preferencia en programación, redacción intensiva o <em>gaming</em>.</li>
+<li><strong>Inalámbricos:</strong> vía <em>Bluetooth</em> o RF de 2,4 GHz; distribuciones extendidas como QWERTY (español/latinoamericano) y diseños ergonómicos divididos o compactos.</li>
+</ul>
+</div>
+<div class="bento-card" style="text-align: justify;">
+<div class="bento-card-top">
+<h4>Dispositivos apuntadores</h4>
+<span class="bento-pill">Entrada</span></div>
+<span class="bento-label">Funcionamiento</span>
+<p>Traducen el desplazamiento físico, la inclinación o la presión en coordenadas espaciales (ejes X, Y y, en ocasiones, Z o rueda de desplazamiento) y eventos de selección/clic en la interfaz gráfica.</p>
+<span class="bento-label">Tipos y actualidad</span>
+<ul>
+<li><strong>Ratón / <em>Mouse</em>:</strong> modelos ópticos (LED o láser) que iluminan la superficie y capturan microfotogramas sucesivos para calcular el desplazamiento sin piezas mecánicas expuestas al desgaste; cableados (USB) o inalámbricos (<em>Bluetooth</em> / 2,4 GHz), ergonómicos verticales o de alta precisión (DPI).</li>
+<li><strong><em>Touchpad</em>:</strong> habitual en portátiles; usa matrices capacitivas que detectan cambios en el campo eléctrico al acercar o deslizar los dedos, admitiendo gestos multitáctiles (desplazamiento con dos dedos, pellizco para zoom, cambio de ventanas).</li>
+<li><strong>Otros apuntadores:</strong> <em>trackball</em> (esfera fija manipulada con dedos o pulgar), <em>joystick</em> y <em>gamepad</em> (palancas analógicas, botones y sensores de movimiento para simulación o videojuegos).</li>
+</ul>
+</div>
+<div class="bento-card" style="text-align: justify;">
+<div class="bento-card-top">
+<h4>Lectores ópticos</h4>
+<span class="bento-pill">Entrada</span></div>
+<span class="bento-label">Funcionamiento</span>
+<p>Utilizan fuentes de luz (LED, láser o sensores de imagen) y fotodetectores o sensores CCD/CMOS para leer patrones visuales codificados, superficies impresas o códigos de barras/QR y convertirlos en datos digitales.</p>
+<span class="bento-label">Tipos y actualidad</span>
+<ul>
+<li><strong>Códigos de barras y QR:</strong> escáneres láser barren un haz y miden luz reflejada en barras claras y oscuras; lectores con cámara (<em>imagers</em> 2D) capturan la imagen completa del código, leyendo QR y <em>DataMatrix</em> incluso desde pantallas de celulares en comercio, logística y gestión educativa/administrativa.</li>
+<li><strong>Escáneres de documentos e imagen:</strong> iluminan el original y mediante sensores ópticos convierten cada punto en píxeles; planos de sobremesa, alimentadores automáticos (ADF), portátiles y apps móviles con reconocimiento óptico de caracteres (<strong>OCR</strong>) para documentos editables o PDF buscables.</li>
+</ul>
+</div>
+<div class="bento-card" style="text-align: justify;">
+<div class="bento-card-top">
+<h4>Digitalizadores</h4>
+<span class="bento-pill">Entrada</span></div>
+<span class="bento-label">Funcionamiento</span>
+<p>Convierten magnitudes analógicas continuas (trazos, presión, inclinación, sonido o luz) en valores digitales discretos mediante muestreo y cuantificación.</p>
+<span class="bento-label">Tipos y actualidad</span>
+<ul>
+<li><strong>Tabletas digitalizadoras y lápices ópticos (<em>stylus</em>):</strong> registran posición, niveles de presión, inclinación y rechazo de palma (<em>palm rejection</em>) para dibujo, anotación manuscrita y recursos didácticos (sin pantalla integrada o monitores interactivos con lápiz activo).</li>
+<li><strong>Micrófonos y cámaras / <em>webcams</em>:</strong> micrófonos captan variaciones de presión sonora y un conversor analógico-digital (ADC) genera muestras de audio; cámaras y <em>webcams</em> capturan luz mediante sensores CMOS y generan video digital para videollamadas, clases híbridas y producción audiovisual.</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Sección 2: Dispositivos de Salida -->
+<div class="bento-pane active" data-bento-group="salida" style="margin-top: 22px; text-align: justify;">
+<div class="bento-section-banner is-out">
+<h3>2. Dispositivos de Salida</h3>
+<p>Reciben información ya procesada por el sistema informático y la transforman en estímulos perceptibles por los sentidos humanos (visuales, auditivos o táctiles/físicos) o en soportes legibles.</p>
+</div>
+<div class="bento-grid">
+<div class="bento-card">
+<div class="bento-card-top">
+<h4>Pantallas (monitores y proyectores)</h4>
+<span class="bento-pill out">Salida</span></div>
+<span class="bento-label">Funcionamiento</span>
+<p>Reciben señales de video desde la placa gráfica o controlador de pantalla (vía HDMI, DisplayPort o USB-C/Thunderbolt) y controlan matrices de píxeles que emiten o modulan luz y color para formar imágenes estáticas y en movimiento.</p>
+<span class="bento-label">Tipos y actualidad</span>
+<ul>
+<li><strong>LCD / LED:</strong> paneles de cristal líquido retroiluminados por LED (eficientes, delgados y de amplio uso en oficinas y aulas).</li>
+<li><strong>OLED y <em>mini-LED</em>:</strong> OLED ilumina cada píxel y puede apagar píxeles individuales para negros profundos y alto contraste; <em>mini-LED</em> con atenuación local (<em>local dimming</em>) mejora brillo y HDR.</li>
+<li><strong>Proyectores:</strong> proyectan la imagen digital sobre superficies o pantallas amplias (DLP o LCD) en salas, auditorios y aulas. (Si incorpora capacidad táctil, cumple función de entrada y salida).</li>
+</ul>
+</div>
+<div class="bento-card">
+<div class="bento-card-top">
+<h4>Impresoras</h4>
+<span class="bento-pill out">Salida</span></div>
+<span class="bento-label">Funcionamiento</span>
+<p>Traducen documentos digitales (texto, gráficos vectoriales o mapas de bits) en marcas físicas sobre papel u otros materiales, siguiendo instrucciones enviadas por el sistema operativo a través del <em>driver</em>.</p>
+<span class="bento-label">Tipos y actualidad</span>
+<ul>
+<li><strong>Inyección de tinta (<em>inkjet</em>) y tanque continuo:</strong> proyectan microgotas mediante cabezales térmicos o piezoeléctricos; los tanques rellenables reducen el costo por página en entornos educativos y domésticos.</li>
+<li><strong>Láser:</strong> usan tambor fotosensible cargado electrostáticamente y tóner fijado por calor; destacan por velocidad y nitidez en grandes volúmenes de texto.</li>
+<li><strong>Térmicas, matriciales y 3D:</strong> térmicas (calor sobre papel termosensible en tickets/etiquetas), matriciales (agujas sobre cinta entintada en entornos industriales o formularios multihoja) e impresoras 3D (modelos físicos capa por capa).</li>
+</ul>
+</div>
+<div class="bento-card">
+<div class="bento-card-top">
+<h4>Sistemas de audio</h4>
+<span class="bento-pill out">Salida</span></div>
+<span class="bento-label">Funcionamiento</span>
+<p>Reciben señales digitales de audio, las convierten en señales eléctricas analógicas mediante un conversor digital-analógico (DAC) y las envían a transductores electroacústicos que hacen vibrar un diafragma para generar ondas sonoras en el aire.</p>
+<span class="bento-label">Tipos y actualidad</span>
+<ul>
+<li><strong>Parlantes o altavoces:</strong> integrados en notebooks/monitores o externos, estéreo o con <em>subwoofer</em>.</li>
+<li><strong>Auriculares:</strong> <em>supraaurales</em>, <em>circumaurales</em> o <em>in-ear</em>, cableados o inalámbricos con cancelación activa de ruido.</li>
+<li><strong>Barras de sonido:</strong> clave para reproducción multimedia, accesibilidad y entornos virtuales de aprendizaje.</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Sección 3: Dispositivos Mixtos -->
+<div class="bento-pane active" data-bento-group="mixtos" style="margin-top: 22px; text-align: justify;">
+<div class="bento-section-banner is-io">
+<h3>3. Dispositivos Mixtos (Entrada / Salida)</h3>
+<p>Permiten tanto enviar información desde el computador hacia el exterior como recibir datos desde el exterior hacia el sistema, cumpliendo un rol clave en la comunicación y la interacción.</p>
+</div>
+<div class="bento-grid">
+<div class="bento-card">
+<div class="bento-card-top">
+<h4>Módem (y conectividad de red)</h4>
+<span class="bento-pill io">Mixto E/S</span></div>
+<span class="bento-label">Funcionamiento y contexto actual</span>
+<p><em>Módem</em> proviene de <strong>modulación</strong> y <strong>demodulación</strong>: convierte señales digitales del computador en señales aptas para viajar por un medio de transmisión y realiza el proceso inverso al recibirlas. En hogares e instituciones actuales, el acceso a Internet se gestiona mediante <strong>ONT/módems de fibra óptica o cablemódem</strong> integrados o ligados a <strong>routers</strong> con <em>Wi-Fi</em> y puertos <em>Ethernet</em>, intercambiando paquetes de datos de forma bidireccional y continua entre la red local e Internet.</p>
+</div>
+<div class="bento-card">
+<div class="bento-card-top">
+<h4>Estándar USB (<em>Universal Serial Bus</em>)</h4>
+<span class="bento-pill io">Mixto E/S</span></div>
+<span class="bento-label">Funcionamiento y evolución</span>
+<p>Estándar de comunicación <strong>serie</strong> que conecta periféricos de manera unificada, transporta datos y energía eléctrica (según versión/perfil) y admite conexión en caliente con autoconfiguración (<strong>Hot Plug &amp; Play</strong>). El conector <strong>USB Tipo-C</strong> (reversible) y protocolos como <strong>USB 3.2 / USB4</strong> (junto a estándares compatibles como <em>Thunderbolt</em>) unifican transferencia de alta velocidad, salida de video y carga (<em>USB Power Delivery</em>) para teclados, <em>pendrives</em>, monitores, <em>hubs</em>/<em>docks</em> y unidades externas.</p>
+</div>
+<div class="bento-card">
+<div class="bento-card-top">
+<h4>Otros ejemplos habituales de E/S</h4>
+<span class="bento-pill io">Mixto E/S</span></div>
+<span class="bento-label">Interacción bidireccional</span>
+<ul>
+<li><strong>Pantallas táctiles:</strong> muestran información y capturan toques o gestos.</li>
+<li><strong>Impresoras multifunción:</strong> imprimen como salida y escanean como entrada.</li>
+<li><strong>Placas de red:</strong> interfaces <em>Ethernet</em>, <em>Wi-Fi</em> o <em>Bluetooth</em>.</li>
+<li><strong>Cascos/visores de RV o RA:</strong> captan movimiento/sensores y proyectan imagen y audio.</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Sección 4: Sistemas de Almacenamiento Secundario -->
+<div class="bento-pane active" data-bento-group="almacenamiento" style="margin-top: 22px;">
+<div class="bento-section-banner is-mem" style="text-align: justify;">
+<h3>4. Sistemas de Almacenamiento Secundario</h3>
+<p>A diferencia de la memoria principal (RAM) —que es volátil y pierde su contenido al apagarse el equipo, pero ofrece acceso sumamente rápido para los datos y programas en ejecución—, los sistemas de almacenamiento secundario son <strong>no volátiles</strong>: conservan el sistema operativo, las aplicaciones y los archivos de forma persistente aun sin energía eléctrica.</p>
+</div>
+<div class="bento-grid">
+<div class="bento-card" style="text-align: justify;">
+<div class="bento-card-top">
+<h4>Unidades de Estado Sólido (SSD) y memorias Flash</h4>
+<span class="bento-pill mem">No volátil</span></div>
+<span class="bento-label">Funcionamiento</span>
+<p>Almacenan datos de manera electrónica en celdas de <strong>memoria flash NAND</strong> (sin partes mecánicas móviles). Al no depender del movimiento físico de platos ni cabezales, ofrecen tiempos de acceso mínimos, silencio, resistencia a golpes y menor consumo energético.</p>
+<span class="bento-label">Formatos y protocolos actuales</span>
+<ul>
+<li><strong>SSD NVMe en formato M.2 (PCIe):</strong> constituyen el estándar predominante en computadoras modernas por su altísimo ancho de banda y bajas latencias, ideales para el sistema operativo, aplicaciones exigentes y edición multimedia.</li>
+<li><strong>SSD SATA (2,5" o M.2 SATA):</strong> más rápidos y resistentes que los discos mecánicos tradicionales, resultan muy frecuentes para actualizar equipos más antiguos o ampliar capacidad a costo moderado.</li>
+<li><strong>Unidades flash USB (<em>pendrives</em>) y tarjetas de memoria (SD / microSD):</strong> dispositivos portátiles basados en memoria flash, ampliamente utilizados para transportar archivos, ampliar almacenamiento en cámaras o dispositivos móviles y realizar respaldos rápidos.</li>
+</ul>
+</div>
+<div class="bento-card" style="text-align: justify;">
+<div class="bento-card-top">
+<h4>Unidades de Disco Duro Mecánico (HDD)</h4>
+<span class="bento-pill mem">Magnético</span></div>
+<span class="bento-label">Funcionamiento</span>
+<p>Guardan la información mediante <strong>magnetismo</strong> sobre uno o varios platos rígidos giratorios recubiertos de material magnético, mientras un brazo con cabezales de lectura/escritura se desplaza a milímetros de la superficie para magnetizar o leer sectores.</p>
+<span class="bento-label">Rol actual</span>
+<p>Aunque han sido desplazados como unidad principal del sistema operativo por los SSD, siguen siendo relevantes para el almacenamiento masivo de gran capacidad a bajo costo por gigabyte, copias de seguridad locales o servidores/NAS donde prima el volumen de datos sobre la velocidad de acceso inmediato.</p>
+</div>
+<div class="bento-card" style="text-align: justify;">
+<div class="bento-card-top" style="text-align: justify;">
+<h4>Otros medios y almacenamiento en red / nube</h4>
+<span class="bento-pill mem">Red y Nube</span></div>
+<span class="bento-label">Tecnologías complementarias</span>
+<ul>
+<li style="text-align: justify;"><strong>Discos ópticos (CD, DVD, Blu-ray):</strong> utilizan un láser para leer o grabar datos en surcos microscópicos sobre discos de policarbonato. Su uso cotidiano ha disminuido notablemente frente a las memorias flash y la descarga/transmisión digital, aunque aún persisten en ciertos archivos o usos puntuales.</li>
+<li style="text-align: justify;"><strong>Almacenamiento en red (NAS) y en la nube (<em>Cloud Storage</em>):</strong> los sistemas NAS (<em>Network Attached Storage</em>) centralizan discos en una red local para compartir archivos entre varios equipos; el almacenamiento en la nube (como Google Drive, OneDrive o Nextcloud) aloja los datos en centros de datos remotos accesibles desde distintos dispositivos mediante conexión a Internet, complementando el almacenamiento local del equipo.</li>
+</ul>
+</div>
+</div>
+</div>
+<script>
+    (function () {
+      const root = document.currentScript ? document.currentScript.parentElement : document;
+      const tabs = root.querySelectorAll(".bento-tab");
+      const panes = root.querySelectorAll(".bento-pane");
+
+      function applyTab(target) {
+        tabs.forEach((t) => t.classList.toggle("active", t.getAttribute("data-bento-tab") === target));
+
+        let visibleIndex = 0;
+        panes.forEach((pane) => {
+          const group = pane.getAttribute("data-bento-group");
+          const show = target === "todos" || target === group;
+          pane.classList.toggle("active", show);
+          if (show) {
+            pane.style.marginTop = visibleIndex > 0 ? "22px" : "0px";
+            visibleIndex++;
+          } else {
+            pane.style.marginTop = "0px";
+          }
+        });
+      }
+
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          applyTab(tab.getAttribute("data-bento-tab"));
+        });
+      });
+
+      applyTab("todos");
+    })();
+  </script>
+</div></div></div></section></div>
+</div>
+</div>
+</article><article id="block-mwha07hz-xgjsrvmga" class="box">
+<header class="box-head">
+<div class="box-icon exe-icon">
+<span class="exe-material-icon" style="--exe-material-icon-url:url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2248%22%20height%3D%2248%22%20viewBox%3D%220%20-960%20960%20960%22%3E%3Cpath%20d%3D%22M240-80v-172q-57-52-88.5-121.5T120-520q0-150%20105-255t255-105q125%200%20221.5%2073.5T827-615l55%20218q4%2014-5%2025.5T853-360h-93v140q0%2025-17.5%2042.5T700-160H600v80H240Zm240-240q17%200%2028.5-11.5T520-360q0-17-11.5-28.5T480-400q-17%200-28.5%2011.5T440-360q0%2017%2011.5%2028.5T480-320Zm-30-128h61q0-25%206.5-40.5T544-526q18-20%2035-40.5t17-53.5q0-42-32.5-71T483-720q-40%200-72.5%2023T365-637l55%2023q7-22%2024.5-35.5T483-663q22%200%2036.5%2012t14.5%2031q0%2021-12.5%2037.5T492-549q-20%2021-31%2042t-11%2059Z%22%2F%3E%3C%2Fsvg%3E');" aria-hidden="true"></span>
+</div>
+<h1 class="box-title">Metas</h1>
+<button class="box-toggle box-toggle-on" title="Toggle content">
+<span>Toggle content</span>
+</button></header>
+<div class="box-content">
+<div id="idevice-1794713375735-zkmr9nkwx" class="idevice_node text" data-idevice-path="../idevices/text/" data-idevice-type="text" data-idevice-component-type="json" data-idevice-json-data="{&quot;ideviceId&quot;:&quot;idevice-1794713375735-zkmr9nkwx&quot;}">
+<div class="exe-text-template">
+    <div style="font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #2d3748; line-height: 1.6; max-width: 900px; margin: 0px auto; text-align: justify;"><!-- Párrafo introductorio limpio y directo -->
+<p style="font-size: 1.03em; color: #334155; margin: 0px 0px 18px; text-align: justify;">A través del siguiente <strong>libro interactivo</strong>, te proponemos un recorrido dinámico para descubrir cómo se conectan los datos, los dispositivos externos y la memoria dentro de la arquitectura de computadoras.</p>
+<!-- Caja destacada: Objetivo / Meta (integrando periféricos y almacenamiento) -->
+<div style="background: linear-gradient(135deg, #f0f7ff 0%, #e6f0fa 100%); border-left: 5px solid #1e3a8a; padding: 18px 22px; border-radius: 0 12px 12px 0; margin-bottom: 22px; box-shadow: 0 2px 8px rgba(30, 58, 138, 0.08);"><span style="display: inline-block; background-color: #1e3a8a; color: #ffffff; font-size: 0.75em; font-weight: bold; text-transform: uppercase; letter-spacing: 0.05em; padding: 3px 10px; border-radius: 20px; margin-bottom: 8px;"> 🎯 Meta de aprendizaje </span>
+<p style="margin: 0px; font-size: 1em; color: #1e293b; text-align: justify;">Comprender cómo un sistema informático interactúa con su entorno y conserva la información, reconociendo el rol de los <strong>periféricos</strong> (puente entre el usuario y la CPU) y de los <strong>sistemas de almacenamiento</strong> en el funcionamiento cotidiano del equipo.</p>
+</div>
+<!-- Subtítulo de anticipación del recorrido -->
+<p style="font-weight: bold; font-size: 1.02em; color: #1e293b; margin: 0px 0px 12px; text-align: justify;">📖 ¿Qué vas a encontrar dentro de este libro interactivo?</p>
+<!-- Dos tarjetas responsivas con los componentes del libro -->
+<div style="display: flex; flex-wrap: wrap; gap: 16px; text-align: justify;"><!-- Tarjeta 1: Video explicativo -->
+<div style="flex: 1 1 280px; background-color: #f8fafc; border: 1px solid #cbd5e1; border-top: 4px solid #7c3aed; border-radius: 10px; padding: 16px 18px; box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);">
+<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px; text-align: justify;"><span style="font-size: 1.3em;">🎬</span> <strong style="color: #6d28d9; font-size: 0.98em;">1. Recurso audiovisual</strong></div>
+<p style="margin: 0px; font-size: 0.94em; color: #334155; text-align: justify;">Un <strong>video explicativo</strong> seleccionado especialmente para ampliar tus saberes previos y visualizar cómo dialogan los dispositivos con el núcleo del sistema.</p>
+</div>
+<!-- Tarjeta 2: Desafío práctico -->
+<div style="flex: 1 1 280px; background-color: #f8fafc; border: 1px solid #cbd5e1; border-top: 4px solid #059669; border-radius: 10px; padding: 16px 18px; box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);">
+<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px; text-align: justify;"><span style="font-size: 1.3em;">🛠️</span> <strong style="color: #047857; font-size: 0.98em;">2. Desafío práctico guiado</strong></div>
+<p style="margin: 0px; font-size: 0.94em; color: #334155; text-align: justify;">La consigna paso a paso y los criterios de análisis necesarios para resolver con éxito la actividad sobre la <strong>estación de trabajo</strong> y la <strong>clasificación funcional</strong> de los dispositivos.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article><article id="block-mvatntq5-w3pghvo6c" class="box">
+<header class="box-head">
+<div class="box-icon exe-icon">
+<img src="../theme/icons/udl_exp_interactivo.svg" alt="" style="display:block;object-fit:contain;">
+</div>
+<h1 class="box-title">Libro: Periféricos de Hardware</h1>
+<button class="box-toggle box-toggle-on" title="Toggle content">
+<span>Toggle content</span>
+</button></header>
+<div class="box-content">
+<div id="idevice-1792146344764-8jfe4xl1q" class="idevice_node text" data-idevice-path="../idevices/text/" data-idevice-type="text" data-idevice-component-type="json" data-idevice-json-data="{&quot;ideviceId&quot;:&quot;idevice-1792146344764-8jfe4xl1q&quot;}">
+<div class="exe-text-template">
+    <p><iframe width="100%" height="800px" src="../LIBRO/CONT2/CONT2.htm" frameborder="0" scrolling="auto"></iframe></p>
+</div>
+</div>
+</div>
+</article>
+</div></main><div class="nav-buttons">
+<a href="../html/2-fundamentos-de-hardware-y-su-arquitectura.html" title="Anterior" class="nav-button nav-button-left"><span>Anterior</span></a>
+<a href="../html/4-actividades.html" title="Siguiente" class="nav-button nav-button-right"><span>Siguiente</span></a>
+</div>
+<footer id="siteFooter"><div id="siteFooterContent"> <div id="packageLicense" class="cc cc-by-sa"> <p> <span class="license-label">Licencia: </span><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="license">Creative Commons: Reconocimiento - compartir igual 4.0</a></p>
+</div>
+<div id="siteUserFooter"> <div><style>
+
+<div style="background-color: #f0f9ff; border: 1px solid #bae6fd; border-left: 6px solid #0284c7; border-radius: 6px; padding: 18px 22px; margin: 10px 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #1e293b; font-size: 15px; line-height: 1.6; text-align: justify;">
+  <p style="margin: 0;">
+    En esta sección encontrarás actividades interactivas para poner en práctica lo aprendido sobre <strong>Hardware y Arquitectura</strong>: analizar el ciclo de instrucción en un vídeo interactivo, explorar componentes en un panel gráfico, resolver desafíos en Edpuzzle, jugar a <em>El Rosco</em> e interactuar con modelos en Realidad Aumentada. Cada propuesta te ayudará a fortalecer tu comprensión sobre el funcionamiento interno del computador. <strong>¡Explorá, probá y aprendé haciendo!</strong>
+  </p>
+</div>
+
+
+<div style="background-color: #f0f9ff; border: 1px solid #bae6fd; border-left: 6px solid #0284c7; border-radius: 6px; padding: 18px 22px; margin: 10px 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #1e293b; font-size: 15px; line-height: 1.6; text-align: justify;">
+  <p style="margin: 0;">
+    Aquí escribes tu texto o consigna de la sección. Este tono celeste suave cuida la vista de los estudiantes y mantiene la coherencia visual con todo tu módulo de Hardware y Arquitectura. <strong>¡Explorá, probá y aprendé haciendo!</strong>
+  </p>
+</div>
+
+
+  .print-banner-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 15px;
+  }
+
+  .btn-print-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #334155; /* Gris pizarra profesional */
+    color: #ffffff !important;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    text-decoration: none !important;
+  }
+
+  .btn-print-action:hover {
+    background-color: #1e293b;
+    transform: translateY(-1px);
+  }
+
+  .btn-print-action svg {
+    width: 18px;
+    height: 18px;
+    fill: #ffffff;
+  }
+</style>
+
+<!-- Botón de impresión visible y garantizado -->
+<div class="print-banner-container">
+  <button class="btn-print-action" onclick="window.print()" title="Imprimir o guardar como PDF esta página">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/>
+    </svg>
+    Imprimir página
+  </button>
+</div></div>
+</div></div></footer>
+</div>
+<p id="made-with-eXe"> <a href="https://exelearning.net/" target="_blank" rel="noopener"> <span>Creado con eXeLearning <span>(Ventana nueva)</span></span></a></p>
+</body>
+</html>
